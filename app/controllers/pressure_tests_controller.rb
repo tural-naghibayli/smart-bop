@@ -1,24 +1,26 @@
 class PressureTestsController < ApplicationController
   def show
-    @pressure_test = Pressure_test.find(params[:id])
+    @pressure_test = PressureTest.find(params[:id])
   end
 
   def new
-    @pressure_test = Pressure_test.new
+    @pressure_test = PressureTest.new
+    @bop = Bop.find(params[:bop_id])
   end
 
   def create
-    @pressure_test = Pressure_test.new(pressure_test_params)
+    @pressure_test = PressureTest.new(pressure_test_params)
+    @bop = Bop.find(params[:bop_id])
     @pressure_test.user = current_user
     if @pressure_test.save
-      redirect_to bop_path, notice: "Pressure test successfully created."
+      redirect_to root_path, notice: "Pressure test successfully created."
     else
       render :new
     end
   end
 
   def edit
-    @pressure_test = Pressure_test.find(params[:id])
+    @pressure_test = PressureTest.find(params[:id])
   end
 
   def update
@@ -30,7 +32,7 @@ class PressureTestsController < ApplicationController
   end
 
   def destroy
-    @pressure_test = Pressure_test.find(params[:id])
+    @pressure_test = PressureTest.find(params[:id])
     @pressure_test.destroy
     redirect_to bop_path
   end
