@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_many :pressure_tests
   has_many :approvals
   has_one :bop, through: :rig
+  validates :name, :position, :company, :rig, presence: true
 end
