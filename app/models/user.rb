@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   belongs_to :rig
-  has_many :presssure_tests
+  has_many :pressure_tests
   has_many :approvals
   has_one :bop, through: :rig
 end
