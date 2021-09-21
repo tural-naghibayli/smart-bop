@@ -5,7 +5,7 @@ class CreateRigs < ActiveRecord::Migration[6.0]
       t.string :reservoir_field
       t.string :contractor_drilling_company
       t.string :operator_company
-      t.references :user, null: false, foreign_key: true
+
 
       t.timestamps
     end
