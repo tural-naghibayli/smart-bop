@@ -1,0 +1,12 @@
+<%= simple_form_for [@bop, @pressure_test] do |f| %>
+    <%= f.input :last_test_date %>
+    <%= f.input :completed_date %>
+    <%= f.input :next_test_deadline %>
+    <%= f.input :test_fluid %>
+    <%= f.input :well_name %>
+    <%= f.input :serial_number_chart_recorded %>
+    <%= f.input :comment %>
+    <%= f.input :corrective_action %>
+    <%= f.input :drill_pipe_diameter %>
+    <%= f.submit %>
+<% end %>
