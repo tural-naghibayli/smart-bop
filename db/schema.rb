@@ -10,10 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_20_135829) do
+ActiveRecord::Schema.define(version: 2021_09_21_092439) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "answers", force: :cascade do |t|
+    t.string "value"
+    t.string "answerable_type"
+    t.bigint "question_id", null: false
+    t.bigint "pressure_test_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["pressure_test_id"], name: "index_answers_on_pressure_test_id"
+    t.index ["question_id"], name: "index_answers_on_question_id"
+  end
+
+  create_table "approvals", force: :cascade do |t|
+    t.string "testable_type"
+    t.string "approval_status"
+    t.string "signature"
+    t.bigint "pressure_test_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["pressure_test_id"], name: "index_approvals_on_pressure_test_id"
+    t.index ["user_id"], name: "index_approvals_on_user_id"
+  end
 
   create_table "bops", force: :cascade do |t|
     t.string "serial_number"
@@ -25,6 +48,46 @@ ActiveRecord::Schema.define(version: 2021_09_20_135829) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["rig_id"], name: "index_bops_on_rig_id"
+  end
+
+  create_table "component_pressure_tests", force: :cascade do |t|
+    t.string "bop_element_unit"
+    t.string "type"
+    t.integer "low_pressure"
+    t.integer "high_pressure"
+    t.string "test_result"
+    t.integer "open_gallons"
+    t.integer "open_time"
+    t.integer "close_gallons"
+    t.integer "close_time"
+    t.bigint "pressure_test_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["pressure_test_id"], name: "index_component_pressure_tests_on_pressure_test_id"
+  end
+
+  create_table "pressure_tests", force: :cascade do |t|
+    t.date "last_test_date"
+    t.date "completed_date"
+    t.date "next_test_deadline"
+    t.string "test_fluid"
+    t.string "well_name"
+    t.string "serial_number_chart_recorded"
+    t.text "comment"
+    t.string "corrective_action"
+    t.string "drill_pipe_diameter"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_pressure_tests_on_user_id"
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.string "name"
+    t.string "category"
+    t.string "question_type"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "rigs", force: :cascade do |t|
@@ -45,6 +108,8 @@ ActiveRecord::Schema.define(version: 2021_09_20_135829) do
     t.boolean "test_result"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "pressure_test_id", null: false
+    t.index ["pressure_test_id"], name: "index_safety_valve_tests_on_pressure_test_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -65,6 +130,13 @@ ActiveRecord::Schema.define(version: 2021_09_20_135829) do
     t.index ["rig_id"], name: "index_users_on_rig_id"
   end
 
+  add_foreign_key "answers", "pressure_tests"
+  add_foreign_key "answers", "questions"
+  add_foreign_key "approvals", "pressure_tests"
+  add_foreign_key "approvals", "users"
   add_foreign_key "bops", "rigs"
+  add_foreign_key "component_pressure_tests", "pressure_tests"
+  add_foreign_key "pressure_tests", "users"
+  add_foreign_key "safety_valve_tests", "pressure_tests"
   add_foreign_key "users", "rigs"
 end
