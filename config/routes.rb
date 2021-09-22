@@ -16,6 +16,9 @@ Rails.application.routes.draw do
     member do
       patch :approve
     end
+    collection do
+      get :preview
+    end
   end
 
   resources :pressure_tests, only: [:edit, :update, :delete]
