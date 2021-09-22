@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   end
 
   resources :pressure_tests, only: [:show] do
+    resources :component_pressure_tests, only: [:new, :create, :show]
+    resources :safety_valve_tests, only: [:new, :create, :show]
     member do
       patch :approve
     end

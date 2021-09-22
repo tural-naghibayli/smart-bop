@@ -1,0 +1,16 @@
+<%= simple_form_for [@pressure_test, @component_pressure_test] do |f| %>
+    <%= f.input :bop_element_unit %>
+    <%= f.input :component_type %>
+    <%= f.input :low_pressure %>
+    <%= f.input :high_pressure %>
+    <%= f.input :test_result %>
+    <%= f.input :open_gallons %>
+    <%= f.input :open_time %>
+    <%= f.input :close_gallons %>
+    <%= f.input :close_time %>
+    <%= f.submit %>
+<% end %>
+
+
+   <%# bop_pressure_test_component_pressure_tests POST   /bops/:bop_id/pressure_tests/:pressure_test_id/component_pressure_tests(.:format)        component_pressure_tests#create
+new_bop_pressure_test_component_pressure_test GET    /bops/:bop_id/pressure_tests/:pressure_test_id/component_pressure_tests/new(.:format)    component_pressure_tests#new %>
