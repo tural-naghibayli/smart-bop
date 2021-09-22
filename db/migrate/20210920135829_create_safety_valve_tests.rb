@@ -6,7 +6,7 @@ class CreateSafetyValveTests < ActiveRecord::Migration[6.0]
       t.string :connection_type
       t.integer :high_pressure
       t.integer :low_pressure
-      t.boolean :test_result
+      t.string :test_result
 
 
       t.timestamps

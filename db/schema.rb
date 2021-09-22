@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_21_092439) do
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 2021_09_22_090504) do
+=======
+ActiveRecord::Schema.define(version: 2021_09_22_091157) do
+>>>>>>> master
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,7 +56,7 @@ ActiveRecord::Schema.define(version: 2021_09_21_092439) do
 
   create_table "component_pressure_tests", force: :cascade do |t|
     t.string "bop_element_unit"
-    t.string "type"
+    t.string "component_type"
     t.integer "low_pressure"
     t.integer "high_pressure"
     t.string "test_result"
@@ -79,6 +83,8 @@ ActiveRecord::Schema.define(version: 2021_09_21_092439) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "bop_id", null: false
+    t.index ["bop_id"], name: "index_pressure_tests_on_bop_id"
     t.index ["user_id"], name: "index_pressure_tests_on_user_id"
   end
 
@@ -105,7 +111,7 @@ ActiveRecord::Schema.define(version: 2021_09_21_092439) do
     t.string "connection_type"
     t.integer "high_pressure"
     t.integer "low_pressure"
-    t.boolean "test_result"
+    t.string "test_result"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "pressure_test_id", null: false
@@ -136,6 +142,7 @@ ActiveRecord::Schema.define(version: 2021_09_21_092439) do
   add_foreign_key "approvals", "users"
   add_foreign_key "bops", "rigs"
   add_foreign_key "component_pressure_tests", "pressure_tests"
+  add_foreign_key "pressure_tests", "bops"
   add_foreign_key "pressure_tests", "users"
   add_foreign_key "safety_valve_tests", "pressure_tests"
   add_foreign_key "users", "rigs"
