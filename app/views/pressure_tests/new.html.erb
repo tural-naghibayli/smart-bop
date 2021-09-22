@@ -9,5 +9,27 @@
     <%= f.input :comment %>
     <%= f.input :corrective_action %>
     <%= f.input :drill_pipe_diameter %>
+
+    <h2>Components of BOP</h2>
+    <div id='component_pressure_tests'>
+      <%= f.simple_fields_for :component_pressure_tests do |component| %>
+        <%= render 'component_pressure_tests_fields', f:component %>
+      <% end %>
+      <div class='links'>
+        <%= link_to_add_association 'add Component', f, :component_pressure_tests %>
+      </div>
+    </div>
+
+    <h2>Safety Valve tests</h2>
+    <div id='safety_valve_tests'>
+      <%= f.simple_fields_for :safety_valve_tests do |safety_valve| %>
+        <%= render 'safety_valve_tests_fields', f:safety_valve %>
+      <% end %>
+      <div class='links'>
+        <%= link_to_add_association 'add Safety_valve', f, :safety_valve_tests %>
+      </div>
+    </div>
+
+
     <%= f.submit %>
 <% end %>

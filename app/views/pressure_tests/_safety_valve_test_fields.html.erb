@@ -1,0 +1,12 @@
+
+<div class="nested-fields">
+<%#= simple_form_for [@pressure_test, @safety_valve_test] do |f| %>
+    <%= f.input :unit %>
+    <%= f.input :serial_number %>
+    <%= f.input :connection_type %>
+    <%= f.input :high_pressure %>
+    <%= f.input :low_pressure %>
+    <%= f.input :test_result %>
+    <%= link_to_remove_association "remove Safety valve", f %>
+    <%#= f.submit %>
+<%# end %>
