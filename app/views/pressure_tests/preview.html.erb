@@ -1,3 +1,5 @@
+<h1><%= @pressure_test.well_name %> </h1>
+
 <h1>BOP serial number: <%= Bop.find(@pressure_test.bop_id).serial_number %></h1>
 <h1>Pressure Test Details</h1>
 
@@ -11,4 +13,5 @@
 <p> Corrective Action: <%= @pressure_test.corrective_action %></p>
 <p> Drill Pipe Diameter: <%= @pressure_test.drill_pipe_diameter %></p>
 
-<%= link_to "Preview", preview_pressure_tests_path(@pressure_test) %>
+
+<%= link_to "Edit", edit_pressure_test_path(@pressure_test) %>
