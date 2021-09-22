@@ -1,6 +1,7 @@
 class PressureTestsController < ApplicationController
   def show
     @pressure_test = PressureTest.find(params[:id])
+
   end
 
   def new
@@ -20,7 +21,7 @@ class PressureTestsController < ApplicationController
 
     @pressure_test.user = current_user
     if @pressure_test.save
-      redirect_to root_path, notice: "Pressure test successfully created."
+      redirect_to pressure_test_path(@pressure_test), notice: "Pressure test successfully created."
     else
       render :new
     end
