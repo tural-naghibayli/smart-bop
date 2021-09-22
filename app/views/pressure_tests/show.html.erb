@@ -1,0 +1,14 @@
+<h1>BOP serial number: <%= Bop.find(@pressure_test.bop_id).serial_number %></h1>
+<h1>Pressure Test Details</h1>
+
+<p> Last Test Date: <%= @pressure_test.last_test_date %></p>
+<p> Completed Date: <%= @pressure_test.completed_date %></p>
+<p> Next Test Deadline: <%= @pressure_test.next_test_deadline %></p>
+<p> Test Fluid: <%= @pressure_test.test_fluid %></p>
+<p> Well Name: <%= @pressure_test.well_name %></p>
+<p> Serial Number Chart Recorded: <%= @pressure_test.serial_number_chart_recorded %></p>
+<p> Comment: <%= @pressure_test.comment %></p>
+<p> Corrective Action: <%= @pressure_test.corrective_action %></p>
+<p> Drill Pipe Diameter: <%= @pressure_test.drill_pipe_diameter %></p>
+
+<%= link_to "Preview", preview_pressure_tests_path(@pressure_test) %>

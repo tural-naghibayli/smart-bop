@@ -1,6 +1,7 @@
 class PressureTestsController < ApplicationController
+  before_action :set_pressure_test, only: [:show, :edit, :update, :destroy]
+
   def show
-    @pressure_test = PressureTest.find(params[:id])
   end
 
   def new
@@ -18,14 +19,17 @@ class PressureTestsController < ApplicationController
 
     @pressure_test.user = current_user
     if @pressure_test.save
-      redirect_to root_path, notice: "Pressure test successfully created."
+      redirect_to pressure_test_path(@pressure_test), notice: "Pressure test successfully created."
     else
       render :new
     end
   end
 
+  def preview
+    @pressure_test = PressureTest.find(params[:format])
+  end
+
   def edit
-    @pressure_test = PressureTest.find(params[:id])
   end
 
   def update
@@ -37,13 +41,16 @@ class PressureTestsController < ApplicationController
   end
 
   def destroy
-    @pressure_test = PressureTest.find(params[:id])
     @pressure_test.destroy
     redirect_to bop_path
   end
 
 
   private
+
+  def set_pressure_test
+    @pressure_test = PressureTest.find(params[:id])
+  end
 
   def pressure_test_params
     params.require(:pressure_test).permit(:completed_date, :test_fluid, :well_name, :serial_number_chart_recorded, :comment, :corrective_action, :drill_pipe_diameter,
