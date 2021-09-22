@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 2021_09_22_090504) do
+=======
 ActiveRecord::Schema.define(version: 2021_09_22_091157) do
+>>>>>>> master
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,7 +56,7 @@ ActiveRecord::Schema.define(version: 2021_09_22_091157) do
 
   create_table "component_pressure_tests", force: :cascade do |t|
     t.string "bop_element_unit"
-    t.string "type"
+    t.string "component_type"
     t.integer "low_pressure"
     t.integer "high_pressure"
     t.string "test_result"
@@ -107,7 +111,7 @@ ActiveRecord::Schema.define(version: 2021_09_22_091157) do
     t.string "connection_type"
     t.integer "high_pressure"
     t.integer "low_pressure"
-    t.boolean "test_result"
+    t.string "test_result"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "pressure_test_id", null: false
