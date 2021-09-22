@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_21_092439) do
+ActiveRecord::Schema.define(version: 2021_09_22_091157) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -79,6 +79,8 @@ ActiveRecord::Schema.define(version: 2021_09_21_092439) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "bop_id", null: false
+    t.index ["bop_id"], name: "index_pressure_tests_on_bop_id"
     t.index ["user_id"], name: "index_pressure_tests_on_user_id"
   end
 
@@ -136,6 +138,7 @@ ActiveRecord::Schema.define(version: 2021_09_21_092439) do
   add_foreign_key "approvals", "users"
   add_foreign_key "bops", "rigs"
   add_foreign_key "component_pressure_tests", "pressure_tests"
+  add_foreign_key "pressure_tests", "bops"
   add_foreign_key "pressure_tests", "users"
   add_foreign_key "safety_valve_tests", "pressure_tests"
   add_foreign_key "users", "rigs"
