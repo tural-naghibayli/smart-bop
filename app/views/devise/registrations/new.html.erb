@@ -19,7 +19,7 @@
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :company,
                 required: true %>
-    <%= f.input :position,
+    <%= f.input :position, collection: User::POSITIONS,
                 required: true %>
 
     <%= f.association :rig %>

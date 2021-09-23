@@ -12,10 +12,14 @@ Rig.destroy_all
 Bop.destroy_all
 Question.destroy_all
 
+
+
+
 rig_1 = Rig.create!(name: "Fatih", reservoir_field: "Tuna_1", contractor_drilling_company: "Odfjell", operator_company: "TPAO")
 user_1 = User.create!(rig: rig_1, email: "user2@user.com", password: "password", name: "User_name_2", position: "driller", company: "Odfjell", admin: false)
 bop_1 = Bop.create!(rig: rig_1, serial_number: "ofko", bop_type: "power", producer: "gs", pressure_rating: 5, description: 'very good')
 pressure_test_1 = PressureTest.create!(user: user_1, bop: bop_1, last_test_date: Date.today-20 , completed_date:Date.today, next_test_deadline:Date.today+21 , test_fluid: "mud", well_name:"A1", serial_number_chart_recorded:"SN gauge 125", comment: "Equipment checked", corrective_action: "Risk assessed", drill_pipe_diameter: "4inch DP XT50")
+<<<<<<< HEAD
 
 puts "Created rig_1, user_1, bop_1, pressure_test_1 WITH NEW ids"
 # ------ Questions for forms -------

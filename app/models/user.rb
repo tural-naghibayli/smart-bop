@@ -8,4 +8,6 @@ class User < ApplicationRecord
   has_many :approvals
   has_one :bop, through: :rig
   validates :name, :position, :company, :rig, presence: true
+  POSITIONS = ['Driller', 'Shift Supervisor', 'Rig Superintendent', 'Well Site Leader', 'Manager']
+  validates :position, inclusion: { in: POSITIONS }
 end
