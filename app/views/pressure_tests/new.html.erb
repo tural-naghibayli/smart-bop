@@ -11,6 +11,24 @@
     <%= f.input :drill_pipe_diameter %>
 
 
+    <ul>
+      <h3>Equipment Checks</h3>
+      <% Question.all.each do |question| %>
+
+        <% if question.category =="Equipment Checks" %>
+          <li> <%= question.name %> <%#= f.input :answer, input_html {id: "#{quetion.id}", label:"#{question.name}" } %>  </li>
+        <% end %>
+
+
+        <%#  create hmtl input, with name
+        # name of input is id of question (question-id)
+        # label of input Question name
+        # go through params and get question-id and value of input and create new Answer object %>
+      <% end %>
+    </ul>
+
+
+
     <h2>Components of BOP</h2>
     <div id='component_pressure_tests'>
       <%= f.simple_fields_for :component_pressure_tests do |component| %>
@@ -21,6 +39,35 @@
       </div>
     </div>
 
+
+
+    <ul>
+      <h3> Choke Manifold checks</h3>
+      <% Question.all.each do |question| %>
+
+        <% if question.category =="General Manifold" %>
+          <li> <%= question.name %>  </li>
+        <% end %>
+       <% end %>
+
+       <% Question.all.each do |question| %>
+
+        <% if question.category =="Choke Manifold" %>
+          <li> <%= question.name %>  </li>
+        <% end %>
+       <% end %>
+    </ul>
+
+    <ul>
+      <h3>Stand pipe Manifold checks</h3>
+      <% Question.all.each do |question| %>
+
+        <% if question.category =="General Manifold" %>
+          <li> <%= question.name %>  </li>
+        <% end %>
+       <% end %>
+    </ul>
+
     <h2>Safety Valve tests</h2>
     <div id='safety_valve_tests'>
       <%= f.simple_fields_for :safety_valve_tests do |safety_valve| %>
@@ -30,6 +77,7 @@
         <%= link_to_add_association 'add Safety_valve', f, :safety_valve_tests %>
       </div>
     </div>
+
 
 
     <%= f.submit %>

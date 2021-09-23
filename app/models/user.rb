@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   belongs_to :rig
-  has_many :pressure_tests
+  has_many :pressure_tests, dependent: :destroy
   has_many :approvals
   has_one :bop, through: :rig
   validates :name, :position, :company, :rig, presence: true
