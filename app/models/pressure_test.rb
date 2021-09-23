@@ -1,6 +1,7 @@
 class PressureTest < ApplicationRecord
   belongs_to :user, dependent: :destroy
   belongs_to :bop
+  has_one_attached :photo
 
   has_many :component_pressure_tests, dependent: :destroy
   accepts_nested_attributes_for :component_pressure_tests, reject_if: :all_blank, allow_destroy: true
