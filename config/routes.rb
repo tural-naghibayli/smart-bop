@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :pressure_tests, only: [:new, :create]
   end
 
-  resources :pressure_tests, only: [:show] do
+  resources :pressure_tests, only: [:show, :index] do
     resources :component_pressure_tests, only: [:new, :create, :show]
     resources :safety_valve_tests, only: [:new, :create, :show]
     member do
