@@ -10,6 +10,15 @@
 <p> Comment: <%= @pressure_test.comment %></p>
 <p> Corrective Action: <%= @pressure_test.corrective_action %></p>
 <p> Drill Pipe Diameter: <%= @pressure_test.drill_pipe_diameter %></p>
+<% if @pressure_test.component_pressure_tests.present? %>
+<% @pressure_test.component_pressure_tests.each do |comp| %>
+<p> <%= comp.bop_element_unit %></p>
+<p> <%= comp.component_type %></p>
+<p> <%= comp.low_pressure %></p>
+<p> <%= comp.high_pressure %></p>
+<% end %>
+<% end %>
+
 <% if current_user.approvals.present?  %>
 <p><%= link_to "Approve",  approve_pressure_test_path(@pressure_test), method: :patch, class:'btn-approve btn' %></p>
 <% end %>
