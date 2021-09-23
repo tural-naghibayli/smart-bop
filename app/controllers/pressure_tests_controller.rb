@@ -32,13 +32,8 @@ class PressureTestsController < ApplicationController
     @pressure_test.user = current_user
 
     if @pressure_test.save
-<<<<<<< HEAD
       @pressure_test.answers.build
       redirect_to pressure_test_path(@pressure_test), notice: "Pressure test successfully created."
-=======
-      # Create Answer with params
-      redirect_to preview_pressure_tests_path(@pressure_test), notice: "Pressure test successfully created."
->>>>>>> master
     else
       render :new
     end
@@ -80,8 +75,7 @@ class PressureTestsController < ApplicationController
                                           answers_attributes: [ :question_id, :value])
     end
 
-
-   def set_pressure_test
+  def set_pressure_test
     @pressure_test = PressureTest.find(params[:id])
   end
 
