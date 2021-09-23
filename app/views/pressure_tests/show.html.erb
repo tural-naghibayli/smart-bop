@@ -10,11 +10,6 @@
 <p> Comment: <%= @pressure_test.comment %></p>
 <p> Corrective Action: <%= @pressure_test.corrective_action %></p>
 <p> Drill Pipe Diameter: <%= @pressure_test.drill_pipe_diameter %></p>
-
-<% if @pressure_test.photo.presence %>
-  <%= cl_image_tag @pressure_test.photo.key, class:'linegraph', height: 200 %>
-  <% else %>
-    <img src="https://res.cloudinary.com/dk9bhadx6/image/upload/v1632386748/development/smart%20bop/Screen_Shot_2021-09-23_at_11.31.14_esnhlt.png" class="card-image" alt="luggage image">
+<% if current_user.approvals.present?  %>
+<p><%= link_to "Approve",  approve_pressure_test_path(@pressure_test), method: :patch, class:'btn-approve btn' %></p>
 <% end %>
-
-<%= link_to "Preview", preview_pressure_tests_path(@pressure_test) %>

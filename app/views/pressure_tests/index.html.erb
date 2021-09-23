@@ -1,0 +1,23 @@
+<div class="container">
+<h1>Pressure Tests</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Completed Date</th>
+      <th scope="col">Well Name</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @pressure_tests.each_with_index do |pressure_test, index| %>
+      <tr>
+        <td><%= index + 1 %>.</td>
+        <td><%= pressure_test.completed_date %></td>
+        <td><%= pressure_test.well_name %></td>
+        <td><%= link_to "Show", pressure_test_path(pressure_test) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>

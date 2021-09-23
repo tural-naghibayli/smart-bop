@@ -1,7 +1,17 @@
 class PressureTestsController < ApplicationController
-  before_action :set_pressure_test, only: [:show, :edit, :update, :destroy]
+
+  before_action :set_pressure_test, only: [:show, :edit, :update, :destroy, :approve]
+
+  def index
+    @pressure_tests = PressureTest.all
+  end
+
+  def preview
+    @pressure_test = PressureTest.find(params[:format])
+  end
 
   def show
+    @approve = Approval.find_by(user: current_user, pressure_test: @pressure_test)
   end
 
   def new
@@ -11,27 +21,37 @@ class PressureTestsController < ApplicationController
   end
 
   def create
-
     @pressure_test = PressureTest.new(pressure_test_params)
     @bop = Bop.find(params[:bop_id])
+
     @pressure_test.bop = @bop
     @pressure_test.last_test_date = @bop.last_completed_pressure_test_date
+
+
     @pressure_test.next_test_deadline = @pressure_test.completed_date + 21.day
     @pressure_test.user = current_user
 
     if @pressure_test.save
+<<<<<<< HEAD
       @pressure_test.answers.build
       redirect_to pressure_test_path(@pressure_test), notice: "Pressure test successfully created."
+=======
+      # Create Answer with params
+      redirect_to preview_pressure_tests_path(@pressure_test), notice: "Pressure test successfully created."
+>>>>>>> master
     else
       render :new
     end
   end
 
-  def preview
-    @pressure_test = PressureTest.find(params[:format])
+  def edit
   end
 
-  def edit
+  def approve
+    @approve = Approval.find_by(user: current_user, pressure_test: @pressure_test)
+    @approve.approval_status = "Approved"
+    @approve.save
+    redirect_to @pressure_test
   end
 
   def update
@@ -50,18 +70,19 @@ class PressureTestsController < ApplicationController
 
   private
 
-  def set_pressure_test
-    @pressure_test = PressureTest.find(params[:id])
-  end
-
   def pressure_test_params
+
     params.require(:pressure_test).permit(:completed_date, :test_fluid, :well_name, :serial_number_chart_recorded, :comment, :corrective_action, :drill_pipe_diameter, :photo,
                                           component_pressure_tests_attributes:[:id, :pressure_test_id,:bop_element_unit, :component_type, :low_pressure,
                                                     :high_pressure, :test_result, :open_gallons, :open_time,
                                                     :close_gallons, :close_time, :_destroy],
                                           safety_valve_tests_attributes:[:id, :unit, :serial_number, :connection_type, :high_pressure, :low_pressure, :test_result, :_destroy],
                                           answers_attributes: [ :question_id, :value])
+    end
 
+
+   def set_pressure_test
+    @pressure_test = PressureTest.find(params[:id])
   end
 
 end

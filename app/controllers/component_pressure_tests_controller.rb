@@ -44,6 +44,6 @@ class ComponentPressureTestsController < ApplicationController
   def component_pressure_test_params
     params.require(:component_pressure_test).permit(:pressure_test_id,:bop_element_unit, :component_type, :low_pressure,
                                                     :high_pressure, :test_result, :open_gallons, :open_time,
-                                                    :close_gallons, :close_time)
+                                                    :close_gallons, :close_time, :photo)
   end
 end
