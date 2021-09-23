@@ -12,23 +12,23 @@
           <div class='dashboard-show-test-container container'>
             <div class="dashboard-list-of-all-test table">
 
-                <% @pressure_tests.each do |pressuretest| %>
+                <% @pressure_tests.each do |pressure_test| %>
               <div class="pressure-test-section"  style='margin: 5px;'>
                     <div class="well-name-info col-xl-2 col-md-12">
                     <div class="card ">
-                      <h3 class='card-content ' style='font-size: 20px; margin: 5px;'><strong>Well Name:</strong> <%= pressuretest.well_name %></h3>
+                      <h3 class='card-content ' style='font-size: 20px; margin: 5px;'><strong>Well Name:</strong> <%= pressure_test.well_name %></h3>
                       <br>
                       <div class="completed-test-info">
-                        <h3 class='card-content' style='font-size: 20px; margin: 5px;'><strong>Completed Date:</strong> <%= pressuretest.completed_date %></h3>
+                        <h3 class='card-content' style='font-size: 20px; margin: 5px;'><strong>Completed Date:</strong> <%= pressure_test.completed_date %></h3>
                       </div>
                       <br>
                       <div class="completed-test-info">
-                        <h3 class='card-content' style='font-size: 20px; margin: 5px;'><strong>Next test deadline: </strong><%= pressuretest.next_test_deadline %></h3>
+                        <h3 class='card-content' style='font-size: 20px; margin: 5px;'><strong>Next test deadline: </strong><%= pressure_test.next_test_deadline %></h3>
                       </div>
 
+                      <button style=' background-color: #ffff; '><%= link_to "Show", pressure_test_path(pressure_test) %></button>
                 <% end %>
                 <br>
-                      <button style=' background-color: #ffff; '><%= link_to 'Show', pressure_tests_path(@pressure_test), class: 'btn-wide' 'card-content'%></button>
                     </div>
                   </div>
               </div>
