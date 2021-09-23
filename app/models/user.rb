@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   belongs_to :rig
   has_many :pressure_tests
+  has_many :safety_valve_tests, through: :pressure_test
   has_many :approvals
   has_one :bop, through: :rig
   validates :name, :position, :company, :rig, presence: true

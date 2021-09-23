@@ -2,6 +2,8 @@ class DashboardsController < ApplicationController
   def show
     @rigs = current_user.rig
     @bop = current_user.bop
-    @pressure_tests = current_user.pressure_tests
+    @pressure_tests = @bop.pressure_tests
+    @safety_valve_tests = @bop.safety_valve_tests.all
+    @component_pressure_tests = @bop.component_pressure_tests.all
   end
 end

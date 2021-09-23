@@ -1,1 +1,58 @@
-<h1>Welcome to your dashboard!</h1>
+<div class="dashboard-container">
+<h1>Welcome to Smart-BOP Dashboard!</h1>
+  <ul>
+    <li class="nav-item" role="presentation">
+        <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">All Tests</a>
+      </li>
+  </ul>
+    <div class="tab-content" id="pills-tabContent">
+      <div class="tab-pane fade show active" id="pills-home" role="tabpanel"aria-labelledby="pills-home-tab">
+        <section>
+          <div class='dashboard-show-test-container'>
+            <div class="dashboard-list-of-all-test">
+              <div class="pressure-test-section">
+                <% @pressure_tests.each do |pressuretest| %>
+                  <div class="card">
+                    <div class="well-name-info">
+                      <h2>Well Name: <%= pressuretest.well_name %></h2>
+                      <div class="completed-test-info">
+                        <h3>Completed Date: <%= pressuretest.completed_date %></h3>
+                      </div>
+                      <div class="completed-test-info">
+                        <h3>Completed Date: <%= pressuretest.completed_date %></h3>
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+
+              <div class="safety-valve-test-section">
+                <% @safety_valve_tests.each do |safetytest| %>
+                  <div class="unit-test-info">
+                      <h3>Unit: <%= safetytest.unit %></h3>
+                  </div>
+                  <div class="serial-number-test-info">
+                      <h3>SN: <%= safetytest.serial_number %></h3>
+                  </div>
+                  <div class="connection-type-test-info">
+                      <h3>Connection type: <%= safetytest.connection_type %></h3>
+                  </div>
+                <% end %>
+              </div>
+
+              <div class="component-test-section">
+                <% @component_pressure_tests.each do |componenttest| %>
+                <div class="unit-test-info">
+                  <h3>Unit: <%= componenttest.bop_element_unit %> </h3>
+                  </div>
+                  <div class="serial-number-test-info">
+                      <h3>SN: <%= componenttest.component_type %></h3>
+                  </div>
+                <% end %>
+              </div>
+
+            </div>
+          </div>
+        </section>
+</div>
