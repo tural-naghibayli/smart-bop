@@ -5,3 +5,11 @@
 <h2>Pressure Rating: <%= @bop.pressure_rating %></h2>
 <h2>Description: <%= @bop.description %></h2>
 <h2>Rig name: <%= @bop.rig.name %></h2>
+
+<br>
+
+<h2>Pressure Tests</h2>
+<% @bop.pressure_tests.each do |test| %>
+<p><%= test.well_name %> | <%= test.completed_date %></p>
+
+<% end %>
