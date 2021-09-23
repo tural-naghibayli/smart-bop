@@ -53,7 +53,7 @@ class PressureTestsController < ApplicationController
   end
 
   def pressure_test_params
-    params.require(:pressure_test).permit(:completed_date, :test_fluid, :well_name, :serial_number_chart_recorded, :comment, :corrective_action, :drill_pipe_diameter, :photo,
+    params.require(:pressure_test).permit(:completed_date, :test_fluid, :well_name, :serial_number_chart_recorded, :comment, :corrective_action, :drill_pipe_diameter,
                                           component_pressure_tests_attributes:[:id, :pressure_test_id,:bop_element_unit, :component_type, :low_pressure,
                                                     :high_pressure, :test_result, :open_gallons, :open_time,
                                                     :close_gallons, :close_time, :_destroy],
