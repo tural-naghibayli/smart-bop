@@ -10,5 +10,6 @@
 <p> Comment: <%= @pressure_test.comment %></p>
 <p> Corrective Action: <%= @pressure_test.corrective_action %></p>
 <p> Drill Pipe Diameter: <%= @pressure_test.drill_pipe_diameter %></p>
+<p><%= link_to "Approve",  approve_pressure_test_path(@pressure_test), method: :patch, class:'btn-approve btn' %></p>
 
 <%= link_to "Preview", preview_pressure_tests_path(@pressure_test) %>

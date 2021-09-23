@@ -9,4 +9,14 @@ class PressureTest < ApplicationRecord
   accepts_nested_attributes_for :safety_valve_tests, reject_if: :all_blank, allow_destroy: true
 
   validates :completed_date, :test_fluid, :well_name, :drill_pipe_diameter, :user, presence: true
+  after_create :create_approvals
+
+  def create_approvals
+    users = bop.rig.users
+    users.each do |user|
+      if user.position == 'Driller' || user.position == 'Shift Supervisor' || user.position == 'Well Site Leader' || user.position == 'Rig Superintendent'
+        Approval.create(user: user, pressure_test: self, testable_type: "right", approval_status: "pending")
+      end
+    end
+  end
 end
