@@ -10,3 +10,8 @@
 <p>1.<%= @component_pressure_test.open_time %></p>
 <p>1.<%= @component_pressure_test.close_gallons %></p>
 <p>1.<%= @component_pressure_test.close_time %></p>
+<% if @component_pressure_test.photo.presence %>
+  <%= cl_image_tag @component_pressure_test.photo.key, class:'linegraph', height: 200 %>
+  <% else %>
+    <img src="https://res.cloudinary.com/dk9bhadx6/image/upload/v1632386748/development/smart%20bop/Screen_Shot_2021-09-23_at_11.31.14_esnhlt.png" class="card-image" alt="luggage image">
+<% end %>
