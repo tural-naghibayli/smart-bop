@@ -1,5 +1,5 @@
+<div class="container">
 <h1>Pressure Tests</h1>
-<% @pressure_tests.each do |pressure_test| %>
 <table class="table">
   <thead>
     <tr>
@@ -10,12 +10,14 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row"><%= pressure_test.id %></th>
-      <td><%= pressure_test.completed_date %></td>
-      <td><%= pressure_test.well_name %></td>
-      <td><%= link_to "Show", pressure_test_path(pressure_test) %></td>
-    </tr>
-   </tbody>
+    <% @pressure_tests.each_with_index do |pressure_test, index| %>
+      <tr>
+        <td><%= index + 1 %>.</td>
+        <td><%= pressure_test.completed_date %></td>
+        <td><%= pressure_test.well_name %></td>
+        <td><%= link_to "Show", pressure_test_path(pressure_test) %></td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
-<% end %>
+</div>
