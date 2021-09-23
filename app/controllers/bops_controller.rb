@@ -5,7 +5,6 @@ class BopsController < ApplicationController
 
   def show
     @bop = Bop.find(params[:id])
-    @pressure_test = Pressure_test.new
   end
 
   def new
