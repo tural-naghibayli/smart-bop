@@ -9,6 +9,7 @@
     <%= f.input :comment %>
     <%= f.input :corrective_action %>
     <%= f.input :drill_pipe_diameter %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true }, class:'btn-photo' %>
 
     <h2>Components of BOP</h2>
     <div id='component_pressure_tests'>
