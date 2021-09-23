@@ -1,1 +1,7 @@
 <h1>Rigs Index Page</h1>
+<% @rigs.each do |rig| %>
+<p>Rig Name: <%= rig.name %> </p>
+<p>Reservoir Field: <%= rig.reservoir_field %></p>
+<p>Contractor Drilling Company: <%= rig.contractor_drilling_company %></p>
+<p>Operator Company: <%= rig.operator_company %></p>
+<% end %>
