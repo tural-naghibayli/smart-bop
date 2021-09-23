@@ -9,49 +9,49 @@
       <div class="tab-pane fade show active" id="pills-home" role="tabpanel"aria-labelledby="pills-home-tab">
         <section>
           <div class='dashboard-show-test-container'>
-            <div class="dashboard-list-of-all-test">
-              <div class="pressure-test-section">
-                <% @pressure_tests.each do |pressuretest| %>
-                  <div class="card">
-                    <div class="well-name-info">
-                      <h2>Well Name: <%= pressuretest.well_name %></h2>
-                      <div class="completed-test-info">
-                        <h3>Completed Date: <%= pressuretest.completed_date %></h3>
-                      </div>
-                      <div class="completed-test-info">
-                        <h3>Completed Date: <%= pressuretest.completed_date %></h3>
-                      </div>
-                      </div>
-                    </div>
-                  </div>
-                <% end %>
-              </div>
+            <div class="dashboard-list-of-all-test table">
 
-              <div class="safety-valve-test-section">
+                <% @pressure_tests.each do |pressuretest| %>
+              <div class="pressure-test-section row">
+                    <div class="well-name-info col">
+                      <h2>Well Name: <%= pressuretest.well_name %></h2>
+                      <div class="completed-test-info col">
+                        <h3>Completed Date: <%= pressuretest.completed_date %></h3>
+                      </div>
+                      <div class="completed-test-info col">
+                        <h3>Completed Date: <%= pressuretest.completed_date %></h3>
+                      </div>
+                <% end %>
+                    </div>
+              </div>
+<%
+=begin %>
                 <% @safety_valve_tests.each do |safetytest| %>
-                  <div class="unit-test-info">
+              <div class="safety-valve-test-section row">
+                  <div class=" unit-test-info col">
                       <h3>Unit: <%= safetytest.unit %></h3>
                   </div>
-                  <div class="serial-number-test-info">
+                  <div class="serial-number-test-info col">
                       <h3>SN: <%= safetytest.serial_number %></h3>
                   </div>
-                  <div class="connection-type-test-info">
+                  <div class="connection-type-test-info col">
                       <h3>Connection type: <%= safetytest.connection_type %></h3>
                   </div>
                 <% end %>
               </div>
 
-              <div class="component-test-section">
                 <% @component_pressure_tests.each do |componenttest| %>
-                <div class="unit-test-info">
+              <div class="component-test-section row">
+                <div class="unit-test-info col">
                   <h3>Unit: <%= componenttest.bop_element_unit %> </h3>
                   </div>
-                  <div class="serial-number-test-info">
+                  <div class="serial-number-test-info col">
                       <h3>SN: <%= componenttest.component_type %></h3>
                   </div>
                 <% end %>
               </div>
-
+<%
+=end %>
             </div>
           </div>
         </section>
