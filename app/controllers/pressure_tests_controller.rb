@@ -21,6 +21,7 @@ class PressureTestsController < ApplicationController
 
     @pressure_test.user = current_user
     if @pressure_test.save
+      # Create Answer with params
       redirect_to pressure_test_path(@pressure_test), notice: "Pressure test successfully created."
     else
       render :new
