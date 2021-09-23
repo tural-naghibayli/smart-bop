@@ -22,4 +22,3 @@
 <% if current_user.approvals.present?  %>
 <p><%= link_to "Approve",  approve_pressure_test_path(@pressure_test), method: :patch, class:'btn-approve btn' %></p>
 <% end %>
-<%= link_to "Preview", preview_pressure_tests_path(@pressure_test) %>
