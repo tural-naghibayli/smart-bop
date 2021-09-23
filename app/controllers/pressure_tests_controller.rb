@@ -1,6 +1,7 @@
 class PressureTestsController < ApplicationController
    before_action :set_pressure_test, only: [:show, :edit, :update, :destroy, :approve]
   def show
+    @approve = Approval.find_by(user: current_user, pressure_test: @pressure_test)
   end
 
   def new
