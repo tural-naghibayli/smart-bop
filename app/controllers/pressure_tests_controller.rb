@@ -6,6 +6,10 @@ class PressureTestsController < ApplicationController
     @pressure_tests = PressureTest.all
   end
 
+  def preview
+    @pressure_test = PressureTest.find(params[:format])
+  end
+
   def show
     @approve = Approval.find_by(user: current_user, pressure_test: @pressure_test)
   end
@@ -28,7 +32,7 @@ class PressureTestsController < ApplicationController
     @pressure_test.user = current_user
     if @pressure_test.save
       # Create Answer with params
-      redirect_to pressure_test_path(@pressure_test), notice: "Pressure test successfully created."
+      redirect_to preview_pressure_tests_path(@pressure_test), notice: "Pressure test successfully created."
     else
       render :new
     end
