@@ -39,3 +39,48 @@ h3 {
   margin-bottom: 6px;
   text-align: center;
 }
+
+.dash {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dash-new {
+  margin-right: 20px;
+}
+.dash-new a {
+  color: white;
+}
+
+.dash-new a:hover {
+  color: rgb(121, 103, 103);
+  text-decoration: none;
+}
+
+.dashboard-list-of-all-test {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.show-btn {
+  background-color: #dda15e;
+  border-radius: 8px;
+  padding: 6px 8px;
+}
+
+.dash-menu {
+  color: white;
+  border-radius: 10px;
+  margin-left: 10px;
+  background-color: #09a2a5;
+  padding: 10px 12px;
+}
+
+.dash-menu > a:hover {
+  background-color: #2fd5d8;
+  padding: 10px 12px;
+  color: white;
+  border-radius: 10px;
+  margin-left: 10px;
+}
