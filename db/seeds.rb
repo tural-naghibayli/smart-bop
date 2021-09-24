@@ -10,6 +10,8 @@ ComponentPressureTest.destroy_all
 SafetyValveTest.destroy_all
 Question.destroy_all
 PressureTest.destroy_all
+Answer.destroy_all
+Approval.destroy_all
 User.destroy_all
 Bop.destroy_all
 Rig.destroy_all
@@ -51,8 +53,8 @@ question_11 = Question.create!(name: "Valves tested individually?", question_typ
 
 puts "Created general manifold questions"
 # Choke Manifold
-question_13 = Question.create!(name: "Remote manual choke checked ?", question_type:"", category:"Choke Manifold")
-question_14 = Question.create!(name: "Operated auto-chokes with hand pump ?", question_type:"", category:"Choke Manifold")
+question_12 = Question.create!(name: "Remote manual choke checked ?", question_type:"", category:"Choke Manifold")
+question_13 = Question.create!(name: "Operated auto-chokes with hand pump ?", question_type:"", category:"Choke Manifold")
 
 
 puts "Created choke manifold questions"
