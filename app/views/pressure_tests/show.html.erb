@@ -24,9 +24,11 @@
       <li class="items">Open Time: <%= component_pressure_test.open_time %></li>
       <li class="items">Close Time: <%= component_pressure_test.close_time %></li>
     </ul>
-      <div style="text-align: center;">
-        <%= cl_image_tag component_pressure_test.photo.key, height: 600, width: 600, crop: :fill %>
-      </div>
+      <% if component_pressure_test.photo.present? %>
+        <div style="text-align: center;">
+          <%= cl_image_tag component_pressure_test.photo.key, height: 600, width: 600, crop: :fill %>
+        </div>
+      <% end %>
   <% end %>
 <% end %>
 
@@ -47,8 +49,12 @@
 
 <% if current_user.approvals.present?%>
   <% if current_user.approvals.find_by(pressure_test: @pressure_test).approval_status == "pending"%>
+<<<<<<< HEAD
+   <div class="item2"><%= link_to "Approve",  approve_pressure_test_path(@pressure_test), method: :patch, class:'btn-approve' %></div>
+=======
    <p class="item2"><%= link_to "Approve",  approve_pressure_test_path(@pressure_test), method: :patch %></p>
+>>>>>>> master
   <% else %>
-    <p class="item1">Approved</p>
+    <div class="item1">Approved</div>
   <% end %>
 <% end %>
