@@ -15,18 +15,20 @@ Bop.destroy_all
 Question.destroy_all
 
 rig_1 = Rig.create!(name: "Fatih", reservoir_field: "Tuna_1", contractor_drilling_company: "Odfjell", operator_company: "TPAO")
+user_1 = User.create!(rig: rig_1, email: "user2@user.com", password: "password", name: "User_name_2", position: "Driller", company: "Odfjell", admin: false)
 bop_1 = Bop.create!(rig: rig_1, serial_number: "ofko", bop_type: "power", producer: "gs", pressure_rating: 5, description: 'very good')
+bop_2 = Bop.create!(rig: rig_1, serial_number: "kok", bop_type: "horse", producer: "gsts", pressure_rating: 9, description: 'excellent')
 
 
 rig_2 = Rig.create!(name: "Zatih", reservoir_field: "Tuna_2", contractor_drilling_company: "Odfjell", operator_company: "TPAO")
-user_1 = User.create!(rig: rig_1, email: "user2@user.com", password: "password", name: "User_name_2", position: 'Driller', company: "Odfjell", admin: false)
+user_1 = User.create!(rig: rig_1, email: "user9@user.com", password: "password", name: "User_name_2", position: 'Driller', company: "Odfjell", admin: false)
 user_2 = User.create!(rig: rig_1, email: "user3@user.com", password: "password", name: "User_name_3", position: 'Shift Supervisor', company: "Odfjell", admin: false)
 user_3 = User.create!(rig: rig_1, email: "user4@user.com", password: "password", name: "User_name_4", position: 'Well Site Leader', company: "Odfjell", admin: false)
 user_4 = User.create!(rig: rig_1, email: "user5@user.com", password: "password", name: "User_name_5", position: 'Rig Superintendent', company: "Odfjell", admin: false)
 user_5 = User.create!(rig: rig_2, email: "user6@user.com", password: "password", name: "User_name_6", position: 'Rig Superintendent', company: "Odfjell", admin: false)
 
 
-pressure_test_1 = PressureTest.create!(user: user_1, bop: bop_1, last_test_date: Date.today-20 , completed_date:Date.today, next_test_deadline:Date.today+21 , test_fluid: "mud", well_name:"A1", serial_number_chart_recorded:"SN gauge 125", comment: "Equipment checked", corrective_action: "Risk assessed", drill_pipe_diameter: "4inch DP XT50")
+pressure_test_2 = PressureTest.create!(user: user_3, bop: bop_2, last_test_date: Date.today-20 , completed_date:Date.today, next_test_deadline:Date.today+21 , test_fluid: "water", well_name:"B1", serial_number_chart_recorded:"SN Cool32", comment: "Equipment un checked", corrective_action: "Risk no assested", drill_pipe_diameter: "20 inch XT50")
 
 puts "Created rig_1, user_1, bop_1, pressure_test_1 WITH NEW ids"
 # ------ Questions for forms -------
