@@ -46,6 +46,16 @@
   <% end %>
 <% end %>
 
+<% if @pressure_test.report_file.attached? %>
+  <%= cl_image_tag "#{@pressure_test.report_file.key}.jpg", height: 100, width: 200, crop: :fill %>
+<% else %>
+  <%= simple_form_for @pressure_test do |f| %>
+    <%= f.input :report_file, as: :file %>
+    <%= f.submit %>
+  <% end %>
+<% end %>
+
+
 
 <% if current_user.approvals.present?%>
   <% if current_user.approvals.find_by(pressure_test: @pressure_test).approval_status == "pending"%>
