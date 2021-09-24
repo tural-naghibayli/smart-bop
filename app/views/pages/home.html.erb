@@ -1,2 +1,9 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+  <%= image_tag "bop-main-img.jpg", alt: "Home", class: "main-page-pic" %>
+    <h2 class='main-text'>Welcome to Smart BOP</h2>
+    <p class='main-paragraph'> We are committed to bring safety to the front line workers and give accurate results with a better history records</p>
+
+    <%= link_to "<button class='main-button '>Sign Up</button>".html_safe, new_user_registration_path %>
+    <p class='existing-account'>Already have an account | <%= link_to "<strong>log in</strong>".html_safe, new_user_session_path  %></p>
+
+</div>

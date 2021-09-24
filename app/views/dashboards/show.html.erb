@@ -1,9 +1,8 @@
 
 <h1>Welcome to Smart-BOP Dashboard!</h1>
-  <ul>
-    <li class="nav-item" role="presentation">
         <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">All Tests</a>
     </li>
+    <%= link_to "Add a new test", new_bop_pressure_test_path(@bop), class:'btn'%>
   </ul>
 <div class="tab-content" id="pills-tabContent">
   <section>

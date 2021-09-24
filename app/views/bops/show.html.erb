@@ -10,6 +10,5 @@
 
 <h2>Pressure Tests</h2>
 <% @bop.pressure_tests.each do |test| %>
-<p><%= test.well_name %> | <%= test.completed_date %></p>
-
+<p><%= test.well_name %> | <%= test.completed_date %>  <%= link_to "Show", pressure_test_path(test) %></p>
 <% end %>
