@@ -39,6 +39,10 @@ class PressureTestsController < ApplicationController
     end
   end
 
+  def preview
+    @pressure_test = PressureTest.find(params[:format])
+  end
+
   def edit
   end
 
