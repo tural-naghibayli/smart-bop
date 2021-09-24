@@ -1,2 +1,7 @@
 // Import page-specific CSS files here.
 @import "home";
+
+li {
+  display: inline;
+  margin-left: 10px;
+}
