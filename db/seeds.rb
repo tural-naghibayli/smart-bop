@@ -21,8 +21,8 @@ bop_2 = Bop.create!(rig: rig_1, serial_number: "SN BOP 4578", bop_type: "5k", pr
 
 
 rig_2 = Rig.create!(name: "Zatih", reservoir_field: "Tuna_2", contractor_drilling_company: "Odfjell", operator_company: "TPAO")
-user_2 = User.create!(rig: rig_1, email: "user2@user.com", password: "password", name: "Efe", position: 'Shift Supervisor', company: "TPAO", admin: false)
-user_3 = User.create!(rig: rig_1, email: "user3@user.com", password: "password", name: "Tural", position: 'Well Site Leader', company: "Odfjell", admin: false)
+user_2 = User.create!(rig: rig_1, email: "user2@user.com", password: "password", name: "Efe", position: 'Shift Supervisor', company: "Odfjell", admin: false)
+user_3 = User.create!(rig: rig_1, email: "user3@user.com", password: "password", name: "Tural", position: 'Well Site Leader', company: "TPAO", admin: false)
 user_4 = User.create!(rig: rig_1, email: "user4@user.com", password: "password", name: "Duygu", position: 'Rig Superintendent', company: "Odfjell", admin: false)
 user_5 = User.create!(rig: rig_2, email: "user5@user.com", password: "password", name: "Safi", position: 'Driller', company: "Odfjell", admin: false)
 
