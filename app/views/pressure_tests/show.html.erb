@@ -14,30 +14,41 @@
 <% if @pressure_test.component_pressure_tests.present? %>
   <% @pressure_test.component_pressure_tests.each do |component_pressure_test| %>
     <h3>COMPONENT PRESSURE TEST</h3>
-    <p>Bop Element Unit: <%= component_pressure_test.bop_element_unit %></p>
-    <p>Component Type: <%= component_pressure_test.component_type %></p>
-    <p>Low Pressure: <%= component_pressure_test.low_pressure %></p>
-    <p>High Pressure: <%= component_pressure_test.high_pressure %></p>
-    <p>Test Result: <%= component_pressure_test.test_result %></p>
-    <p>Open Gallons: <%= component_pressure_test.open_gallons %></p>
-    <p>Open Time: <%= component_pressure_test.open_time %></p>
-    <p>Close Time: <%= component_pressure_test.close_time %></p>
+    <ul>
+      <li class="items">Bop Element Unit: <%= component_pressure_test.bop_element_unit %></li>
+      <li class="items">Component Type: <%= component_pressure_test.component_type %></li>
+      <li class="items">Low Pressure: <%= component_pressure_test.low_pressure %></li>
+      <li class="items">High Pressure: <%= component_pressure_test.high_pressure %></li>
+      <li class="items">Test Result: <%= component_pressure_test.test_result %></li>
+      <li class="items">Open Gallons: <%= component_pressure_test.open_gallons %></li>
+      <li class="items">Open Time: <%= component_pressure_test.open_time %></li>
+      <li class="items">Close Time: <%= component_pressure_test.close_time %></li>
+    </ul>
+      <div style="text-align: center;">
+        <%= cl_image_tag component_pressure_test.photo.key, height: 600, width: 600, crop: :fill %>
+      </div>
   <% end %>
 <% end %>
 
 <% if @pressure_test.safety_valve_tests.present? %>
   <% @pressure_test.safety_valve_tests.each do |safety_valve_test| %>
     <h3>SAFETY VALVE TEST - <%= safety_valve_test.serial_number %> </h3>
-    <p>Unit: <%= safety_valve_test.unit %></p>
-    <p>Serial Number: <%= safety_valve_test.serial_number %></p>
-    <p>Connection Type: <%= safety_valve_test.connection_type %></p>
-    <p>High Pressure: <%= safety_valve_test.high_pressure %></p>
-    <p>Low Pressure: <%= safety_valve_test.low_pressure %></p>
-    <p>Test Result: <%= safety_valve_test.test_result %></p>
+    <ul>
+      <li class="items">Unit: <%= safety_valve_test.unit %></li>
+      <li class="items">Serial Number: <%= safety_valve_test.serial_number %></li>
+      <li class="items">Connection Type: <%= safety_valve_test.connection_type %></li>
+      <li class="items">High Pressure: <%= safety_valve_test.high_pressure %></li>
+      <li class="items">Low Pressure: <%= safety_valve_test.low_pressure %></li>
+      <li class="items">Test Result: <%= safety_valve_test.test_result %></li>
+    </ul>
   <% end %>
 <% end %>
 
 
-<% if current_user.approvals.present?  %>
-<p><%= link_to "Approve",  approve_pressure_test_path(@pressure_test), method: :patch, class:'btn-approve btn' %></p>
+<% if current_user.approvals.present?%>
+  <% if current_user.approvals.find_by(pressure_test: @pressure_test).approval_status == "pending"%>
+   <p class="item2"><%= link_to "Approve",  approve_pressure_test_path(@pressure_test), method: :patch, class:'btn-approve btn' %></p>
+  <% else %>
+    <p class="item1">Approved</p>
+  <% end %>
 <% end %>

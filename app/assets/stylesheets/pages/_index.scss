@@ -1,2 +1,32 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.items {
+  display: inline;
+  margin-left: 10px;
+  border: 2px solid rgb(179, 77, 77);
+  border-radius: 4px;
+  padding: 6px;
+}
+
+.item2 {
+  border: 2px solid rgb(179, 77, 77);
+  padding: 6px;
+  width: 90px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.item1 {
+  border: 2px solid rgb(177, 179, 77);
+  padding: 6px;
+  width: 90px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+h3 {
+  margin-top: 6px;
+  margin-bottom: 6px;
+  text-align: center;
+}
