@@ -36,7 +36,7 @@
     <h2>Components of BOP</h2>
     <div id='component_pressure_tests'>
       <%= f.simple_fields_for :component_pressure_tests do |component| %>
-        <%= render 'component_pressure_tests_fields', f:component %>
+        <%= render 'component_pressure_tests_fields', f: component %>
       <% end %>
       <div class='links'>
         <%= link_to_add_association 'add Component', f, :component_pressure_tests %>
