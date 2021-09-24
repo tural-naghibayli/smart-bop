@@ -36,16 +36,17 @@
     <p>Test Result: <%= safety_valve_test.test_result %></p>
   <% end %>
 <% end %>
-<form method="post" enctype="multipart/form-data">
-  <div>
-    <label for="profile_pic">Choose file to upload</label>
-    <input type="file" id="profile_pic" name="profile_pic"
-          accept=".pdf">
-  </div>
-  <div>
-    <button>Submit</button>
-  </div>
-  </form>
+
+<% if @pressure_test.report_file.attached? %>
+  <%= cl_image_tag "#{@pressure_test.report_file.key}.jpg", height: 100, width: 200, crop: :fill %>
+<% else %>
+  <%= simple_form_for @pressure_test do |f| %>
+    <%= f.input :report_file, as: :file %>
+    <%= f.submit %>
+  <% end %>
+<% end %>
+
+
 
 <% if current_user.approvals.present?  %>
 <p><%= link_to "Approve",  approve_pressure_test_path(@pressure_test), method: :patch, class:'btn-approve btn' %></p>
