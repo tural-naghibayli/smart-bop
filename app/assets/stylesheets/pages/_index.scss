@@ -17,12 +17,21 @@
   text-align: center;
 }
 
+.item2 > a {
+  color:rgb(179, 77, 77)
+}
+
+.item2 > a:hover {
+  color:rgb(219, 123, 123)
+}
+
 .item1 {
   border: 2px solid rgb(177, 179, 77);
   padding: 6px;
   width: 90px;
   border-radius: 4px;
   text-align: center;
+  color: rgb(177, 179, 77);
 }
 
 h3 {
