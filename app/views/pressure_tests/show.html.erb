@@ -55,13 +55,29 @@
   <% end %>
 <% end %>
 
+<div class="container">
+  <ul class="responsive-table">
+    <li class="table-header">
+      <div class="col col-1">Rig</div>
+      <div class="col col-2">Name</div>
+      <div class="col col-3">Position</div>
+      <div class="col col-4">Approval Status</div>
+    </li>
+    <% @pressure_test.approvals.each do |appr| %>
+    <li class="table-row">
+      <div class="col col-1"><%= appr.user.rig.name %></div>
+      <div class="col col-2"><%= appr.user.name %></div>
+      <div class="col col-3"><%= appr.user.position %></div>
+      <div class="col col-4"><%= appr.approval_status %></div>
+    </li>
+    <% end %>
+  </ul>
+</div>
 
 
 <% if current_user.approvals.present?%>
   <% if current_user.approvals.find_by(pressure_test: @pressure_test).approval_status == "pending"%>
-
-   <div class="item2"><%= link_to "Approve",  approve_pressure_test_path(@pressure_test), method: :patch, class:'btn-approve' %></div>
-
+    <div class="item2"><%= link_to "Approve",  approve_pressure_test_path(@pressure_test), method: :patch, class:'btn-approve' %></div>
   <% else %>
     <div class="item1">Approved</div>
   <% end %>

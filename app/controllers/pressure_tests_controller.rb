@@ -77,7 +77,7 @@ class PressureTestsController < ApplicationController
                                                     :close_gallons, :close_time, :photo, :_destroy],
                                           safety_valve_tests_attributes:[:id, :unit, :serial_number, :connection_type, :high_pressure, :low_pressure, :test_result, :_destroy],
                                           answers_attributes: [ :question_id, :value])
-    end
+  end
 
   def set_pressure_test
     @pressure_test = PressureTest.find(params[:id])
