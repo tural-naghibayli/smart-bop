@@ -4,7 +4,7 @@
 }
 
 .main-about-pic {
-  width: 730px;
+  width: 670px;
 }
 
 .main-about-pic-box {
@@ -12,20 +12,21 @@
   height: 600px;
 
   position: absolute;
-  left: 190px;
-  top: 180px;
+  left: 150px;
+  top: 130px;
 }
 
 .about-main-text {
-  width: 500px;
+  width: 600px;
   height: 700px;
 
   position: absolute;
-  left: 920px;
+  left: 780px;
   top: 380px;
 
   border-left: red;
   border-width: 2px;
+  text-align: justify;
 }
 
 
@@ -48,6 +49,8 @@
   width: auto;
   color: rgb(196, 16, 16);
   text-align: center;
+  margin-top: 25px;
+
 }
 .what-we-do-text {
   margin-top: -25px;
@@ -127,4 +130,17 @@
   position: relative;
   left: 210px;
   margin-top: -70px;
+}
+
+// what is bop area
+.what-is-bop-text-2header {
+  height: 30px;
+  width: auto;
+  color: rgb(196, 16, 16);
+  text-align: center;
+  margin-top: 700px;
+
+}
+.what-is-bop-text {
+  margin-top: -22px;
 }
