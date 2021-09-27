@@ -136,6 +136,16 @@
     </div>
     <hr>
 
+    <h2>Approvals</h2>
+    <div id='approvals'>
+      <%= f.simple_fields_for :approvals do |approval| %>
+        <%= render 'approval_fields', f:approval %>
+      <% end %>
+      <div class='links'>
+        <%= link_to_add_association 'add approval', f, :approvals %>
+      </div>
+    </div>
+
 
     <%= f.submit %>
 <% end %>

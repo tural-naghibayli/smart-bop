@@ -78,7 +78,6 @@
   </ul>
 </div>
 
-
 <% if current_user.approvals.present?%>
   <% if current_user.approvals.find_by(pressure_test: @pressure_test).approval_status == "pending"%>
     <div class="item2"><%= link_to "Approve",  approve_pressure_test_path(@pressure_test), method: :patch, class:'btn-approve' %></div>
