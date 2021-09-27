@@ -211,3 +211,17 @@
   margin: 20px;
   text-align: justify;
 }
+
+.footer-about-us {
+  position: absolute;
+  top: 2600px;
+  width: 100vw;
+  height: 50px;
+  background-color: rgb(26, 82, 165);
+  h2 {
+    position: relative;
+    margin: 10px;
+    font-size: 18px;
+    color: white;
+  }
+}

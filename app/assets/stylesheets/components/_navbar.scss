@@ -19,23 +19,27 @@ $dark-gblue: #57758D;
 }
 
 .navbar-xspace .navbar-brand img {
-  width: 100px;
-
+  width: 130px;
+  position: absolute;
+  left: 48px;
+  top: 20px;
 }
 
 .nav-link {
-  color: white;
+  color: rgb(212, 49, 49);
   border-radius: 10px;
   margin-left: 10px;
-  background-color: #c25f4d;
+  margin-right: 30px;
 }
 
-.nav-link:hover {
-  background-color: #e2a89e;
-  color: $dark-gblue;
-}
+
 
 #nav-text {
-  font-weight: bolder;
-  color: white;
+  font-size: 19px;
+  font-weight: 500;
+  color: rgb(214, 59, 59);
+}
+
+#nav-text:hover {
+  color: rgb(59, 117, 192);
 }
