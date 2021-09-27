@@ -1,16 +1,46 @@
 .rig-table-container {
+<<<<<<< HEAD
   margin: 20px;
   padding: 15px;
   border-radius: 10px;
   box-shadow: -5px 3px 90px 2px #A8C0CE;
+=======
+  padding: 15px;
+  width: 80%;
+  border-radius: 10px;
+  position: absolute;
+  left: 10%;
+  background-color: rgba(255, 255, 255, .15);
+  backdrop-filter: blur(5px);
+>>>>>>> tableRig
 }
 
 .rig-page-title {
   text-align: center;
   font-weight: bold;
+<<<<<<< HEAD
   color: $gray-blue;
 }
 
 .row-header {
   color: ;
+=======
+  color: #424761;
+}
+
+.rig-page-body {
+  background-image: linear-gradient(to right top, #051937, #424761, #7a7b8f, #b5b5bf, #f2f2f2);
+  min-height: 100vh;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.row-header {
+  color: #424761;
+  font-weight: bold;
+
+}
+
+.rig-filler {
+  color: #424761;
+>>>>>>> tableRig
 }

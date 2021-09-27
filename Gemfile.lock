@@ -128,10 +128,14 @@ GEM
     netrc (0.11.0)
     nio4r (2.5.8)
 <<<<<<< HEAD
+<<<<<<< HEAD
     nokogiri (1.12.4-x86_64-darwin)
 =======
     nokogiri (1.12.4-x86_64-linux)
 >>>>>>> de80ed405da2f117dc07cfb9db2d85821cd690c2
+=======
+    nokogiri (1.12.4-x86_64-darwin)
+>>>>>>> tableRig
       racc (~> 1.4)
     orm_adapter (0.5.0)
     pg (1.2.3)
