@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container-home-page">
   <%= image_tag "bop-main-img.jpg", alt: "Home", class: "main-page-pic" %>
-    <h2 class='main-text'>Welcome to Smart BOP</h2>
+    <h2 class='main-text blue-header-text'>Welcome to Smart BOP</h2>
     <p class='main-paragraph'> We are committed to bring safety to the front line workers and give accurate results with a better history records</p>
     <% unless current_user.present? %>
     <%= link_to "<button class='main-button '>Sign Up</button>".html_safe, new_user_registration_path %>
@@ -11,14 +11,14 @@
 
 
       <div class="what-we-do-text-2header-home">
-        <h2>What we do?</h2>
+        <h2 class='align-text-header'>What we do?</h2>
         <h6 class='what-we-do-text-home'>__________________________</h6>
       </div>
 
       <div class="wwdo-active-data-record-home">
         <%= image_tag "live-track-img.jpg", alt: "live track image", class: 'live-track-image-home' %>
         <div class="info-wwdo-live-track-home">
-            <h6 class='red-header-text-sm-home'>Active Data</h6>
+            <h6 class='red-header-text-sm-home blue-header-text'><strong>Active Data</strong></h6>
             <p>Now you can update or track your data live the data is on tip of your finger no need to search papers for the history of your tests</p>
         </div>
       </div>
@@ -26,7 +26,7 @@
       <div class="wwdo-onlone-form-home">
         <%= image_tag "online-form-img.jpg ", alt: "online form image", class: 'online-form-image-home' %>
         <div class="info-wwdo-online-form-home">
-            <h6 class='red-header-text-sm-home'>Online Form</h6>
+            <h6 class='red-header-text-sm-home blue-header-text'><strong>Online Form</strong></h6>
             <p>We provide the online form platform for your BOP test to make your work more effecient and avoid the Big or small errors</p>
         </div>
       </div>
@@ -34,7 +34,7 @@
       <div class="wwdo-work-flow-home">
         <%= image_tag "work-flow-img.png", alt: "work flow image", class: 'work-flow-image-home' %>
         <div class="info-wwdo-work-flow-home">
-            <h6 class='red-header-text-sm-home'>Simple Workflow</h6>
+            <h6 class='red-header-text-sm-home blue-header-text'><strong>Simple Workflow</strong></h6>
             <p>No more complex and different work flow for your BOP records because we provide you the easiest and more accurate Workflow for your BOP tests <br> that will cover everything for you</p>
         </div>
       </div>
@@ -50,8 +50,17 @@
         </div>
       </div>
 
-    <div class="footer-about-us footer-home">
+    <div class="footer-about-us-home">
         <h2>©smartBOP</h2>
     </div>
+  </div>
+
+
+  <div class="wwdo-active-data-record-home-grid">
+        <%= image_tag "live-track-img.jpg", alt: "live track image", class: 'live-track-image-home-grid' %>
+        <div class="info-wwdo-live-track-home-grid">
+            <h6 class='red-header-text-sm-home blue-header-text-grid'><strong>Active Data</strong></h6>
+            <p>Now you can update or track your data live the data is on tip of your finger no need to search papers for the history of your tests</p>
+        </div>
   </div>
 </div>

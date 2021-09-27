@@ -1,9 +1,8 @@
 // Specific CSS for your home-page
-.container {
-  width: auto;
+.container-home-page {
+  width: 100vw;
   height: auto;
 }
-
 .main-page-pic {
   position: absolute;
   width: 500px;
@@ -35,7 +34,7 @@ color: #1D1D1D;
 
 .main-paragraph{
   position: absolute;
-width: 629px;
+width: 600px;
 height: 146px;
 left: 140px;
 top: 390px;
@@ -77,47 +76,38 @@ color: #4F4F4F;
   }
 }
 
-.add-from-about-us {
-  position: absolute;
-  top: 600px;
-  left: 28px;
-}
-
 
 
 //the about section start here
 
 //pic area
-.main-about-pic {
-  width: 670px;
+.main-about-pic-home {
+  width: 400px;
 }
 
-.main-about-pic-box {
-  width: 600px;
-  height: 600px;
-
+.main-about-pic-box-home {
+  width: 350px;
+  height: 330px;
   position: absolute;
-  left: 150px;
-  top: 130px;
+  left: 200px;
+  top: 1420px;
 }
 
 // pic area ends
 
-.about-main-text {
+.about-main-text-home {
   width: 600px;
-  height: 700px;
-
+  height: 190px;
   position: absolute;
-  left: 780px;
-  top: 380px;
-
+  left: 660px;
+  top: 1560px;
   border-left: red;
-  border-width: 2px;
+  border-width: 0px;
   text-align: justify;
 }
 
 
-.about-main-paragraph {
+.about-main-paragraph-home {
   color: gray;
   font-size: 20px;
   font-weight: 250;
@@ -126,95 +116,149 @@ color: #4F4F4F;
   line-height: 27px;
 }
 
-.main-header-about-page {
+.main-header-about-page-home {
   height: 570px;
   width: 100vw;
 }
 // what we do area
-.what-we-do-text-2header {
-  height: 30px;
+
+.what-we-do-text-2header-home {
+   height: 30px;
   width: auto;
-  color: rgb(196, 16, 16);
+  color: #c41010;
   text-align: center;
-  margin-top: 25px;
+  margin-top: 0px;
+  position: absolute;
+  left: 42%;
+  top: 720px;
 
 }
-.what-we-do-text {
+.what-we-do-text-home {
+
   margin-top: -25px;
 }
 // Record area
-.wwdo-active-data-record {
+.wwdo-active-data-record-home {
   position: absolute;
+  top: 830px;
   left: 135px;
   width: 1400px;
   height: 150px;
-  margin-top: 53px;
-
+  /* margin-top: 0px; */
   box-shadow: 2px 10px 19px -1px rgba(128, 128, 128, 0.22);
-  background-color: rgb(255, 255, 255);
-
+  background-color: white;
 }
-.live-track-image {
+.live-track-image-home {
   width: 145px;
   position: relative;
   top: 1px;
   left: 27px;
 }
 
-.info-wwdo-live-track {
+.info-wwdo-live-track-home {
   position: relative;
-  left: 210px;
+  // left: 210px;
   margin-top: -110px;
 }
 
 // Online form area
 
-.wwdo-onlone-form {
+.wwdo-onlone-form-home {
   position: absolute;
   left: 135px;
   width: 1400px;
   height: 150px;
-  top: 1000px;
-
+  top: 1020px;
   box-shadow: 2px 10px 19px -1px rgba(128, 128, 128, 0.22);
-  background-color: rgb(255, 255, 255);
+  background-color: white;
 
 }
-.online-form-image {
+.online-form-image-home {
   width: 110px;
   position: relative;
   top: 19px;
   left: 37px;
 }
 
-.info-wwdo-online-form {
+.info-wwdo-online-form-home {
   position: relative;
-  left: 210px;
+  // left: 210px;
   margin-top: -70px;
 }
 
 // Work flow area
 
-.wwdo-work-flow {
+.wwdo-work-flow-home {
   position: absolute;
   left: 135px;
   width: 1400px;
   height: 150px;
   top: 1210px;
-
   box-shadow: 2px 10px 19px -1px rgba(128, 128, 128, 0.22);
-  background-color: rgb(255, 255, 255);
+  background-color: white;
 
 }
-.work-flow-image {
+.work-flow-image-home {
   width: 110px;
   position: relative;
   top: 19px;
   left: 37px;
 }
 
-.info-wwdo-work-flow {
+.info-wwdo-work-flow-home {
   position: relative;
-  left: 210px;
+  margin-left: 30px;
+  // left: 210px;
   margin-top: -70px;
+}
+
+.footer-about-us-home {
+  position: absolute;
+  top: 1920px;
+  width: 100vw;
+  height: 50px;
+  background-color: #1a52a5;
+  h2 {
+    position: relative;
+    margin: 20px;
+    font-size: 18px;
+    color: white;
+  }
+}
+
+.blue-header-text {
+  color: #1a52a5;
+  strong {
+    font-size: 19px;
+  }
+}
+// grid is amazing i will kill you if you spend more than 30 mins on FUCKING card
+.wwdo-active-data-record-home-grid {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 1px 1px 4px 6px rgba(190, 189, 189, 0.281);
+  position: absolute;
+  left: 200px;
+  top: 2000px;
+  display: grid;
+  grid-template-areas:
+                        'a b'
+                    ;
+  width: 60%;
+  border-radius: 6px;
+  margin-bottom: 30px;
+
+}
+
+.live-track-image-home-grid {
+  grid-area: a;
+  width: 150px;
+  border-top-left-radius: 6px;
+  border-end-start-radius: 6px;
+
+}
+
+.info-wwdo-live-track-home-grid {
+  grid-area: b;
+  align-items: center;
+  padding: 15px;
 }
