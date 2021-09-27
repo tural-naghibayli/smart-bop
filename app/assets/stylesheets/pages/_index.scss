@@ -16,6 +16,15 @@
   width: 90px;
   border-radius: 4px;
   text-align: center;
+  margin: 0 auto;
+}
+
+.item2 > a {
+  color:rgb(179, 77, 77)
+}
+
+.item2 > a:hover {
+  color:rgb(219, 123, 123)
 }
 
 .item1 {
@@ -24,6 +33,8 @@
   width: 90px;
   border-radius: 4px;
   text-align: center;
+  color: rgb(177, 179, 77);
+  margin: 0 auto;
 }
 
 h3 {
@@ -39,4 +50,121 @@ h3 {
 .red-header-text-sm {
   color: rgb(196, 16, 16);
   font-size: 20px;
+
+.dash {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.dash-new {
+  margin-right: 20px;
+}
+.dash-new a {
+  color: white;
+}
+
+.dash-new  a:hover {
+  color: rgb(121, 103, 103);
+  text-decoration: none;
+}
+
+.dash-all a:hover {
+  color: rgb(121, 103, 103);
+  text-decoration: none;
+}
+
+
+.dashboard-list-of-all-test {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid rgb(219, 123, 123);
+  border-radius: 6px;
+  padding: 6px;
+}
+
+.show-btn {
+  background-color: #277da1;
+  border-radius: 8px;
+  padding: 6px 8px;
+  margin-top: 24px;
+}
+
+.dash-menu {
+  color: white;
+  border-radius: 10px;
+  margin-left: 10px;
+  background-color: #43aa8b;
+  padding: 10px 12px;
+}
+
+// css for approval table
+
+.container {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+
+.responsive-table {
+  li {
+    border-radius: 3px;
+    padding: 25px 30px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+  }
+  .table-header {
+    background-color: #4d908e;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .table-row {
+    background-color: #ffffff;
+    box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);
+  }
+  .col-1 {
+    flex-basis: 10%;
+  }
+  .col-2 {
+    flex-basis: 40%;
+  }
+  .col-3 {
+    flex-basis: 25%;
+  }
+  .col-4 {
+    flex-basis: 25%;
+  }
+
+  @media all and (max-width: 767px) {
+    .table-header {
+      display: none;
+    }
+    .table-row{
+
+    }
+    li {
+      display: block;
+    }
+    .col {
+      flex-basis: 100%;
+    }
+    .col {
+      display: flex;
+      padding: 10px 0;
+      &:before {
+        color: #89816c;
+        padding-right: 10px;
+        content: attr(data-label);
+        flex-basis: 50%;
+        text-align: right;
+      }
+    }
+  }
+}
 }

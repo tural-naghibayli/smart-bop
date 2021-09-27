@@ -17,6 +17,8 @@ class PressureTest < ApplicationRecord
   validates :completed_date, :test_fluid, :well_name, :drill_pipe_diameter, :user, presence: true
   after_create :create_approvals
 
+  has_one_attached :report_file
+
   def create_approvals
     users = bop.rig.users
     users.each do |user|
