@@ -1,4 +1,5 @@
 <div class="nested-fields">
+  <table class="form_table">
 
     <%# <%= simple_form_for [@pressure_test, @component_pressure_test] do |f| %>
         <%= f.input :bop_element_unit, collection: [ "Annular Preventer", "Upper Pipe ram", "Middle Pipe ram", "Lower Pipe ram", "Blind Shear Ram" ] %>
@@ -13,6 +14,7 @@
         <%= f.input :photo, as: :file, class:'btn-photo' %>
         <%= link_to_remove_association "remove component", f %>
         <%#= f.submit %>
+  </table>
 
 </div>
 

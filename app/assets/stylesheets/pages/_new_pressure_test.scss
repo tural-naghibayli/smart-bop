@@ -1,0 +1,44 @@
+/* Color Theme Swatches in Hex */
+//  { color: #0339A6; }
+//  { color: #034AA6; }
+//  { color: #0487D9; }
+//  { color: #A60505; }
+//  { color: #F2F2F2; }
+
+.bg-dark-blue {
+
+  padding: 50px 50px;
+  margin-bottom: 20px;
+  background: linear-gradient(to right, #004e92, #000428); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.bg-light-blue {
+  margin-bottom: 20px;
+  background: linear-gradient(to bottom, #abbaab, #ffffff);
+}
+
+.flexbox {
+  display: flex;
+  align-items: center;
+}
+
+.test_heading {
+  color: #F2F2F2;
+  margin-left: 30px;
+  font-weight: bold;
+  text-shadow: 3px 3px #7f919036;
+}
+
+.form_table {
+  border: 1px #0339A6 solid;
+}
+.form_question{
+  padding: 20px;
+}
+
+.main-form-pic{
+  height: 300px;
+  width: 400px;
+  border-radius: 25%;
+}
