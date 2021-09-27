@@ -1,5 +1,6 @@
 // Import page-specific CSS files here.
 @import "home";
+@import "about";
 
 .items {
   display: inline;
@@ -41,6 +42,14 @@ h3 {
   margin-bottom: 6px;
   text-align: center;
 }
+
+.red-header-text-bg {
+  color: rgb(196, 16, 16);
+  font-size: 26px;
+}
+.red-header-text-sm {
+  color: rgb(196, 16, 16);
+  font-size: 20px;
 
 .dash {
   display: flex;
@@ -157,4 +166,5 @@ h3 {
       }
     }
   }
+}
 }
