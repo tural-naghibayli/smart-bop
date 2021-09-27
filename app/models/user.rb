@@ -11,4 +11,5 @@ class User < ApplicationRecord
   validates :name, :position, :company, :rig, presence: true
   POSITIONS = ['Driller', 'Shift Supervisor', 'Rig Superintendent', 'Well Site Leader', 'Manager']
   validates :position, inclusion: { in: POSITIONS }
+
 end

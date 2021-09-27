@@ -11,13 +11,14 @@ class PressureTestsController < ApplicationController
   end
 
   def show
-    @approve = Approval.find_by(user: current_user, pressure_test: @pressure_test)
+    @approval = Approval.find_by(user: current_user, pressure_test: @pressure_test)
   end
 
   def new
     @pressure_test = PressureTest.new
     @bop = Bop.find(params[:bop_id])
     @pressure_test.answers.build
+    @pressure_test.approvals.build
   end
 
   def create
@@ -44,6 +45,7 @@ class PressureTestsController < ApplicationController
   end
 
   def edit
+
   end
 
   def approve
@@ -76,7 +78,8 @@ class PressureTestsController < ApplicationController
                                                     :high_pressure, :test_result, :open_gallons, :open_time,
                                                     :close_gallons, :close_time, :photo, :_destroy],
                                           safety_valve_tests_attributes:[:id, :unit, :serial_number, :connection_type, :high_pressure, :low_pressure, :test_result, :_destroy],
-                                          answers_attributes: [ :question_id, :value])
+                                          answers_attributes: [ :question_id, :value],
+                                          approvals_attributes: [ :id, :testable_type, :approval_status, :pressure_test_id, :user_id])
   end
 
   def set_pressure_test
