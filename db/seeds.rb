@@ -12,8 +12,12 @@ ComponentPressureTest.destroy_all
 SafetyValveTest.destroy_all
 Question.destroy_all
 PressureTest.destroy_all
+
 Approval.destroy_all
 Answer.destroy_all
+
+
+
 Bop.destroy_all
 Rig.destroy_all
 
@@ -37,8 +41,8 @@ puts "Created rig_1, user_1, bop_1, pressure_test_1 WITH NEW ids"
 # Equipment Checks
 question_1 = Question.create!(name: "Annular pressure regulator - increase/decrease ?", question_type:"", category:"Equipment Checks")
 question_2 = Question.create!(name: "Manifold pressure regulator - increase/decrease ?", question_type:"", category:"Equipment Checks")
-question_3 = Question.create!(name: "Manifold pressure regulator - bypass/normal ?", question_type:"", category:"Equipment Checks")
-question_4 = Question.create!(name: "Maximum manifold pressure applied to all closed ram functions ?", question_type:"", category:"Equipment Checks")
+question_3 = Question.create!(name: "Manifold pressure regulator - bypass/normal ?", question_type:"", category:"EquipmentCheckBypassNormal")
+question_4 = Question.create!(name: "Maximum manifold pressure applied to all closed ram functions ?", question_type:"", category:"ManifoldPressure")
 question_5 = Question.create!(name: "Mud gas Separator", question_type:"", category:"Equipment Checks")
 question_6 = Question.create!(name: "Rotary Drilling hoses", question_type:"", category:"Equipment Checks")
 question_7 = Question.create!(name: "Trip tanks", question_type:"", category:"Equipment Checks")
@@ -47,7 +51,7 @@ question_8 = Question.create!(name: "Pit level indicators", question_type:"", ca
 puts "Created equipment check questions"
 # General Manifold
 
-question_9 = Question.create!(name: "Test pressure applied", question_type:"", category:"General Manifold")
+question_9 = Question.create!(name: "Test pressure applied", question_type:"", category:"PressureInput")
 question_10 = Question.create!(name: "Pressure gauge checked", question_type:"", category:"General Manifold")
 question_11 = Question.create!(name: "Valves tested individually?", question_type:"", category:"General Manifold")
 

@@ -33,11 +33,32 @@
               <td><%= question.name %></td>
               <td>
                 <%= f.simple_fields_for :answers do |answer| %>
-                  <%= answer.input :value, collection: [ "Yes", "No"], label:false%>
+                  <%= answer.input_field :value, as: :radio_buttons, collection: [['Yes', 'Yes'], ['No', 'No'], ["N/A","N/A"]], label: false %>
                   <%= answer.hidden_field :question_id, value: question.id %>
                 <% end %>
               </td>
             <% end %>
+
+            <% if question.category =="EquipmentCheckBypassNormal" %>
+              <td><%= question.name %></td>
+              <td>
+                <%= f.simple_fields_for :answers do |answer| %>
+                  <%= answer.input :value, collection: [ "Bypass", "Normal"], label: false%>
+                  <%= answer.hidden_field :question_id, value: question.id %>
+                <% end %>
+              </td>
+            <% end %>
+
+            <% if question.category =="ManifoldPressure" %>
+              <td><%= question.name %></td>
+              <td>
+                <%= f.simple_fields_for :answers do |answer| %>
+                  <%= answer.input :value, as: :string, label: false %>
+                  <%= answer.hidden_field :question_id, value: question.id %>
+                <% end %>
+              </td>
+            <% end %>
+
           </tr>
         <% end %>
 
@@ -47,16 +68,14 @@
 
     <h2>Components of BOP</h2>
 
-
-    <div id='component_pressure_tests'>
-      <%= f.simple_fields_for :component_pressure_tests do |component| %>
-        <%= render 'component_pressure_tests_fields', f: component %>
-      <% end %>
-      <div class='links'>
-        <%= link_to_add_association 'add Component', f, :component_pressure_tests %>
+      <div id='component_pressure_tests'>
+        <%= f.simple_fields_for :component_pressure_tests do |component| %>
+          <%= render 'component_pressure_tests_fields', f:component %>
+        <% end %>
+        <div class='links'>
+          <%= link_to_add_association 'add Component', f, :component_pressure_tests %>
+        </div>
       </div>
-    </div>
-
 
     <hr>
     <table>
@@ -67,7 +86,7 @@
               <td><%= question.name %></td>
               <%= f.simple_fields_for :answers do |answer| %>
                 <td>
-                  <%= answer.input :value, collection: [ "Yes", "No"], label:false %>
+                  <%= answer.input_field :value,as: :radio_buttons, collection: [['Yes', 'Yes'], ['No', 'No'], ["N/A","N/A"]], label:false %>
                   <%= answer.hidden_field :question_id, value: question.id %>
                 </td>
               <% end %>
@@ -80,7 +99,7 @@
                 <td><%= question.name %></td>
                 <%= f.simple_fields_for :answers do |answer| %>
                   <td>
-                    <%= answer.input :value, collection: [ "Yes", "No"], label:false %>
+                    <%= answer.input_field :value, as: :radio_buttons, collection: [['Yes', 'Yes'], ['No', 'No'], ["N/A","N/A"]], label:false %>
                     <%= answer.hidden_field :question_id, value: question.id %>
                   </td>
                 <% end %>
@@ -97,7 +116,7 @@
                 <td><%= question.name %></td>
                 <%= f.simple_fields_for :answers do |answer| %>
                   <td>
-                    <%= answer.input :value, collection: [ "Yes", "No"], label:false %>
+                    <%= answer.input_field :value,as: :radio_buttons, collection: [['Yes', 'Yes'], ['No', 'No'], ["N/A","N/A"]], label:false %>
                     <%= answer.hidden_field :question_id, value: question.id %>
                   </td>
                 <% end %>
@@ -112,7 +131,7 @@
         <%= render 'safety_valve_tests_fields', f:safety_valve %>
       <% end %>
       <div class='links'>
-        <%= link_to_add_association 'add Safety_valve', f, :safety_valve_tests %>
+        <%= link_to_add_association 'Add Safety_valve', f, :safety_valve_tests %>
       </div>
     </div>
     <hr>

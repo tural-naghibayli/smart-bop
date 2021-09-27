@@ -1,14 +1,52 @@
+<div class="container">
 <h1>BOP Details</h1>
-<h2>BOP Serial Number: <%= @bop.serial_number %></h2>
-<h2>BOP Type: <%= @bop.bop_type %></h2>
-<h2>Producer: <%= @bop.producer  %></h2>
-<h2>Pressure Rating: <%= @bop.pressure_rating %></h2>
-<h2>Description: <%= @bop.description %></h2>
-<h2>Rig name: <%= @bop.rig.name %></h2>
 
-<br>
+<table class="table table-hover">
+  <thead>
+    <tr>
+        <th scope="col"></th>
+        <th scope="col">BOP Serial Number</th>
+        <th scope="col">BOP Type</th>
+        <th scope="col">Producer</th>
+        <th scope="col">Pressure Rating</th>
+        <th scope="col">Description</th>
+        <th scope="col">Rig Name</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr class='clickable-row' <%#= link_to " ", rigs_path(@rig) %>>
+        <th scope="row"></th>
+        <td><%= @bop.serial_number %></td>
+        <td><%= @bop.bop_type %></td>
+        <td><%= @bop.producer  %></td>
+        <td><%= @bop.pressure_rating %></td>
+        <td><%= @bop.description %></td>
+        <td><%= @bop.rig.name %></td>
+      </tr>
+  </tbody>
+</table>
+
 
 <h2>Pressure Tests</h2>
-<% @bop.pressure_tests.each do |test| %>
-<p><%= test.well_name %> | <%= test.completed_date %>  <%= link_to "Show", pressure_test_path(test) %></p>
-<% end %>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+        <th scope="col"></th>
+        <th scope="col">Well Name</th>
+        <th scope="col">Completed Date</th>
+        <th scope="col"></th>
+      </tr>
+  </thead>
+  <tbody>
+    <% @bop.pressure_tests.each do |test| %>
+      <tr class='clickable-row' <%#= link_to " ", rigs_path(@rig) %>>
+        <th scope="row"></th>
+        <td><%= test.well_name %></td>
+        <td><%= test.completed_date %></td>
+        <td><%= link_to "Show", pressure_test_path(test) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
