@@ -11,7 +11,7 @@
   </thead>
   <tbody>
     <% @rigs.each do |rig| %>
-      <tr>
+      <tr class='clickable-row' data-href='/rigs/<%=rig.id%>'>
         <th scope="row"></th>
         <td><%= rig.name %></td>
         <td><%= rig.reservoir_field %></td>
