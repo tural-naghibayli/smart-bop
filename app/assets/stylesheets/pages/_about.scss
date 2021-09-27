@@ -144,3 +144,70 @@
 .what-is-bop-text {
   margin-top: -22px;
 }
+
+// What is BOP. area
+.bop-info-conatainer {
+  position: absolute;
+  top: 1450px;
+}
+.top-bop-info-pic {
+  position: relative;
+  width: 300px;
+  left: 50px;
+}
+
+.bottom-bop-info-pic {
+  position: relative;
+  width: 250px;
+  left: 740px;
+  top: 530px;
+}
+
+// bop info text area
+
+.bop-info-text-box {
+  position: absolute;
+  left: 550px;
+  top: 160px;
+
+  width: 900px;
+  height: 400px;
+
+  background-color: white;
+  box-shadow: 2px 10px 19px -1px rgba(128, 128, 128, 0.22);
+
+  strong {
+  color: rgb(26, 82, 165);
+  font-size: 18px;
+  }
+}
+
+
+.info-bop-paragraph {
+  margin: 20px;
+  text-align: justify;
+}
+
+// bop info text area
+
+.bop-operate-info-text-box{
+  position: absolute;
+  left: 200px;
+  top: 700px;
+
+  width: 900px;
+  height: 400px;
+
+  background-color: white;
+  box-shadow: 2px 10px 19px -1px rgba(128, 128, 128, 0.22);
+
+}
+
+.info-bop-operate-header {
+  margin: 19px;
+  color: rgb(26, 82, 165);
+}
+.info-bop-operate-paragraph {
+  margin: 20px;
+  text-align: justify;
+}
