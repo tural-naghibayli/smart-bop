@@ -74,12 +74,6 @@
   </ul>
 </div>
 
-
-
-<%#= f.collection_radio_buttons :user, current_user.rig.users.all, :name %>
-<%#= f.collection_select :provider_id, Provider.order(:name),:id,:name, include_blank: true %>
-<%#= f.collection_select(:approval, current_user.rig.users.all, :name, :position) %>
-<%#= f.select :user, options_for_select(User.usernames(current_user.rig_id)) %>
 <% if current_user.approvals.present?%>
   <% if current_user.approvals.find_by(pressure_test: @pressure_test).approval_status == "pending"%>
     <div class="item2"><%= link_to "Approve",  approve_pressure_test_path(@pressure_test), method: :patch, class:'btn-approve' %></div>

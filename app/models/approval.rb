@@ -3,8 +3,6 @@ class Approval < ApplicationRecord
   belongs_to :user
   before_create :create_approvals
 
-  validates :user, uniqueness: true
-
 
   def create_approvals
     self.approval_status = 'pending'
