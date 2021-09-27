@@ -76,3 +76,145 @@ color: #4F4F4F;
     color: rgb(209, 62, 62);
   }
 }
+
+.add-from-about-us {
+  position: absolute;
+  top: 600px;
+  left: 28px;
+}
+
+
+
+//the about section start here
+
+//pic area
+.main-about-pic {
+  width: 670px;
+}
+
+.main-about-pic-box {
+  width: 600px;
+  height: 600px;
+
+  position: absolute;
+  left: 150px;
+  top: 130px;
+}
+
+// pic area ends
+
+.about-main-text {
+  width: 600px;
+  height: 700px;
+
+  position: absolute;
+  left: 780px;
+  top: 380px;
+
+  border-left: red;
+  border-width: 2px;
+  text-align: justify;
+}
+
+
+.about-main-paragraph {
+  color: gray;
+  font-size: 20px;
+  font-weight: 250;
+
+  margin-top: 9px;
+  line-height: 27px;
+}
+
+.main-header-about-page {
+  height: 570px;
+  width: 100vw;
+}
+// what we do area
+.what-we-do-text-2header {
+  height: 30px;
+  width: auto;
+  color: rgb(196, 16, 16);
+  text-align: center;
+  margin-top: 25px;
+
+}
+.what-we-do-text {
+  margin-top: -25px;
+}
+// Record area
+.wwdo-active-data-record {
+  position: absolute;
+  left: 135px;
+  width: 1400px;
+  height: 150px;
+  margin-top: 53px;
+
+  box-shadow: 2px 10px 19px -1px rgba(128, 128, 128, 0.22);
+  background-color: rgb(255, 255, 255);
+
+}
+.live-track-image {
+  width: 145px;
+  position: relative;
+  top: 1px;
+  left: 27px;
+}
+
+.info-wwdo-live-track {
+  position: relative;
+  left: 210px;
+  margin-top: -110px;
+}
+
+// Online form area
+
+.wwdo-onlone-form {
+  position: absolute;
+  left: 135px;
+  width: 1400px;
+  height: 150px;
+  top: 1000px;
+
+  box-shadow: 2px 10px 19px -1px rgba(128, 128, 128, 0.22);
+  background-color: rgb(255, 255, 255);
+
+}
+.online-form-image {
+  width: 110px;
+  position: relative;
+  top: 19px;
+  left: 37px;
+}
+
+.info-wwdo-online-form {
+  position: relative;
+  left: 210px;
+  margin-top: -70px;
+}
+
+// Work flow area
+
+.wwdo-work-flow {
+  position: absolute;
+  left: 135px;
+  width: 1400px;
+  height: 150px;
+  top: 1210px;
+
+  box-shadow: 2px 10px 19px -1px rgba(128, 128, 128, 0.22);
+  background-color: rgb(255, 255, 255);
+
+}
+.work-flow-image {
+  width: 110px;
+  position: relative;
+  top: 19px;
+  left: 37px;
+}
+
+.info-wwdo-work-flow {
+  position: relative;
+  left: 210px;
+  margin-top: -70px;
+}
