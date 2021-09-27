@@ -5,26 +5,27 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+User.destroy_all
 ComponentPressureTest.destroy_all
 SafetyValveTest.destroy_all
 Question.destroy_all
 PressureTest.destroy_all
-User.destroy_all
+Answer.destroy_all
+Approval.destroy_all
+
 Bop.destroy_all
 Rig.destroy_all
 
 rig_1 = Rig.create!(name: "Fatih", reservoir_field: "Tuna_1", contractor_drilling_company: "Odfjell", operator_company: "TPAO")
-user_1 = User.create!(rig: rig_1, email: "user1@user.com", password: "password", name: "User_name_2", position: "Driller", company: "Odfjell", admin: false)
-bop_1 = Bop.create!(rig: rig_1, serial_number: "ofko", bop_type: "power", producer: "gs", pressure_rating: 5, description: 'very good')
-bop_2 = Bop.create!(rig: rig_1, serial_number: "kok", bop_type: "horse", producer: "gsts", pressure_rating: 9, description: 'excellent')
+bop_1 = Bop.create!(rig: rig_1, serial_number: "SN BOP 1234", bop_type: "U-shape Dual Ram BOP", producer: "NOV Shaffer", pressure_rating: 5000, description: 'Designed for HP oil fields')
+bop_2 = Bop.create!(rig: rig_1, serial_number: "SN BOP 4578", bop_type: "5k", producer: "Cameron", pressure_rating: 9000, description: 'Designed for HP and HT oil fields')
 
 
 rig_2 = Rig.create!(name: "Zatih", reservoir_field: "Tuna_2", contractor_drilling_company: "Odfjell", operator_company: "TPAO")
-user_2 = User.create!(rig: rig_1, email: "user2@user.com", password: "password", name: "User_name_3", position: 'Shift Supervisor', company: "Odfjell", admin: false)
-user_3 = User.create!(rig: rig_1, email: "user3@user.com", password: "password", name: "User_name_4", position: 'Well Site Leader', company: "Odfjell", admin: false)
-user_4 = User.create!(rig: rig_1, email: "user4@user.com", password: "password", name: "User_name_5", position: 'Rig Superintendent', company: "Odfjell", admin: false)
-user_5 = User.create!(rig: rig_2, email: "user5@user.com", password: "password", name: "User_name_6", position: 'Rig Superintendent', company: "Odfjell", admin: false)
+user_1 = User.create!(rig: rig_1, email: "user1@user.com", password: "password", name: "Efe", position: 'Shift Supervisor', company: "Odfjell", admin: false)
+user_2 = User.create!(rig: rig_1, email: "user2@user.com", password: "password", name: "Tural", position: 'Well Site Leader', company: "TPAO", admin: false)
+user_3 = User.create!(rig: rig_1, email: "user3@user.com", password: "password", name: "Duygu", position: 'Rig Superintendent', company: "Odfjell", admin: false)
+user_4 = User.create!(rig: rig_2, email: "user4@user.com", password: "password", name: "Safi", position: 'Driller', company: "Odfjell", admin: false)
 
 
 pressure_test_2 = PressureTest.create!(user: user_3, bop: bop_2, last_test_date: Date.today-20 , completed_date:Date.today, next_test_deadline:Date.today+21 , test_fluid: "water", well_name:"B1", serial_number_chart_recorded:"SN Cool32", comment: "Equipment un checked", corrective_action: "Risk no assested", drill_pipe_diameter: "20 inch XT50")
@@ -51,8 +52,8 @@ question_11 = Question.create!(name: "Valves tested individually?", question_typ
 
 puts "Created general manifold questions"
 # Choke Manifold
-question_13 = Question.create!(name: "Remote manual choke checked ?", question_type:"", category:"Choke Manifold")
-question_14 = Question.create!(name: "Operated auto-chokes with hand pump ?", question_type:"", category:"Choke Manifold")
+question_12 = Question.create!(name: "Remote manual choke checked ?", question_type:"", category:"Choke Manifold")
+question_13 = Question.create!(name: "Operated auto-chokes with hand pump ?", question_type:"", category:"Choke Manifold")
 
 
 puts "Created choke manifold questions"

@@ -55,7 +55,7 @@ class PressureTestsController < ApplicationController
 
   def update
     if @pressure_test.update(pressure_test_params)
-      redirect_to @pressure_test
+      redirect_to @pressure_test, notice: 'Pressure test updated.'
     else
       render :edit
     end
@@ -71,13 +71,13 @@ class PressureTestsController < ApplicationController
 
   def pressure_test_params
 
-    params.require(:pressure_test).permit(:completed_date, :test_fluid, :well_name, :serial_number_chart_recorded, :comment, :corrective_action, :drill_pipe_diameter, :photo,
+    params.require(:pressure_test).permit(:completed_date, :test_fluid, :well_name, :serial_number_chart_recorded, :comment, :corrective_action, :drill_pipe_diameter, :photo, :report_file,
                                           component_pressure_tests_attributes:[:id, :pressure_test_id,:bop_element_unit, :component_type, :low_pressure,
                                                     :high_pressure, :test_result, :open_gallons, :open_time,
                                                     :close_gallons, :close_time, :photo, :_destroy],
                                           safety_valve_tests_attributes:[:id, :unit, :serial_number, :connection_type, :high_pressure, :low_pressure, :test_result, :_destroy],
                                           answers_attributes: [ :question_id, :value])
-    end
+  end
 
   def set_pressure_test
     @pressure_test = PressureTest.find(params[:id])

@@ -1,18 +1,26 @@
 
-<h1>Welcome to Smart-BOP Dashboard!</h1>
-        <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">All Tests</a>
-    </li>
-    <%= link_to "Add a new test", new_bop_pressure_test_path(@bop), class:'btn'%>
-  </ul>
+<h1> <%=current_user.name%>, welcome to your dashboard!</h1>
+  <div class='dash'>
+    <div class='dash-all'>
+       <a class="dash-menu active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">All Tests</a>
+    </div>
+    <div class='dash-new'>
+      <p class="dash-menu active" id="pills-home-tab" style="color: white;"><%= link_to "Add a new test", new_bop_pressure_test_path(@bop)%></p>
+    </div>
+  </div>
 <div class="tab-content" id="pills-tabContent">
   <section>
-    <div class="dashboard-list-of-all-test table">
       <% @pressure_tests.each do |pressure_test| %>
-          <h3 class='card-content' style='font-size: 20px; margin: 5px;'><strong>Well Name:</strong> <%= pressure_test.well_name %></h3>
-          <h3 class='card-content' style='font-size: 20px; margin: 5px;'><strong>Completed Date:</strong> <%= pressure_test.completed_date %></h3>
-          <h3 class='card-content' style='font-size: 20px; margin: 5px;'><strong>Next test deadline: </strong><%= pressure_test.next_test_deadline %></h3>
-          <button style=' background-color: #ffff; '><%= link_to "Show", pressure_test_path(pressure_test) %></button>
+        <div class="dashboard-list-of-all-test table">
+          <div class='dash-all'>
+            <h4 class='card-content' style='font-size: 20px; margin: 5px;'><strong>Well Name:</strong> <%= pressure_test.well_name %></h3>
+            <h4 class='card-content' style='font-size: 20px; margin: 5px;'><strong>Completed Date:</strong> <%= pressure_test.completed_date %></h3>
+            <h4 class='card-content' style='font-size: 20px; margin: 5px;'><strong>Next test deadline: </strong><%= pressure_test.next_test_deadline %></h3>
+          </div>
+          <div class='dash-new'>
+            <button class='show-btn'><%= link_to "Show", pressure_test_path(pressure_test) %></button>
+          </div>
+        </div>
       <% end %>
-    </div>
   </section>
 </div>

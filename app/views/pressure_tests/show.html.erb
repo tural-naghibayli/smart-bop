@@ -24,9 +24,11 @@
       <li class="items">Open Time: <%= component_pressure_test.open_time %></li>
       <li class="items">Close Time: <%= component_pressure_test.close_time %></li>
     </ul>
-      <div style="text-align: center;">
-        <%= cl_image_tag component_pressure_test.photo.key, height: 600, width: 600, crop: :fill %>
-      </div>
+      <% if component_pressure_test.photo.present? %>
+        <div style="text-align: center;">
+          <%= cl_image_tag component_pressure_test.photo.key, height: 600, width: 600, crop: :fill %>
+        </div>
+      <% end %>
   <% end %>
 <% end %>
 
@@ -44,11 +46,39 @@
   <% end %>
 <% end %>
 
+<% if @pressure_test.report_file.attached? %>
+  <%= cl_image_tag "#{@pressure_test.report_file.key}.jpg", height: 100, width: 200, crop: :fill %>
+<% else %>
+  <%= simple_form_for @pressure_test do |f| %>
+    <%= f.input :report_file, as: :file %>
+    <%= f.submit %>
+  <% end %>
+<% end %>
+
+<div class="container">
+  <ul class="responsive-table">
+    <li class="table-header">
+      <div class="col col-1">Rig</div>
+      <div class="col col-2">Name</div>
+      <div class="col col-3">Position</div>
+      <div class="col col-4">Approval Status</div>
+    </li>
+    <% @pressure_test.approvals.each do |appr| %>
+    <li class="table-row">
+      <div class="col col-1"><%= appr.user.rig.name %></div>
+      <div class="col col-2"><%= appr.user.name %></div>
+      <div class="col col-3"><%= appr.user.position %></div>
+      <div class="col col-4"><%= appr.approval_status %></div>
+    </li>
+    <% end %>
+  </ul>
+</div>
+
 
 <% if current_user.approvals.present?%>
   <% if current_user.approvals.find_by(pressure_test: @pressure_test).approval_status == "pending"%>
-   <p class="item2"><%= link_to "Approve",  approve_pressure_test_path(@pressure_test), method: :patch %></p>
+    <div class="item2"><%= link_to "Approve",  approve_pressure_test_path(@pressure_test), method: :patch, class:'btn-approve' %></div>
   <% else %>
-    <p class="item1">Approved</p>
+    <div class="item1">Approved</div>
   <% end %>
 <% end %>
