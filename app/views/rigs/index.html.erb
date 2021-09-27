@@ -1,7 +1,23 @@
 <h1>Rigs Index Page</h1>
-<% @rigs.each do |rig| %>
-<p>Rig Name: <%= rig.name %> </p>
-<p>Reservoir Field: <%= rig.reservoir_field %></p>
-<p>Contractor Drilling Company: <%= rig.contractor_drilling_company %></p>
-<p>Operator Company: <%= rig.operator_company %></p>
-<% end %>
+<table class="table table-hover">
+  <thead>
+    <tr>
+        <th scope="col"></th>
+        <th scope="col">Rig Name</th>
+        <th scope="col">Reservoir Field</th>
+        <th scope="col">Contractor Drilling Company</th>
+        <th scope="col">Operator Company</th>
+      </tr>
+  </thead>
+  <tbody>
+    <% @rigs.each do |rig| %>
+      <tr>
+        <th scope="row"></th>
+        <td><%= rig.name %></td>
+        <td><%= rig.reservoir_field %></td>
+        <td><%= rig.contractor_drilling_company %></td>
+        <td><%= rig.operator_company %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
