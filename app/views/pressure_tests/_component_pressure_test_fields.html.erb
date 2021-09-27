@@ -1,15 +1,15 @@
 <div class="nested-fields">
 
     <%# <%= simple_form_for [@pressure_test, @component_pressure_test] do |f| %>
-        <%= f.input :bop_element_unit %>
+        <%= f.input :bop_element_unit, collection: [ "Annular Preventer", "Upper Pipe ram", "Middle Pipe ram", "Lower Pipe ram", "Blind Shear Ram" ] %>
         <%= f.input :component_type %>
         <%= f.input :low_pressure %>
         <%= f.input :high_pressure %>
-        <%= f.input :test_result %>
         <%= f.input :open_gallons %>
         <%= f.input :open_time %>
         <%= f.input :close_gallons %>
         <%= f.input :close_time %>
+        <%= f.input :test_result,  collection: [ "Good", "Bad"] %>
         <%= f.input :photo, as: :file, class:'btn-photo' %>
         <%= link_to_remove_association "remove component", f %>
         <%#= f.submit %>
