@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Approval.destroy_all
 User.destroy_all
 
 ComponentPressureTest.destroy_all
@@ -13,10 +14,7 @@ SafetyValveTest.destroy_all
 Question.destroy_all
 PressureTest.destroy_all
 
-Approval.destroy_all
 Answer.destroy_all
-
-
 
 Bop.destroy_all
 Rig.destroy_all
@@ -49,16 +47,20 @@ question_7 = Question.create!(name: "Trip tanks", question_type:"", category:"Eq
 question_8 = Question.create!(name: "Pit level indicators", question_type:"", category:"Equipment Checks")
 
 puts "Created equipment check questions"
-# General Manifold
+# Standpipe Manifold
 
-question_9 = Question.create!(name: "Test pressure applied", question_type:"", category:"PressureInput")
-question_10 = Question.create!(name: "Pressure gauge checked", question_type:"", category:"General Manifold")
-question_11 = Question.create!(name: "Valves tested individually?", question_type:"", category:"General Manifold")
+question_9 = Question.create!(name: "STP Pressure gauge checked", question_type:"", category:"Standpipe Manifold")
+question_10 = Question.create!(name: "STP Valves tested individually?", question_type:"", category:"Standpipe Manifold")
+question_11 = Question.create!(name: "Test pressure applied to STP manifold", question_type:"", category:"Pressure Input Standpipe Manifold")
 
 puts "Created general manifold questions"
 # Choke Manifold
-question_12 = Question.create!(name: "Remote manual choke checked ?", question_type:"", category:"Choke Manifold")
-question_13 = Question.create!(name: "Operated auto-chokes with hand pump ?", question_type:"", category:"Choke Manifold")
+question_12 = Question.create!(name: "Choke manifold Pressure gauges checked ", question_type:"", category:"Choke Manifold")
+question_13 = Question.create!(name: "Choke manifold Valves tested individually?", question_type:"", category:"Choke Manifold")
+question_14 = Question.create!(name: "Test pressure applied to Chokemanifold", question_type:"", category:"Pressure Input Choke Manifold")
+question_15 = Question.create!(name: "Remote and manual choke checked ?", question_type:"", category:"Choke Manifold")
+question_16 = Question.create!(name: "Operated auto-chokes with hand pump ?", question_type:"", category:"Choke Manifold")
+
 
 
 puts "Created choke manifold questions"
