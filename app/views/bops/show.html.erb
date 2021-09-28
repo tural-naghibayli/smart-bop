@@ -5,24 +5,24 @@
     <div class="bop-table-container">
       <table class="table table-hover table-borderless">
         <thead>
-          <tr>
-              <th scope="col" class="th-title">BOP Serial Number</th>
-              <th scope="col" class="th-title">BOP Type</th>
-              <th scope="col" class="th-title">Producer</th>
-              <th scope="col" class="th-title">Pressure Rating</th>
-              <th scope="col" class="th-title">Description</th>
-              <th scope="col" class="th-title">Rig Name</th>
-            </tr>
+          <tr class="table-head-wrapper">
+            <th scope="col" class="th-title">BOP Serial Number</th>
+            <th scope="col" class="th-title">BOP Type</th>
+            <th scope="col" class="th-title">Producer</th>
+            <th scope="col" class="th-title">Pressure Rating</th>
+            <th scope="col" class="th-title">Description</th>
+            <th scope="col" class="th-title">Rig Name</th>
+          </tr>
         </thead>
         <tbody>
-            <tr class='clickable-row' <%#= link_to " ", rigs_path(@rig) %>>
-              <td><%= @bop.serial_number %></td>
-              <td><%= @bop.bop_type %></td>
-              <td><%= @bop.producer  %></td>
-              <td><%= @bop.pressure_rating %></td>
-              <td><%= @bop.description %></td>
-              <td><%= @bop.rig.name %></td>
-            </tr>
+          <tr class='clickable-row'>
+            <td><%= @bop.serial_number %></td>
+            <td><%= @bop.bop_type %></td>
+            <td><%= @bop.producer  %></td>
+            <td><%= @bop.pressure_rating %></td>
+            <td><%= @bop.description %></td>
+            <td><%= @bop.rig.name %></td>
+          </tr>
         </tbody>
       </table>
     </div>
@@ -31,10 +31,10 @@
     <div class="bop-table-container">
       <table class="table table-hover table-borderless">
         <thead>
-          <tr>
-              <th scope="col" class="th-title">Well Name</th>
-              <th scope="col" class="th-title">Completed Date</th>
-              <th scope="col" class="th-title"></th>
+          <tr class="table-head-wrapper">
+            <th scope="col" class="th-title">Well Name</th>
+            <th scope="col" class="th-title">Completed Date</th>
+            <th scope="col" class="th-title"></th>
             </tr>
         </thead>
         <tbody>
@@ -42,7 +42,7 @@
             <tr class='clickable-row' <%#= link_to " ", rigs_path(@rig) %>>
               <td><%= test.well_name %></td>
               <td><%= test.completed_date %></td>
-              <td><%= link_to "Show", pressure_test_path(test), class:"pressure-test-link"%></td>
+              <td><%= link_to "📂", pressure_test_path(test), class:"pressure-test-link"%></td>
             </tr>
           <% end %>
         </tbody>
