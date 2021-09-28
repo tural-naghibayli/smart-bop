@@ -1,9 +1,68 @@
-<div class="container">
+<div class="container-home-page">
   <%= image_tag "bop-main-img.jpg", alt: "Home", class: "main-page-pic" %>
-    <h2 class='main-text'>Welcome to Smart BOP</h2>
+    <h2 class='main-text blue-header-text'>Welcome to Smart BOP</h2>
     <p class='main-paragraph'> We are committed to bring safety to the front line workers and give accurate results with a better history records</p>
     <% unless current_user.present? %>
     <%= link_to "<button class='main-button '>Sign Up</button>".html_safe, new_user_registration_path %>
     <p class='existing-account'>Already have an account | <%= link_to "<strong>log in</strong>".html_safe, new_user_session_path  %></p>
     <% end %>
+  <div class="add-from-about-us">
+    <div class="main-container-about-us">
+
+
+      <div class="what-we-do-text-2header-home">
+        <h2 class='align-text-header'>What we do?</h2>
+        <h6 class='what-we-do-text-home'>__________________________</h6>
+      </div>
+
+<%# What we do section %>
+
+      <div class="wwdo-active-data-record-home-grid">
+        <%= image_tag "live-track-img.jpg", alt: "live track image", class: 'live-track-image-home-grid' %>
+        <div class="info-wwdo-live-track-home-grid">
+            <h6 class='red-header-text-sm-home blue-header-text'><strong>Active Data</strong></h6>
+            <p>Now you can update or track your data live the data is on tip of your finger no need to search papers for the history of your tests</p>
+        </div>
+      </div>
+
+      <div class="wwdo-online-form-home-grid">
+        <%= image_tag "online-form-img.jpg ", alt: "online form image", class: 'online-form-image-home-grid' %>
+        <div class="info-wwdo-online-form-home-grid">
+            <h6 class='red-header-text-sm-home blue-header-text'><strong>Online Form</strong></h6>
+            <p>We provide the online form platform for your BOP test to make your work more effecient and avoid the Big or small errors</p>
+        </div>
+      </div>
+
+      <div class="wwdo-work-flow-home-grid">
+        <%= image_tag "work-flow-img.png", alt: "work flow image", class: 'work-flow-image-home-grid' %>
+          <div class="info-wwdo-work-flow-home-grid">
+              <h6 class='red-header-text-sm-home-grid blue-header-text'><strong>Simple Workflow</strong></h6>
+              <p>No more complex and different work flow for your BOP records because we provide you the easiest and more accurate Workflow for your BOP tests <br> that will cover everything for you</p>
+          </div>
+      </div>
+
+<%# main header from about page to home page %>
+
+      <div class="main-header-about-page-home">
+        <div class="main-about-pic-box-home">
+          <%= image_tag 'about-page-img.png', alt: "About us", class: "main-about-pic-home" %>
+        </div>
+
+        <div class="about-main-text-home">
+          <h4 class='red-header-text-bg-home'>Let's Make history.</h4>
+          <p class='about-main-paragraph-home'>We are a team of experts in oil industry and want to transfer the complex and mysterious paper track of your BOP test with the new BOPsmart system that will provide a reliable and safe records of your tests with few clicks!</p>
+        </div>
+      </div>
+
+<%# fotter %>
+
+    <div class="footer-about-us-home">
+        <h2>©smartBOP</h2>
+    </div>
+  </div>
+
+
+
+
+
 </div>
