@@ -1,16 +1,62 @@
-
-<div class='cont-pres'>
+<div class='sidebar'>
   <div class='heading-pres'>
-    <h4>BOP serial number: <%= Bop.find(@pressure_test.bop_id).serial_number %></h4>
-    <h4><strong class='strong'>Pressure Test Details</strong></h4>
+    <img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
+    <h3><%= current_user.name.upcase %></h3>
+    <h4><%= current_user.rig.name %></h4>
+    <p class='staff-position'><%= current_user.position %></p>
+    <div class='bop-serial'>
+      <h5>BOP serial number: <%= Bop.find(@pressure_test.bop_id).serial_number %></h5>
+      <h5><strong>Pressure Test Details</strong></h5>
+      <p>___________________________</p>
+    </div>
   </div>
-  <div class='arrow-pres'>
-    <i class="fas fa-chevron-right"></i>
-  </div>
-  <div class='show-pressure'>
+  <div class='pressure-details'>
     <p> <strong class='strong'>Last Test Date:</strong> <%= @pressure_test.last_test_date %></p>
     <p> <strong class='strong'>Completed Date:</strong> <%= @pressure_test.completed_date %></p>
-    <p> <strong class='strong'>Next Test Deadline:</strong> <%= @pressure_test.next_test_deadline %></p>
+    <p> <strong class='strong-next'>Next Test Deadline:</strong> <%= @pressure_test.next_test_deadline %></p>
+  </div>
+  <p style='text-align: center; color: white; margin-bottom: 0;'><u>Approval Status</u></p>
+  <div class="container-appr">
+    <% @pressure_test.approvals.each do |appr| %>
+        <div class="appr-name"><%= appr.user.name %></div>
+        <div class="appr-position"><%= appr.user.position %></div>
+        <div class="appr-status"><% if appr.approval_status == 'Approved' %>
+        <i class="fas fa-check-circle"></i>
+        <% else %>
+        <i class="fas fa-times-circle"></i>
+        <% end %>
+        </div>
+    <% end %>
+  </div>
+  <% if current_user.approvals.present?%>
+    <% if current_user.approvals.find_by(pressure_test: @pressure_test).approval_status == "pending"%>
+      <div class="item2"><%= link_to "Approve",  approve_pressure_test_path(@pressure_test), method: :patch, class:'btn-approve' %></div>
+    <% end %>
+  <% end %>
+</div>
+
+<div class='pres-div'>
+<table class='press-table'>
+    <thead>
+      <tr>
+        <th>Pressure Test</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong class='strong-tbl'>Well Name:</strong>   <%= @pressure_test.well_name %></td>
+        <td><strong class='strong-tbl'>Serial Number Chart Recorded:</strong>   <%= @pressure_test.serial_number_chart_recorded %></td>
+      </tr>
+      <tr>
+        <td><strong class='strong-tbl'>Test Fluid:</strong>   <%= @pressure_test.test_fluid %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class='tests-out'>
+  <div class='show-pressure'>
+
     <p> <strong class='strong'>Test Fluid:</strong> <%= @pressure_test.test_fluid %></p>
     <p> <strong class='strong'>Well Name:</strong> <%= @pressure_test.well_name %></p>
     <p> <strong class='strong'>Serial Number Chart Recorded:</strong> <%= @pressure_test.serial_number_chart_recorded %></p>
@@ -18,96 +64,103 @@
     <p> <strong class='strong'>Corrective Action:</strong> <%= @pressure_test.corrective_action %></p>
     <p> <strong class='strong'>Drill Pipe Diameter:</strong> <%= @pressure_test.drill_pipe_diameter %></p>
   </div>
-</div>
 
-<% if @pressure_test.component_pressure_tests.present? %>
-  <% @pressure_test.component_pressure_tests.each do |component_pressure_test| %>
-    <h4>COMPONENT PRESSURE TEST</h4>
-    <ul>
-      <li class="items">Bop Element Unit: <%= component_pressure_test.bop_element_unit %></li>
-      <li class="items">Component Type: <%= component_pressure_test.component_type %></li>
-      <li class="items">Low Pressure: <%= component_pressure_test.low_pressure %></li>
-      <li class="items">High Pressure: <%= component_pressure_test.high_pressure %></li>
-      <li class="items">Test Result: <%= component_pressure_test.test_result %></li>
-      <li class="items">Open Gallons: <%= component_pressure_test.open_gallons %></li>
-      <li class="items">Open Time: <%= component_pressure_test.open_time %></li>
-      <li class="items">Close Time: <%= component_pressure_test.close_time %></li>
-    </ul>
-      <% if component_pressure_test.photo.present? %>
-        <div style="text-align: center;">
-          <%= cl_image_tag component_pressure_test.photo.key, height: 600, width: 600, crop: :fill %>
-        </div>
+
+  <div class='heading-comp'>
+    <h4>Component Pressure Tests</h4>
+  </div>
+
+  <div class='cont-comp'>
+    <div class = 'comp-item'>
+      <% if @pressure_test.component_pressure_tests.present? %>
+        <% @pressure_test.component_pressure_tests.each do |component_pressure_test| %>
+            <h4><strong class='strong'><%= component_pressure_test.bop_element_unit %></strong></h4>
+            <p><strong class='strong'>Component Type:</strong> <%= component_pressure_test.component_type %></p>
+            <p><strong class='strong'>Low Pressure:</strong> <%= component_pressure_test.low_pressure %></p>
+            <p><strong class='strong'>High Pressure:</strong> <%= component_pressure_test.high_pressure %></p>
+            <p><strong class='strong'>Test Result:</strong> <%= component_pressure_test.test_result %></p>
+            <p><strong class='strong'>Open Gallons:</strong> <%= component_pressure_test.open_gallons %></p>
+            <p><strong class='strong'>Open Time:</strong> <%= component_pressure_test.open_time %></p>
+            <p><strong class='strong'>Close Time:</strong> <%= component_pressure_test.close_time %></p>
+            <% if component_pressure_test.photo.present? %>
+              <div style="text-align: center;">
+                <%= cl_image_tag component_pressure_test.photo.key, height: 600, width: 600, crop: :fill %>
+              </div>
+            <% end %>
+        <% end %>
       <% end %>
+    </div>
+  </div>
+
+
+  <% if @pressure_test.safety_valve_tests.present? %>
+    <% @pressure_test.safety_valve_tests.each do |safety_valve_test| %>
+      <h3>SAFETY VALVE TEST - <%= safety_valve_test.serial_number %> </h3>
+      <ul>
+        <li>Unit: <%= safety_valve_test.unit %></li>
+        <li>Serial Number: <%= safety_valve_test.serial_number %></li>
+        <li>Connection Type: <%= safety_valve_test.connection_type %></li>
+        <li>High Pressure: <%= safety_valve_test.high_pressure %></li>
+        <li>Low Pressure: <%= safety_valve_test.low_pressure %></li>
+        <li>Test Result: <%= safety_valve_test.test_result %></li>
+      </ul>
+    <% end %>
   <% end %>
-<% end %>
 
-<% if @pressure_test.safety_valve_tests.present? %>
-  <% @pressure_test.safety_valve_tests.each do |safety_valve_test| %>
-    <h3>SAFETY VALVE TEST - <%= safety_valve_test.serial_number %> </h3>
-    <ul>
-      <li class="items">Unit: <%= safety_valve_test.unit %></li>
-      <li class="items">Serial Number: <%= safety_valve_test.serial_number %></li>
-      <li class="items">Connection Type: <%= safety_valve_test.connection_type %></li>
-      <li class="items">High Pressure: <%= safety_valve_test.high_pressure %></li>
-      <li class="items">Low Pressure: <%= safety_valve_test.low_pressure %></li>
-      <li class="items">Test Result: <%= safety_valve_test.test_result %></li>
-    </ul>
+  <% if @pressure_test.report_file.attached? %>
+    <%= cl_image_tag "#{@pressure_test.report_file.key}.jpg", flag: "attachment", height: 450, width: 300, crop: :scale %>
+    <a href="https://res.cloudinary.com/dk9bhadx6/image/upload/fl_attachment/v1632486696/<%= @pressure_test.report_file.key %>.jpg">Download</a>
+  <% else %>
+    <%= simple_form_for @pressure_test do |f| %>
+      <%= f.input :report_file, as: :file %>
+      <%= f.submit %>
+    <% end %>
   <% end %>
-<% end %>
 
-<% if @pressure_test.report_file.attached? %>
-  <%= cl_image_tag "#{@pressure_test.report_file.key}.jpg", flag: "attachment", height: 450, width: 300, crop: :scale %>
-  <a href="https://res.cloudinary.com/dk9bhadx6/image/upload/fl_attachment/v1632486696/<%= @pressure_test.report_file.key %>.jpg">Download</a>
-<% else %>
-  <%= simple_form_for @pressure_test do |f| %>
-    <%= f.input :report_file, as: :file %>
-    <%= f.submit %>
-  <% end %>
-<% end %>
+  <div class='container-question'>
+    <div class='questionss'>
+      <h4>Equipment Checks</h4>
+      <% Question.where(category:"Equipment Checks").each do |quest| %>
+        <p><%= quest.name %> <%= quest.answers.first.value %></p>
+      <% end %>
+    </div>
 
-<div class='container-question'>
-  <div class='questionss'>
-    <h4>Equipment Checks</h4>
-    <% Question.where(category:"Equipment Checks").each do |quest| %>
-      <p><%= quest.name %> <%= quest.answers.first.value %></p>
-    <% end %>
-  </div>
+    <div class='questionss'>
+      <h4>ManifoldPressure</h4>
+      <% Question.where(category:"ManifoldPressure").each do |quest| %>
+        <p><%= quest.name %> <%= quest.answers.first.value %></p>
+      <% end %>
+    </div>
 
-  <div class='questionss'>
-    <h4>ManifoldPressure</h4>
-    <% Question.where(category:"ManifoldPressure").each do |quest| %>
-      <p><%= quest.name %> <%= quest.answers.first.value %></p>
-    <% end %>
-  </div>
+    <div class='questionss'>
+      <h4>General Manifold</h4>
+      <% Question.where(category:"General Manifold").each do |quest| %>
+        <p><%= quest.name %> <%= quest.answers.first.value %></p>
+      <% end %>
+    </div>
 
-  <div class='questionss'>
-    <h4>General Manifold</h4>
-    <% Question.where(category:"General Manifold").each do |quest| %>
-      <p><%= quest.name %> <%= quest.answers.first.value %></p>
-    <% end %>
-  </div>
+    <div class='questionss'>
+      <h4>Choke Manifold</h4>
+      <% Question.where(category:"Choke Manifold").each do |quest| %>
+        <p><%= quest.name %> <%= quest.answers.first.value %></p>
+      <% end %>
+    </div>
 
-  <div class='questionss'>
-    <h4>Choke Manifold</h4>
-    <% Question.where(category:"Choke Manifold").each do |quest| %>
-      <p><%= quest.name %> <%= quest.answers.first.value %></p>
-    <% end %>
-  </div>
+    <div class='questionss'>
+      <h4>Pressure Input</h4>
+      <%# Question.where(category:"PressureInput").each do |quest| %>
+        <p><%#= quest.name %> <%#= quest.answers.first.value %></p>
+      <%# end %>
+    </div>
 
-  <div class='questionss'>
-    <h4>Pressure Input</h4>
-    <%# Question.where(category:"PressureInput").each do |quest| %>
-      <p><%#= quest.name %> <%#= quest.answers.first.value %></p>
-    <%# end %>
-  </div>
-
-  <div class='questionss'>
-    <h4>EquipmentCheckBypassNormal</h4>
-    <% Question.where(category:"EquipmentCheckBypassNormal").each do |quest| %>
-      <p><%= quest.name %> <%= quest.answers.first.value %></p>
-    <% end %>
-  </div>
+    <div class='questionss'>
+      <h4>EquipmentCheckBypassNormal</h4>
+      <% Question.where(category:"EquipmentCheckBypassNormal").each do |quest| %>
+        <p><%= quest.name %> <%= quest.answers.first.value %></p>
+      <% end %>
+    </div>
 </div>
+
 
 
 <%#= link_to("Download", cl_private_download_url("#{@pressure_test.report_file.key}", :pdf, :attachment => true)) %>
@@ -130,11 +183,3 @@
     <% end %>
   </ul>
 </div>
-
-<% if current_user.approvals.present?%>
-  <% if current_user.approvals.find_by(pressure_test: @pressure_test).approval_status == "pending"%>
-    <div class="item2"><%= link_to "Approve",  approve_pressure_test_path(@pressure_test), method: :patch, class:'btn-approve' %></div>
-  <% else %>
-    <div class="item1">Approved</div>
-  <% end %>
-<% end %>

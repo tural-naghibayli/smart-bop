@@ -4,40 +4,7 @@
 @import "new_pressure_test";
 @import "show";
 
-.items {
-  display: inline;
-  margin-left: 10px;
-  border: 2px solid rgb(179, 77, 77);
-  border-radius: 4px;
-  padding: 6px;
-}
 
-.item2 {
-  border: 2px solid rgb(179, 77, 77);
-  padding: 6px;
-  width: 90px;
-  border-radius: 4px;
-  text-align: center;
-  margin: 0 auto;
-}
-
-.item2 > a {
-  color:rgb(179, 77, 77)
-}
-
-.item2 > a:hover {
-  color:rgb(219, 123, 123)
-}
-
-.item1 {
-  border: 2px solid rgb(177, 179, 77);
-  padding: 6px;
-  width: 90px;
-  border-radius: 4px;
-  text-align: center;
-  color: rgb(177, 179, 77);
-  margin: 0 auto;
-}
 
 h3 {
   margin-top: 6px;
