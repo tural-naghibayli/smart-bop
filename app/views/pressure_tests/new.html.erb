@@ -69,7 +69,7 @@
 
             <div id='component_pressure_tests'>
                 <%= f.simple_fields_for :component_pressure_tests do |component| %>
-                  <%= render 'component_pressure_tests_fields', f:component %>
+                  <%= render 'component_pressure_test_fields', f:component %>
                 <% end %>
                 <div class='links'>
                   <%= link_to_add_association 'add Component', f, :component_pressure_tests %>
@@ -145,7 +145,7 @@
           <h3>Safety Valve tests</h3>
           <div id='safety_valve_tests'>
             <%= f.simple_fields_for :safety_valve_tests do |safety_valve| %>
-              <%= render 'safety_valve_tests_fields', f:safety_valve %>
+              <%= render 'safety_valve_test_fields', f:safety_valve %>
             <% end %>
             <div class='links'>
               <%= link_to_add_association 'Add Safety_valve', f, :safety_valve_tests %>
