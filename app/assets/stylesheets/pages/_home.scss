@@ -90,7 +90,7 @@ color: #4F4F4F;
   height: 330px;
   position: absolute;
   left: 200px;
-  top: 1420px;
+  top: 1500px;
 }
 
 // pic area ends
@@ -100,7 +100,7 @@ color: #4F4F4F;
   height: 190px;
   position: absolute;
   left: 660px;
-  top: 1560px;
+  top: 1600px;
   border-left: red;
   border-width: 0px;
   text-align: justify;
@@ -130,7 +130,7 @@ color: #4F4F4F;
   margin-top: 0px;
   position: absolute;
   left: 42%;
-  top: 720px;
+  top: 790px;
 
 }
 .what-we-do-text-home {
@@ -221,20 +221,21 @@ color: #4F4F4F;
   box-shadow: 1px 1px 4px 6px rgba(190, 189, 189, 0.281);
   position: absolute;
   left: 200px;
-  top: 800px;
+  top: 870px;
   display: grid;
   grid-template-areas:
                         'a b'
                     ;
   width: 80%;
   border-radius: 6px;
-  margin-bottom: 30px;
+  // margin-bottom: 30px;
+  height: 140px;
 
 }
 
 .live-track-image-home-grid {
   grid-area: a;
-  width: 150px;
+  width: 123px;
   border-top-left-radius: 6px;
   border-end-start-radius: 6px;
 
@@ -243,7 +244,9 @@ color: #4F4F4F;
 .info-wwdo-live-track-home-grid {
   grid-area: b;
   align-items: center;
-  padding: 15px;
+  padding: 0px;
+  margin-top: 40px;
+  margin-left: -110px;
 }
 
 // grid - for online form
@@ -253,29 +256,33 @@ color: #4F4F4F;
   box-shadow: 1px 1px 4px 6px rgba(190, 189, 189, 0.281);
   position: absolute;
   left: 200px;
-  top: 1000px;
+  top: 1090px;
   display: grid;
   grid-template-areas:
                         'a b'
                     ;
   width: 80%;
   border-radius: 6px;
-  margin-bottom: 30px;
+  // margin-bottom: 30px;
+  height: 140px;
 
 }
 
 .online-form-image-home-grid {
   grid-area: a;
-  width: 120px;
+  width: 100px;
   border-top-left-radius: 6px;
   border-end-start-radius: 6px;
+  margin: 23px;
 
 }
 
 .info-wwdo-online-form-home-grid {
   grid-area: b;
   align-items: center;
-  padding: 15px;
+  padding: 0px;
+  margin-left: -186px;
+  margin-top: 30px;
 }
 
 // grid - for workflow
@@ -285,27 +292,43 @@ color: #4F4F4F;
   box-shadow: 1px 1px 4px 6px rgba(190, 189, 189, 0.281);
   position: absolute;
   left: 200px;
-  top: 1100px;
+  top: 1300px;
   display: grid;
   grid-template-areas:
                         'a b'
                     ;
   width: 80%;
   border-radius: 6px;
-  margin-bottom: 30px;
+  // margin-bottom: 30px;
+  height: 140px;
 
 }
 
 .work-flow-image-home-grid {
   grid-area: a;
-  width: 120px;
+  width: 100px;
   border-top-left-radius: 6px;
   border-end-start-radius: 6px;
+  margin: 23px;
 
 }
 
-.red-header-text-sm-home-grid {
+
+.info-wwdo-work-flow-home-grid {
   grid-area: b;
   align-items: center;
-  padding: 15px;
+  padding: 0px;
+  margin-top: 29px;
+}
+
+// footer area
+
+.footer-about-us-home {
+  position: absolute;
+  top: 1900px;
+}
+
+
+.red-header-text-bg-home {
+  color: rgb(207, 69, 69);
 }
