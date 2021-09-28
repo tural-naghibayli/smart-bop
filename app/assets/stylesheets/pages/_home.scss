@@ -185,25 +185,8 @@ color: #4F4F4F;
   // left: 210px;
   margin-top: -70px;
 }
-
 // Work flow area
 
-.wwdo-work-flow-home {
-  position: absolute;
-  left: 135px;
-  width: 1400px;
-  height: 150px;
-  top: 1210px;
-  box-shadow: 2px 10px 19px -1px rgba(128, 128, 128, 0.22);
-  background-color: white;
-
-}
-.work-flow-image-home {
-  width: 110px;
-  position: relative;
-  top: 19px;
-  left: 37px;
-}
 
 .info-wwdo-work-flow-home {
   position: relative;
@@ -214,7 +197,7 @@ color: #4F4F4F;
 
 .footer-about-us-home {
   position: absolute;
-  top: 1920px;
+  // top: 1920px;
   width: 100vw;
   height: 50px;
   background-color: #1a52a5;
@@ -232,18 +215,18 @@ color: #4F4F4F;
     font-size: 19px;
   }
 }
-// grid is amazing i will kill you if you spend more than 30 mins on FUCKING card
+// grid - for active record card
 .wwdo-active-data-record-home-grid {
   background-color: rgb(255, 255, 255);
   box-shadow: 1px 1px 4px 6px rgba(190, 189, 189, 0.281);
   position: absolute;
   left: 200px;
-  top: 2000px;
+  top: 800px;
   display: grid;
   grid-template-areas:
                         'a b'
                     ;
-  width: 60%;
+  width: 80%;
   border-radius: 6px;
   margin-bottom: 30px;
 
@@ -258,6 +241,70 @@ color: #4F4F4F;
 }
 
 .info-wwdo-live-track-home-grid {
+  grid-area: b;
+  align-items: center;
+  padding: 15px;
+}
+
+// grid - for online form
+
+.wwdo-online-form-home-grid {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 1px 1px 4px 6px rgba(190, 189, 189, 0.281);
+  position: absolute;
+  left: 200px;
+  top: 1000px;
+  display: grid;
+  grid-template-areas:
+                        'a b'
+                    ;
+  width: 80%;
+  border-radius: 6px;
+  margin-bottom: 30px;
+
+}
+
+.online-form-image-home-grid {
+  grid-area: a;
+  width: 120px;
+  border-top-left-radius: 6px;
+  border-end-start-radius: 6px;
+
+}
+
+.info-wwdo-online-form-home-grid {
+  grid-area: b;
+  align-items: center;
+  padding: 15px;
+}
+
+// grid - for workflow
+
+.wwdo-work-flow-home-grid {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 1px 1px 4px 6px rgba(190, 189, 189, 0.281);
+  position: absolute;
+  left: 200px;
+  top: 1100px;
+  display: grid;
+  grid-template-areas:
+                        'a b'
+                    ;
+  width: 80%;
+  border-radius: 6px;
+  margin-bottom: 30px;
+
+}
+
+.work-flow-image-home-grid {
+  grid-area: a;
+  width: 120px;
+  border-top-left-radius: 6px;
+  border-end-start-radius: 6px;
+
+}
+
+.red-header-text-sm-home-grid {
   grid-area: b;
   align-items: center;
   padding: 15px;
