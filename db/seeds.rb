@@ -39,12 +39,12 @@ puts "Created rig_1, user_1, bop_1, pressure_test_1 WITH NEW ids"
 # Equipment Checks
 question_1 = Question.create!(name: "Annular pressure regulator - increase/decrease ?", question_type:"", category:"Equipment Checks")
 question_2 = Question.create!(name: "Manifold pressure regulator - increase/decrease ?", question_type:"", category:"Equipment Checks")
-question_3 = Question.create!(name: "Manifold pressure regulator - bypass/normal ?", question_type:"", category:"EquipmentCheckBypassNormal")
-question_4 = Question.create!(name: "Maximum manifold pressure applied to all closed ram functions ?", question_type:"", category:"ManifoldPressure")
 question_5 = Question.create!(name: "Mud gas Separator", question_type:"", category:"Equipment Checks")
 question_6 = Question.create!(name: "Rotary Drilling hoses", question_type:"", category:"Equipment Checks")
 question_7 = Question.create!(name: "Trip tanks", question_type:"", category:"Equipment Checks")
 question_8 = Question.create!(name: "Pit level indicators", question_type:"", category:"Equipment Checks")
+question_3 = Question.create!(name: "Manifold pressure regulator - bypass/normal ?", question_type:"", category:"EquipmentCheckBypassNormal")
+question_4 = Question.create!(name: "Maximum manifold pressure applied to all closed ram functions ?", question_type:"", category:"ManifoldPressure")
 
 puts "Created equipment check questions"
 # Standpipe Manifold
@@ -57,9 +57,9 @@ puts "Created general manifold questions"
 # Choke Manifold
 question_12 = Question.create!(name: "Choke manifold Pressure gauges checked ", question_type:"", category:"Choke Manifold")
 question_13 = Question.create!(name: "Choke manifold Valves tested individually?", question_type:"", category:"Choke Manifold")
-question_14 = Question.create!(name: "Test pressure applied to Chokemanifold", question_type:"", category:"Pressure Input Choke Manifold")
 question_15 = Question.create!(name: "Remote and manual choke checked ?", question_type:"", category:"Choke Manifold")
 question_16 = Question.create!(name: "Operated auto-chokes with hand pump ?", question_type:"", category:"Choke Manifold")
+question_14 = Question.create!(name: "Test pressure applied to Choke manifold:", question_type:"", category:"Pressure Input Choke Manifold")
 
 
 
