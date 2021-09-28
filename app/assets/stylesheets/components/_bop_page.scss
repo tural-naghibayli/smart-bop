@@ -1,0 +1,47 @@
+.bop-page-body {
+  background-image: linear-gradient(to right top, #b5b5bf, $white-grey);
+  min-height: 100vh;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.bop-table-container {
+  width: 80%;
+  border-radius: 10px;
+  margin-bottom: 18px;
+  margin-left: 10%;
+  background-color: rgba(255, 255, 255, .15);
+  backdrop-filter: blur(5px);
+  text-align: center;
+}
+.bop-table-wrapper {
+  display: grid;
+  grid-template-rows: auto;
+}
+
+.bop-table-title {
+  text-align: center;
+  font-size: 35px;
+  color: $grey-two;
+  text-shadow: 1px 1px 2px black;
+  margin: 10px;
+}
+
+.pressure-test-link {
+  text-decoration: none;
+  color: $dark-grey;
+  font-size: 25px;
+  &:hover{
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.th-title {
+  color: $white-grey;
+  text-shadow: 1px 1px 2px $dark-grey;
+}
+
+.table-head-wrapper {
+  background: $dark-grey;
+  border-radius: 10px;
+}
