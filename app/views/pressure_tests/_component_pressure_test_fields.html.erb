@@ -29,8 +29,9 @@
 
         <%= f.input :test_result,  collection: [ "Good", "Bad"] %>
         <%= f.input :photo, as: :file, class:'btn-photo' %>
-        <%= link_to_remove_association "remove component", f %>
-    </div>
+
+        <%= link_to_remove_association "remove component", f, class:"remove-button-main" %>
+        <%#= f.submit %>
 
   </div>
 

@@ -72,7 +72,7 @@
                   <%= render 'component_pressure_test_fields', f:component %>
                 <% end %>
                 <div class='links'>
-                  <%= link_to_add_association 'add Component', f, :component_pressure_tests %>
+                  <%= link_to_add_association 'Add Component', f, :component_pressure_tests, class:"add-button-main" %>
                 </div>
             </div>
 
@@ -148,7 +148,7 @@
               <%= render 'safety_valve_test_fields', f:safety_valve %>
             <% end %>
             <div class='links'>
-              <%= link_to_add_association 'Add Safety_valve', f, :safety_valve_tests %>
+              <%= link_to_add_association 'Add Safety Valve', f, :safety_valve_tests, class:"add-button-main" %>
             </div>
           </div>
           <hr>
@@ -159,11 +159,11 @@
           <%= render 'approval_fields', f:approval %>
         <% end %>
         <div class='links'>
-          <%= link_to_add_association 'add approval', f, :approvals %>
+          <%= link_to_add_association 'Add Approval', f, :approvals, class:"add-button-main" %>
         </div>
       </div>
 
-      <%= f.submit %>
+      <%= f.submit "Create Pressure Test", class:"create-test-button" %>
 
     <% end %>
 
