@@ -1,0 +1,46 @@
+.add-button-main {
+  border: 1px solid $blue;
+  border-radius: 6px;
+  background-color: $blue;
+  font-family: 'Secular One', sans-serif;
+  color: $white-grey;
+  padding: 11px 15px;
+  margin: 10px;
+  &:hover {
+    border: 1px solid $light-blue;
+    background-color: $light-blue;
+    text-decoration: none;
+    color: white;
+  }
+}
+.remove-button-main {
+  border: 1px solid $dark-red;
+  border-radius: 6px;
+  background-color: $dark-red;
+  font-family: 'Secular One', sans-serif;
+  color: $white-grey;
+  padding: 11px 15px;
+  margin: 10px;
+  &:hover {
+    border: 1px solid $warning-red;
+    background-color: $warning-red;
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.create-test-button {
+  border: 1px solid $dark-grey;
+  border-radius: 6px;
+  background-color: $dark-grey;
+  font-family: 'Secular One', sans-serif;
+  color: $white-grey;
+  padding: 11px 15px;
+  margin: 10px;
+  &:hover {
+    border: 1px solid $gray-blue;
+    background-color: $gray-blue;
+    text-decoration: none;
+    color: white;
+  }
+}

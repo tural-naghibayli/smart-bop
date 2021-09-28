@@ -7,6 +7,6 @@
     <%= f.input :high_pressure %>
     <%= f.input :low_pressure %>
     <%= f.input :test_result,  collection: [ "Good", "Bad"] %>
-    <%= link_to_remove_association "remove Safety valve", f %>
+    <%= link_to_remove_association "remove Safety valve", f, class:"remove-button-main"%>
     <%#= f.submit %>
 <%# end %>

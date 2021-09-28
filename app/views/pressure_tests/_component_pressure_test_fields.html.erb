@@ -12,7 +12,7 @@
         <%= f.input :close_time %>
         <%= f.input :test_result,  collection: [ "Good", "Bad"] %>
         <%= f.input :photo, as: :file, class:'btn-photo' %>
-        <%= link_to_remove_association "remove component", f %>
+        <%= link_to_remove_association "remove component", f, class:"remove-button-main" %>
         <%#= f.submit %>
   </table>
 
