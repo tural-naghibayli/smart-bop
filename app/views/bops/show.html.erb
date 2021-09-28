@@ -1,56 +1,56 @@
-<body class="rig-page-body">
-<div class="table-container">
-<h1>BOP Details</h1>
+<body class="bop-page-body">
+  <div class="bop-table-wrapper">
 
-<table class="table table-hover">
-  <thead>
-    <tr>
-        <th scope="col"></th>
-        <th scope="col">BOP Serial Number</th>
-        <th scope="col">BOP Type</th>
-        <th scope="col">Producer</th>
-        <th scope="col">Pressure Rating</th>
-        <th scope="col">Description</th>
-        <th scope="col">Rig Name</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr class='clickable-row' <%#= link_to " ", rigs_path(@rig) %>>
-        <th scope="row"></th>
-        <td><%= @bop.serial_number %></td>
-        <td><%= @bop.bop_type %></td>
-        <td><%= @bop.producer  %></td>
-        <td><%= @bop.pressure_rating %></td>
-        <td><%= @bop.description %></td>
-        <td><%= @bop.rig.name %></td>
-      </tr>
-  </tbody>
-</table>
-</div>
+    <div class="bop-table-container">
+      <table class="table table-hover">
+        <h1 class="bop-table-title">BOP Details</h1>
+        <thead>
+          <tr>
+              <th scope="col"></th>
+              <th scope="col">BOP Serial Number</th>
+              <th scope="col">BOP Type</th>
+              <th scope="col">Producer</th>
+              <th scope="col">Pressure Rating</th>
+              <th scope="col">Description</th>
+              <th scope="col">Rig Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class='clickable-row' <%#= link_to " ", rigs_path(@rig) %>>
+              <th scope="row"></th>
+              <td><%= @bop.serial_number %></td>
+              <td><%= @bop.bop_type %></td>
+              <td><%= @bop.producer  %></td>
+              <td><%= @bop.pressure_rating %></td>
+              <td><%= @bop.description %></td>
+              <td><%= @bop.rig.name %></td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
 
-<div class="table-container">
-
-<h2>Pressure Tests</h2>
-
-<table class="table table-hover">
-  <thead>
-    <tr>
-        <th scope="col"></th>
-        <th scope="col">Well Name</th>
-        <th scope="col">Completed Date</th>
-        <th scope="col"></th>
-      </tr>
-  </thead>
-  <tbody>
-    <% @bop.pressure_tests.each do |test| %>
-      <tr class='clickable-row' <%#= link_to " ", rigs_path(@rig) %>>
-        <th scope="row"></th>
-        <td><%= test.well_name %></td>
-        <td><%= test.completed_date %></td>
-        <td><%= link_to "Show", pressure_test_path(test) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-</div>
+    <div class="bop-table-container">
+      <table class="table table-hover">
+        <h2 class="bop-table-title">Pressure Tests</h2>
+        <thead>
+          <tr>
+              <th scope="col"></th>
+              <th scope="col">Well Name</th>
+              <th scope="col">Completed Date</th>
+              <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+          <% @bop.pressure_tests.each do |test| %>
+            <tr class='clickable-row' <%#= link_to " ", rigs_path(@rig) %>>
+              <th scope="row"></th>
+              <td><%= test.well_name %></td>
+              <td><%= test.completed_date %></td>
+              <td><%= link_to "Show", pressure_test_path(test), class:"pressure-test-link"%></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </body>

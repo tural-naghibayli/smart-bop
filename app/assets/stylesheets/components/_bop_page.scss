@@ -1,0 +1,33 @@
+.bop-page-body {
+  background-image: linear-gradient(to right top, #7a7b8f, #b5b5bf, #f2f2f2);
+  min-height: 100vh;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.bop-table-container {
+  padding: 15px;
+  width: 80%;
+  border-radius: 10px;
+  margin-bottom: 18px;
+  margin-left: 10%;
+  background-color: rgba(255, 255, 255, .15);
+  backdrop-filter: blur(5px);
+
+}
+.bop-table-wrapper {
+  display: grid;
+  grid-template-rows: auto;
+}
+
+.bop-table-title {
+  text-align: center;
+}
+
+.pressure-test-link {
+  text-decoration: none;
+  color: #424761;
+  &:hover{
+    color: white;
+    text-decoration: none;
+  }
+}
