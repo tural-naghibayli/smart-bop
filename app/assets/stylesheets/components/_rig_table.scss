@@ -1,31 +1,56 @@
 .rig-table-container {
+<<<<<<< HEAD
   padding: 15px;
+=======
+>>>>>>> 2dc075bf56f31c4d7b7aea62d942119d76ad1eb1
   width: 80%;
   border-radius: 10px;
   position: absolute;
   left: 10%;
   background-color: rgba(255, 255, 255, .15);
+<<<<<<< HEAD
   backdrop-filter: blur(5px);
+=======
+  backdrop-filter: blur(15px);
+  text-align: center;
+
+>>>>>>> 2dc075bf56f31c4d7b7aea62d942119d76ad1eb1
 }
 
 .rig-page-title {
   text-align: center;
+<<<<<<< HEAD
   font-weight: bold;
   color: #424761;
+=======
+  font-size: 35px;
+  color: $grey-two;
+  text-shadow: 1px 1px 2px black;
+  margin: 10px;
+>>>>>>> 2dc075bf56f31c4d7b7aea62d942119d76ad1eb1
 }
 
 .rig-page-body {
-  background-image: linear-gradient(to right top, #051937, #424761, #7a7b8f, #b5b5bf, #f2f2f2);
+  background-image: linear-gradient(to right top, #b5b5bf, $white-grey);
+  font-weight: bold;
+  color: #424761;
   min-height: 100vh;
   font-family: 'DM Sans', sans-serif;
 }
 
-.row-header {
-  color: #424761;
-  font-weight: bold;
 
+.row-header {
+  color: $white-grey;
+  text-shadow: 1px 1px 2px $dark-grey;
+  font-size: 1.1em;
 }
 
 .rig-filler {
   color: #424761;
+<<<<<<< HEAD
+=======
+  font-weight: bold;
+
+>>>>>>> 2dc075bf56f31c4d7b7aea62d942119d76ad1eb1
 }
+
