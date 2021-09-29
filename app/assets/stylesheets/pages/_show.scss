@@ -2,10 +2,11 @@
   display: flex;
   overflow: auto;
   padding: 20px;
+  color: #fdf0d5ff;
 }
 
 .strong-next {
-  color: rgb(206, 38, 38)
+  color: rgb(206, 38, 38);
 }
 .sidebar {
   height: 100%;
@@ -13,17 +14,17 @@
   position: fixed;
   top: 0;
   left: 0;
-  background-color: #293942;
+  background-color: #003049ff;
 }
 .pressure-details {
   margin-top: 4px;
   margin-left: 10px;
   text-align: left;
-  color: whitesmoke;
+  color: #fdf0d5ff;
 }
 
 .staff-position {
-  background-color: #f1a34a;
+  background-color: #c75000;
   border-radius: 4px;
   padding: 4px;
   margin: 0px 80px;
@@ -41,7 +42,7 @@
 .container-appr {
 	display: grid;
   grid-template-columns: 4fr 4fr 1fr;
-  color: white;
+  color: #fdf0d5ff;;
 }
 
 .appr-name {
@@ -83,7 +84,7 @@
 .heading-pres {
   margin-top: 55px;
   text-align: center;
-  color: whitesmoke;
+  color: #fdf0d5ff;
 }
 
 .comp-item > h4 {
@@ -128,7 +129,7 @@
 }
 
 .strong{
-  color: #f1a34a;
+  color: #c75000;
 }
 
 
@@ -154,22 +155,24 @@
 }
 
 .item2 {
-  border: 2px solid rgb(179, 77, 77);
-  padding: 6px;
-  width: 90px;
-  border-radius: 4px;
+  border: 2px solid #38a58a;
+  padding: 3px;
+  border-radius: 24px;
   text-align: center;
-  margin-top: 18px;
   margin-left: 150px;
-
+  margin-right: 150px;
+  margin-top: 18px;
+  font-size: larger;
+  vertical-align: auto;
 }
 
 .item2 > a {
-  color:rgb(179, 77, 77)
+  color:#38a58a;
 }
 
 .item2 > a:hover {
-  color:rgb(219, 123, 123)
+  color:rgb(158, 219, 123);
+  text-decoration: none;
 }
 
 .press-table {
@@ -192,16 +195,26 @@
 }
 
 .press-table thead{
-  background: #c9dff0;
-  border: 2px solid #c9dff0;
+  background: #669bbcff;
+  border: 2px solid #669bbcff;
+  border-radius: 8px;
 }
 
 .pres-div {
   display: flex;
   justify-content: center;
-  margin-top: 16px;
+  margin-top: 20px;
 }
 
 .strong-tbl {
-  color:rgb(19, 3, 3)
+  color:rgb(19, 3, 3);
+}
+
+.report-file-div {
+  border: 1px solid rgb(0,0,0);
+  margin-left: 40%;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding: 8px;
+  width: fit-content;
 }
