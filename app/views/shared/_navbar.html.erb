@@ -1,7 +1,11 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-xspace fixed-top">
   <%= link_to root_path, class: "navbar-brand" do %>
-      <% if request.path.include? "pressure_tests" %>
-        <%= image_tag "bop-logo-white.png" %>
+      <% if request.path.include? "pressure_tests"%>
+        <% if request.path.exclude? "new"%>
+          <%= image_tag "bop-logo-white.png" %>
+        <% else %>
+          <%= image_tag "bop-logo.png" %>
+        <% end %>
       <% else %>
         <%= image_tag "bop-logo.png" %>
       <% end %>
