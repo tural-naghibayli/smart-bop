@@ -19,7 +19,10 @@
 
   <body>
     <%= render 'shared/navbar' %>
-    <%= yield %>
+    <!-- add margin to account for the fixed-top position absolute navbar -->
+    <div class="margin-top-spacing">
+      <%= yield %>
+    </div>
     <%= render 'shared/flashes' %>
   </body>
 </html>
