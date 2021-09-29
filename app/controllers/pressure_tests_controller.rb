@@ -17,7 +17,11 @@ class PressureTestsController < ApplicationController
   def new
     @pressure_test = PressureTest.new
     @bop = Bop.find(params[:bop_id])
-    @pressure_test.answers.build
+
+    Question.all.each do |q|
+      @pressure_test.answers.build
+    end
+
     @pressure_test.approvals.build
   end
 
