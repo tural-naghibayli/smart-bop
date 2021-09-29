@@ -1,24 +1,30 @@
 <body class="rig-page-body">
-    <h1 class="rig-page-title">Our Rigs</h1>
   <div class="rig-table-container">
+    <h1 class="rig-page-title">Our Rigs</h1>
     <table class="table table-borderless rig-table table-hover">
       <thead>
         <tr class="table-head-wrapper">
             <th scope="col" class="row-header"></th>
-            <th scope="col"class="row-header">Rig Name</th>
-            <th scope="col" class="row-header">Reservoir Field</th>
-            <th scope="col" class="row-header">Contractor Drilling Company</th>
             <th scope="col" class="row-header">Operator Company</th>
+            <th scope="col" class="row-header">Contractor Drilling Company</th>
+            <th scope="col" class="row-header">Reservoir Field</th>
+            <th scope="col"class="row-header">Rig Name</th>
+            <th scope="col"class="row-header">Last Test Date</th>
+            <th scope="col"class="row-header">Next Test Deadline</th>
           </tr>
       </thead>
       <tbody>
         <% @rigs.each do |rig| %>
           <tr class='clickable-row' data-href='/rigs/<%=rig.id%>'>
             <th scope="row"></th>
-            <td class="rig-filler"><%= rig.name %></td>
-            <td class="rig-filler"><%= rig.reservoir_field %></td>
-            <td class="rig-filler"><%= rig.contractor_drilling_company %></td>
             <td class="rig-filler"><%= rig.operator_company %></td>
+            <td class="rig-filler"><%= rig.contractor_drilling_company %></td>
+            <td class="rig-filler"><%= rig.reservoir_field %></td>
+            <td class="rig-filler"><%= rig.name %></td>
+            <% unless rig.bop.nil? %>
+              <td class="rig-filler"><%= rig.bop.last_completed_pressure_test_date %></td>
+              <td class="rig-filler"><%= rig.bop.last_completed_pressure_test_date+21.day %></td>
+            <% end %>
           </tr>
         <% end %>
       </tbody>

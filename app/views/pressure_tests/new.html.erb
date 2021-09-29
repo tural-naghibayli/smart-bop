@@ -1,98 +1,128 @@
-<div class="bg-dark-blue flexbox">
-    <%= image_tag "rig-image-form.jpg", alt: "About us", class: "main-form-pic"%>
-    <h3 class= "test_heading">
-      <p class= "last_test_heading">Last test date: <%= @bop.last_completed_pressure_test_date %></p>
-      New Pressure Test
-    </h3>
 
+<div class="bg-image">
+  <div class="container">
+    <h1 class= "test_heading">New Pressure Test</h1>
+    <h2 class= "last_test_heading">Last test date: <%= @bop.last_completed_pressure_test_date %></h2>
+  </div>
 </div>
 
-<div class=bg-light-blue>
+<div class="bg-white">
 
   <div class="container">
 
     <%= simple_form_for [@bop, @pressure_test] do |f| %>
         <div class="general_info_form">
 
-          <%= f.input :well_name %>
-          <%= f.input :completed_date %>
-          <%= f.input :test_fluid %>
-          <%= f.input :drill_pipe_diameter %>
-          <%= f.input :serial_number_chart_recorded, label:"SN chart recorder" %>
-          <%= f.input :corrective_action %>
-          <%= f.input :comment %>
+          <div class="general_info_form_first_row">
+            <%= f.input :well_name %>
+            <%= f.input :completed_date %>
+            <%= f.input :test_fluid %>
+            <%= f.input :drill_pipe_diameter %>
+          </div>
+          <div class="general_info_form_second_row">
+            <%= f.input :serial_number_chart_recorded, label:"SN chart recorder" %>
+            <%= f.input :corrective_action %>
+            <%= f.input :comment %>
+          </div>
 
         </div>
 
-        <hr>
-            <h3>Equipment Checks</h3>
-            <div class="equipment_check_form">
+        <h3>Equipment Checks</h3>
 
-              <% index = 0 %>
-              <%= f.simple_fields_for :answers, class: 'input-display' do |answer| %>
+        <div class="equipment_check_form">
 
-                <% question = Question.where(category: [ "Equipment Checks", "EquipmentCheckBypassNormal", "ManifoldPressure"])[index] %>
+          <% index = 0 %>
+          <%= f.simple_fields_for :answers, class: 'input-display' do |answer| %>
 
-                  <% if question %>
-                    <div class="equipment_check_question">
-                      <%= question.name %>
+            <% question = Question.where(category: [ "Equipment Checks", "EquipmentCheckBypassNormal", "ManifoldPressure"])[index] %>
 
-                      <% if question.category == "Equipment Checks" %>
+              <% if question %>
+                <div class="equipment_check_question">
+                  <div><%= question.name %></div>
+
+
+                    <% if question.category == "Equipment Checks" %>
+                      <span>
                         <%= answer.input_field :value, as: :radio_buttons, collection: [['Yes', 'Yes'], ['No', 'No'], ["N/A","N/A"]], label: false %>
-                      <% elsif question.category == "EquipmentCheckBypassNormal" %>
-                        <%= answer.input :value, collection: [ "Bypass", "Normal"], label: false %>
-                      <% elsif question.category =="ManifoldPressure" %>
-                        <%= answer.input :value, as: :string, label: false %>
-                      <% end %>
+                      </span>
+                    <% elsif question.category == "EquipmentCheckBypassNormal" %>
+                      <%= answer.input :value, collection: [ "Bypass", "Normal"], label: false %>
+                    <% elsif question.category =="ManifoldPressure" %>
+                      <%= answer.input :value, as: :string, label: false %>
+                    <% end %>
 
-                      <%= answer.hidden_field :question_id, value: question.id %>
-                    </div>
-                  <% end %>
+                    <%= answer.hidden_field :question_id, value: question.id %>
 
-                  <% index += 1 %>
-              <% end %>
-            </div>
-
-
-          <h2>Components of BOP</h2>
-
-
-          <hr>
-
-          <h3>Components of BOP</h3>
-
-
-            <div id='component_pressure_tests'>
-                <%= f.simple_fields_for :component_pressure_tests do |component| %>
-                  <%= render 'component_pressure_test_fields', f:component %>
-                <% end %>
-                <div class='links'>
-                  <%= link_to_add_association 'Add Component', f, :component_pressure_tests, class:"add-button-main" %>
                 </div>
+              <% end %>
+
+              <% index += 1 %>
+          <% end %>
+        </div>
+
+
+        <h3>Components of BOP</h3>
+
+        <div id='component_pressure_tests'>
+            <%= f.simple_fields_for :component_pressure_tests do |component| %>
+              <%= render 'component_pressure_test_fields', f:component %>
+            <% end %>
+            <div class='links'>
+              <%= link_to_add_association 'Add Component', f, :component_pressure_tests, class:"add-button-main" %>
             </div>
-
-          <hr>
-
-
-            <h3>Choke Manifold Checks</h3>
-            <div class = "choke_manifold_form">
+        </div>
 
 
-              <% index = 0 %>
-              <%= f.simple_fields_for :answers, class: 'input-display' do |answer| %>
+          <h3>Choke Manifold Checks</h3>
 
-                <% question = Question.where(category: [ "Choke Manifold", "Pressure Input Choke Manifold"])[index] %>
+          <div class="choke_manifold_form">
 
-                  <% if question %>
-                    <div class="choke_manifold_question">
-                      <%= question.name %>
+            <% index = 0 %>
+            <%= f.simple_fields_for :answers, class: 'input-display' do |answer| %>
 
+              <% question = Question.where(category: [ "Choke Manifold", "Pressure Input Choke Manifold"])[index] %>
+
+                <% if question %>
+                  <div class="choke_manifold_question">
+                    <div><%= question.name %></div>
+
+                    <span>
                       <% if question.category == "Choke Manifold" %>
                         <%= answer.input_field :value, as: :radio_buttons, collection: [['Yes', 'Yes'], ['No', 'No'], ["N/A","N/A"]], label:false %>
                       <% elsif question.category == "Pressure Input Choke Manifold" %>
                         <%= answer.input_field :value, as: :string, label:false %>
                       <% end %>
+                    </span>
+                    <%= answer.hidden_field :question_id, value: question.id %>
+                  </div>
+                <% end %>
 
+                <% index += 1 %>
+            <% end %>
+          </div>
+
+
+        <hr>
+
+            <h3> Standpipe Manifold Checks</h3>
+            <div class = "standpipe_manifold_form">
+
+              <% index = 0 %>
+              <%= f.simple_fields_for :answers, class: 'input-display' do |answer| %>
+
+                <% question = Question.where(category: [ "Standpipe Manifold", "Pressure Input Standpipe Manifold"])[index] %>
+
+                  <% if question %>
+                    <div class="standpipe_manifold_question">
+                      <div><%= question.name %></div>
+
+                      <span>
+                        <% if question.category == "Standpipe Manifold" %>
+                          <%= answer.input_field :value, as: :radio_buttons, collection: [['Yes', 'Yes'], ['No', 'No'], ["N/A","N/A"]], label:false %>
+                        <% elsif question.category == "Pressure Input Standpipe Manifold" %>
+                          <%= answer.input_field :value, as: :string, label:false %>
+                        <% end %>
+                      </span>
                       <%= answer.hidden_field :question_id, value: question.id %>
                     </div>
                   <% end %>
@@ -102,49 +132,23 @@
             </div>
 
 
-          <hr>
 
-              <h3> Standpipe Manifold Checks</h3>
-              <div class = "standpipe_manifold_form">
 
-                <% index = 0 %>
-                <%= f.simple_fields_for :answers, class: 'input-display' do |answer| %>
 
-                  <% question = Question.where(category: [ "Standpipe Manifold", "Pressure Input Standpipe Manifold"])[index] %>
-
-                    <% if question %>
-                      <div class="standpipe_manifold_question">
-                        <%= question.name %>
-
-                        <% if question.category == "Standpipe Manifold" %>
-                          <%= answer.input_field :value, as: :radio_buttons, collection: [['Yes', 'Yes'], ['No', 'No'], ["N/A","N/A"]], label:false %>
-                        <% elsif question.category == "Pressure Input Standpipe Manifold" %>
-                          <%= answer.input_field :value, as: :string, label:false %>
-                        <% end %>
-
-                        <%= answer.hidden_field :question_id, value: question.id %>
-                      </div>
-                    <% end %>
-
-                    <% index += 1 %>
-                <% end %>
-              </div>
-
-          <hr>
-
-          <h3>Safety Valve tests</h3>
-          <div id='safety_valve_tests'>
-            <%= f.simple_fields_for :safety_valve_tests do |safety_valve| %>
-              <%= render 'safety_valve_test_fields', f:safety_valve %>
-            <% end %>
-            <div class='links'>
-              <%= link_to_add_association 'Add Safety Valve', f, :safety_valve_tests, class:"add-button-main" %>
-            </div>
+        <h3>Safety Valve tests</h3>
+        <div id='safety_valve_tests'>
+          <%= f.simple_fields_for :safety_valve_tests do |safety_valve| %>
+            <%= render 'safety_valve_test_fields', f:safety_valve %>
+          <% end %>
+          <div class='links'>
+            <%= link_to_add_association 'Add Safety Valve', f, :safety_valve_tests, class:"add-button-main" %>
           </div>
-          <hr>
+        </div>
 
-      <h4>Approvals</h4>
+
+
       <div id='approvals'>
+        <h4>Approvals</h4>
         <%= f.simple_fields_for :approvals do |approval| %>
           <%= render 'approval_fields', f:approval %>
         <% end %>

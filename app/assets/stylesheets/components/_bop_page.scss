@@ -1,10 +1,10 @@
 .bop-page-body {
-  background-image: linear-gradient(to right top, #b5b5bf, $white-grey);
+  // background-image: linear-gradient(to right top, #b5b5bf, $white-grey);
   min-height: 100vh;
-  font-family: 'DM Sans', sans-serif;
 }
 
 .bop-table-container {
+  font-family: 'Roboto Condensed', sans-serif;
   width: 80%;
   border-radius: 10px;
   margin-bottom: 18px;
@@ -16,14 +16,16 @@
 .bop-table-wrapper {
   display: grid;
   grid-template-rows: auto;
+  margin-top: 50px;
 }
 
 .bop-table-title {
-  text-align: center;
-  font-size: 35px;
-  color: $grey-two;
-  text-shadow: 1px 1px 2px black;
-  margin: 10px;
+  text-align: left;
+  font-size: 45px;
+  color: $prussian-blue;
+  //text-shadow: 1px 1px 2px black;
+  margin: 20px;
+  margin-left: 140px;
 }
 
 .pressure-test-link {
@@ -42,6 +44,6 @@
 }
 
 .table-head-wrapper {
-  background: $dark-grey;
+  background: $prussian-blue;
   border-radius: 10px;
 }
