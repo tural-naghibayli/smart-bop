@@ -6,7 +6,6 @@
 //  { color: #F2F2F2; }
 
 .bg-image {
-
   padding: 50px 50px;
   height: 350px;
   margin-top: 15px;
@@ -29,7 +28,7 @@
 
 .bg-white h3 {
   text-align: left;
-  margin-top: 25px;
+  margin-top: 5rem;
 }
 
 
@@ -57,9 +56,11 @@
   // display: grid;
   // grid-template-columns: 1fr 1fr 1fr 1fr;
   // grid-gap: 15px;
-  border: 2px rgb(139, 136, 136) solid;
+  border: 2px rgb(228, 228, 228) solid;
   border-radius: 15px;
-  padding: 20px;
+  padding: 2rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
   font-weight: bold;
   margin-bottom: 25px;
 }
@@ -87,10 +88,12 @@
   margin-bottom: 25px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 15px;
-  border: 1px rgb(139, 136, 136) solid;
+  grid-gap: 2rem;
+  border: 1px rgb(228, 228, 228) solid;
   border-radius: 15px;
-  padding: 15px;
+  padding: 2rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
   font-weight: bold;
 }
 
@@ -114,10 +117,12 @@
   margin-bottom: 25px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 15px;
-  border: 1px rgb(139, 136, 136) solid;
+  grid-gap: 2rem;
+  border: 1px rgb(228, 228, 228) solid;
   border-radius: 15px;
-  padding: 15px;
+  padding: 2rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
   font-weight: bold;
 }
 
@@ -139,10 +144,12 @@
   margin-bottom: 25px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 15px;
-  border: 1px rgb(139, 136, 136) solid;
+  grid-gap: 2rem;
+  border: 1px rgb(228, 228, 228) solid;
   border-radius: 15px;
-  padding: 15px;
+  padding: 2rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
   font-weight: bold;
 }
 
@@ -169,10 +176,12 @@
   margin-bottom: 10px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 10px;
-  border: 1px rgb(139, 136, 136) solid;
+  grid-gap: 2rem;
+  border: 1px rgb(228, 228, 228) solid;
   border-radius: 15px;
-  padding: 15px;
+  padding: 2rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
   color : grey;
   font-weight: bold;
 }
@@ -187,10 +196,12 @@
   margin-bottom: 25px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-gap: 10px;
-  border: 1px rgb(139, 136, 136) solid;
+  grid-gap: 2rem;
+  border: 1px rgb(228, 228, 228) solid;
   border-radius:15px;
-  padding: 15px;
+  padding: 2rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
 .safety_valve_test_question {

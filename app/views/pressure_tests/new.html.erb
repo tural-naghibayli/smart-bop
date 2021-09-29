@@ -102,40 +102,40 @@
           </div>
 
 
-        <hr>
 
-            <h3> Standpipe Manifold Checks</h3>
-            <div class = "standpipe_manifold_form">
+          <h3> Standpipe Manifold Checks</h3>
+          <div class = "standpipe_manifold_form">
 
-              <% index = 0 %>
-              <%= f.simple_fields_for :answers, class: 'input-display' do |answer| %>
+            <% index = 0 %>
+            <%= f.simple_fields_for :answers, class: 'input-display' do |answer| %>
 
-                <% question = Question.where(category: [ "Standpipe Manifold", "Pressure Input Standpipe Manifold"])[index] %>
+              <% question = Question.where(category: [ "Standpipe Manifold", "Pressure Input Standpipe Manifold"])[index] %>
 
-                  <% if question %>
-                    <div class="standpipe_manifold_question">
-                      <div><%= question.name %></div>
+                <% if question %>
+                  <div class="standpipe_manifold_question">
+                    <div><%= question.name %></div>
 
-                      <span>
-                        <% if question.category == "Standpipe Manifold" %>
-                          <%= answer.input_field :value, as: :radio_buttons, collection: [['Yes', 'Yes'], ['No', 'No'], ["N/A","N/A"]], label:false %>
-                        <% elsif question.category == "Pressure Input Standpipe Manifold" %>
-                          <%= answer.input_field :value, as: :string, label:false %>
-                        <% end %>
-                      </span>
-                      <%= answer.hidden_field :question_id, value: question.id %>
-                    </div>
-                  <% end %>
+                    <span>
+                      <% if question.category == "Standpipe Manifold" %>
+                        <%= answer.input_field :value, as: :radio_buttons, collection: [['Yes', 'Yes'], ['No', 'No'], ["N/A","N/A"]], label:false %>
+                      <% elsif question.category == "Pressure Input Standpipe Manifold" %>
+                        <%= answer.input_field :value, as: :string, label:false %>
+                      <% end %>
+                    </span>
+                    <%= answer.hidden_field :question_id, value: question.id %>
+                  </div>
+                <% end %>
 
-                  <% index += 1 %>
-              <% end %>
-            </div>
+                <% index += 1 %>
+            <% end %>
+          </div>
 
 
 
 
 
         <h3>Safety Valve tests</h3>
+
         <div id='safety_valve_tests'>
           <%= f.simple_fields_for :safety_valve_tests do |safety_valve| %>
             <%= render 'safety_valve_test_fields', f:safety_valve %>
@@ -148,7 +148,7 @@
 
 
       <div id='approvals'>
-        <h4>Approvals</h4>
+        <h3>Approvals</h3>
         <%= f.simple_fields_for :approvals do |approval| %>
           <%= render 'approval_fields', f:approval %>
         <% end %>
