@@ -2,9 +2,9 @@
   border: 1px solid $blue;
   border-radius: 6px;
   background-color: $blue;
-  font-family: 'Secular One', sans-serif;
+  font-family: $body-font;
   color: $white-grey;
-  padding: 11px 15px;
+  padding: 5px 10px;
   margin: 10px;
   &:hover {
     border: 1px solid $light-blue;
@@ -19,7 +19,7 @@
   background-color: $dark-red;
   font-family: 'Secular One', sans-serif;
   color: $white-grey;
-  padding: 11px 15px;
+  padding: 2px 5px 0px 5px;
   margin: 10px;
   &:hover {
     border: 1px solid $warning-red;

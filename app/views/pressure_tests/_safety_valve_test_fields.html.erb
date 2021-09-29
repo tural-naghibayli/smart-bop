@@ -1,8 +1,8 @@
 
-<div class="nested-fields">
+<div class="nested-fields nested-margin">
 
   <div class="safety_valve_test_form">
-    
+
     <div class="safety_valve_test_question">
       <%= f.input :unit, collection: [ "TIW valve", "Auto IBOP", "Manual IBOP", "Grey Valve" ] %>
     </div>
@@ -21,8 +21,8 @@
     <div class="safety_valve_test_question">
       <%= f.input :test_result,  collection: [ "Good", "Bad"] %>
     </div>
-    <div>
-      <%= link_to_remove_association "remove Safety valve", f, class:"remove-button-main" %>
-    </div>
   </div>
+      <%= link_to_remove_association f, class:"remove-button-main" do %>
+      <i class="far fa-trash-alt"></i>
+    <% end %>
 </div>

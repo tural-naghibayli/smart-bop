@@ -4,11 +4,11 @@
       <p class= "last_test_heading">Last test date: <%= @bop.last_completed_pressure_test_date %></p>
       New Pressure Test
     </h3>
-
+      <i class="fa-regular fa-trash-can"></i>
 </div>
 
 <div class=bg-light-blue>
-
+<i class="fa-regular fa-trash-can"></i>
   <div class="container">
 
     <%= simple_form_for [@bop, @pressure_test] do |f| %>
@@ -60,9 +60,6 @@
                     </div>
                   <% end %>
               <% end %>
-
-
-          <h2>Components of BOP</h2>
 
             </div>
 
