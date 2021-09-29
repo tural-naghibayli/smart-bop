@@ -68,7 +68,7 @@
   </table>
 </div>
 
-<h4 style='margin-left: 700px; margin-top: 12px;'>Component Pressure Tests</h4>
+<h4 style='margin-left: 470px; margin-top: 10px;'>Component Pressure Tests</h4>
 
   <% if @pressure_test.component_pressure_tests.present? %>
     <% @pressure_test.component_pressure_tests.each do |component_pressure_test| %>
@@ -105,7 +105,7 @@
   <% end %>
 
 
-<h4 style='margin-left: 750px; margin-top: 12px;'>Safety Valve Tests</h4>
+<h4 style='margin-left: 470px; margin-top: 10px;'>Safety Valve Tests</h4>
 
 <% if @pressure_test.safety_valve_tests.present? %>
   <% @pressure_test.safety_valve_tests.each do |safety_valve_test| %>
@@ -142,7 +142,6 @@
       <tr>
         <th><strong>Equipment Checks</strong></th>
         <th></th>
-        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -168,7 +167,11 @@
           <% end %>
         </td>
         <% end %>
-        <%if index == 2 %><td><strong class='strong-tbl'><%= quest.name %>  </strong>
+        <% end %>
+      </tr>
+      <tr>
+      <% Question.where(category:"Equipment Checks").each_with_index  do |quest,index| %>
+        <%if index == 2 %><td><strong class='strong-tbl'><%= quest.name %> </strong>
           <%if quest.answers.first.value == 'Yes'%>
             <i class="fas fa-check fa-lg text-success" ></i>
           <%elsif quest.answers.first.value == 'No'%>
@@ -178,7 +181,17 @@
           <% end %>
         </td>
         <% end %>
+        <%if index == 5 %><td><strong class='strong-tbl'><%= quest.name %> </strong>
+          <%if quest.answers.first.value == 'Yes'%>
+            <i class="fas fa-check fa-lg text-success" ></i>
+          <%elsif quest.answers.first.value == 'No'%>
+            <i class="fas fa-times fa-lg text-danger"></i>
+          <% else %>
+            <%= quest.answers.first.value %>
+          <% end %>
+        </td>
         <% end %>
+      <% end %>
       </tr>
       <tr>
         <% Question.where(category:"Equipment Checks").each_with_index  do |quest,index| %>
@@ -202,16 +215,6 @@
           <% end %>
         </td>
         <% end %>
-        <%if index == 5 %><td><strong class='strong-tbl'><%= quest.name %> </strong>
-          <%if quest.answers.first.value == 'Yes'%>
-            <i class="fas fa-check fa-lg text-success" ></i>
-          <%elsif quest.answers.first.value == 'No'%>
-            <i class="fas fa-times fa-lg text-danger"></i>
-          <% else %>
-            <%= quest.answers.first.value %>
-          <% end %>
-        </td>
-        <% end %>
         <% end %>
       </tr>
       <tr>
@@ -219,9 +222,8 @@
         <td><strong class='strong-tbl'><%= quest.name %>:</strong> <%= quest.answers.first.value %></td>
         <% end %>
         <% Question.where(category:"ManifoldPressure").each  do |quest| %>
-        <td style='border-right: 0;'><strong class='strong-tbl'><%= quest.name %>:</strong> <%= quest.answers.first.value %></td>
+        <td><strong class='strong-tbl'><%= quest.name %>:</strong> <%= quest.answers.first.value %></td>
         <% end %>
-        <td style='border-left: 0;'></td>
       </tr>
     </tbody>
   </table>
