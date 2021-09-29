@@ -14,11 +14,12 @@
 }
 
 .rig-page-title {
-  text-align: center;
+  text-align: left;
   font-size: 35px;
   color: $prussian-blue;
-  text-shadow: 1px 1px 2px black;
+  //text-shadow: 1px 1px 2px black;
   margin: 10px;
+  font-family: 'Roboto Condensed', sans-serif;;
 }
 
 .rig-page-body {
@@ -26,7 +27,6 @@
   font-weight: bold;
   color: #424761;
   min-height: 100vh;
-  font-family: 'DM Sans', sans-serif;
   margin-top: 50px;
 }
 
@@ -34,10 +34,15 @@
 .row-header {
   color: $white-grey;
   text-shadow: 1px 1px 2px $dark-grey;
-  font-size: 1.1em;
+  font-size: 1em;
 }
 
 .rig-filler {
   color: #424761;
   font-weight: bold;
+  font-family: 'Roboto Condensed', sans-serif;;
+
+}
+h1, h2, h3, h4 {
+  font-family: 'Roboto Condensed', sans-serif;
 }
