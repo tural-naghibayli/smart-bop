@@ -1,26 +1,26 @@
-<div class="bg-dark-blue flexbox">
-    <%= image_tag "rig-image-form.jpg", alt: "About us", class: "main-form-pic"%>
-    <h3 class= "test_heading">
-      <p class= "last_test_heading">Last test date: <%= @bop.last_completed_pressure_test_date %></p>
-      New Pressure Test
-    </h3>
-      <i class="fa-regular fa-trash-can"></i>
+<div class="bg-image">
+  <div class="container">
+    <h1 class= "test_heading">New Pressure Test</h1>
+    <h2 class= "last_test_heading">Last test date: <%= @bop.last_completed_pressure_test_date %></h2>
+  </div>
 </div>
 
 <div class=bg-light-blue>
-<i class="fa-regular fa-trash-can"></i>
   <div class="container">
 
     <%= simple_form_for [@bop, @pressure_test] do |f| %>
         <div class="general_info_form">
-
-          <%= f.input :well_name %>
-          <%= f.input :completed_date %>
-          <%= f.input :test_fluid %>
-          <%= f.input :drill_pipe_diameter %>
-          <%= f.input :serial_number_chart_recorded, label:"SN chart recorder" %>
-          <%= f.input :corrective_action %>
-          <%= f.input :comment %>
+          <div class="general_info_form_first_row">
+            <%= f.input :well_name %>
+            <%= f.input :completed_date %>
+            <%= f.input :test_fluid %>
+            <%= f.input :drill_pipe_diameter %>
+          </div>
+          <div class="general_info_form_second_row">
+            <%= f.input :serial_number_chart_recorded, label:"SN chart recorder" %>
+            <%= f.input :corrective_action %>
+            <%= f.input :comment %>
+          </div>
 
         </div>
 
@@ -42,7 +42,7 @@
 
                   <% if question.category =="EquipmentCheckBypassNormal" %>
                     <div class="equipment_check_question">
-                      <%= question.name %>
+                      <div><%= question.name %></div>
                         <%= f.simple_fields_for :answers do |answer| %>
                           <%= answer.input :value, collection: [ "Bypass", "Normal"], label: false %>
                           <%= answer.hidden_field :question_id, value: question.id %>
@@ -52,7 +52,7 @@
 
                   <% if question.category =="ManifoldPressure" %>
                     <div class="equipment_check_question">
-                      <%= question.name %>
+                      <div><%= question.name %></div>
                       <%= f.simple_fields_for :answers do |answer| %>
                         <%= answer.input :value, as: :string, label: false %>
                         <%= answer.hidden_field :question_id, value: question.id %>
