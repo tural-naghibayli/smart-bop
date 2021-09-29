@@ -5,7 +5,7 @@
   </div>
 </div>
 
-<div class=bg-light-blue>
+<div class="bg-white">
   <div class="container">
 
     <%= simple_form_for [@bop, @pressure_test] do |f| %>
@@ -24,45 +24,45 @@
 
         </div>
 
-        <hr>
-            <h3>Equipment Checks</h3>
-            <div class="equipment_check_form">
-              <% Question.all.each do |question| %>
-                  <% if question.category =="Equipment Checks" %>
-                    <div class="equipment_check_question">
-                      <div><%= question.name %></div>
-                       <span>
-                        <%= f.simple_fields_for :answers, class: 'input-display' do |answer| %>
-                          <%= answer.input_field :value, as: :radio_buttons, collection: [['Yes', 'Yes'], ['No', 'No'], ["N/A","N/A"]], label: false %>
-                          <%= answer.hidden_field :question_id, value: question.id %>
-                        <% end %>
-                      </span>
-                    </div>
-                  <% end %>
 
-                  <% if question.category =="EquipmentCheckBypassNormal" %>
-                    <div class="equipment_check_question">
-                      <div><%= question.name %></div>
-                        <%= f.simple_fields_for :answers do |answer| %>
-                          <%= answer.input :value, collection: [ "Bypass", "Normal"], label: false %>
-                          <%= answer.hidden_field :question_id, value: question.id %>
-                        <% end %>
-                    </div>
-                  <% end %>
-
-                  <% if question.category =="ManifoldPressure" %>
-                    <div class="equipment_check_question">
-                      <div><%= question.name %></div>
-                      <%= f.simple_fields_for :answers do |answer| %>
-                        <%= answer.input :value, as: :string, label: false %>
-                        <%= answer.hidden_field :question_id, value: question.id %>
-                      <% end %>
-                    </div>
-                  <% end %>
+        <h3>Equipment Checks</h3>
+        <div class="equipment_check_form">
+          <% Question.all.each do |question| %>
+              <% if question.category =="Equipment Checks" %>
+                <div class="equipment_check_question">
+                  <div><%= question.name %></div>
+                    <span>
+                    <%= f.simple_fields_for :answers, class: 'input-display' do |answer| %>
+                      <%= answer.input_field :value, as: :radio_buttons, collection: [['Yes', 'Yes'], ['No', 'No'], ["N/A","N/A"]], label: false %>
+                      <%= answer.hidden_field :question_id, value: question.id %>
+                    <% end %>
+                  </span>
+                </div>
               <% end %>
 
-            </div>
-          <hr>
+              <% if question.category =="EquipmentCheckBypassNormal" %>
+                <div class="equipment_check_question">
+                  <div><%= question.name %></div>
+                    <%= f.simple_fields_for :answers do |answer| %>
+                      <%= answer.input :value, collection: [ "Bypass", "Normal"], label: false %>
+                      <%= answer.hidden_field :question_id, value: question.id %>
+                    <% end %>
+                </div>
+              <% end %>
+
+              <% if question.category =="ManifoldPressure" %>
+                <div class="equipment_check_question">
+                  <div><%= question.name %></div>
+                  <%= f.simple_fields_for :answers do |answer| %>
+                    <%= answer.input :value, as: :string, label: false %>
+                    <%= answer.hidden_field :question_id, value: question.id %>
+                  <% end %>
+                </div>
+              <% end %>
+          <% end %>
+
+        </div>
+
 
           <h3>Components of BOP</h3>
             <div id='component_pressure_tests'>
@@ -74,7 +74,7 @@
                 </div>
             </div>
 
-          <hr>
+
 
 
             <h3>Choke Manifold Checks</h3>
@@ -108,7 +108,7 @@
               </div>
 
 
-          <hr>
+
 
               <h3> Standpipe Manifold Checks</h3>
               <div class = "standpipe_manifold_form">
@@ -138,7 +138,7 @@
                   <% end %>
                 <% end %>
               </div>
-          <hr>
+
 
           <h3>Safety Valve tests</h3>
           <div id='safety_valve_tests'>
@@ -149,10 +149,11 @@
               <%= link_to_add_association 'Add Safety Valve', f, :safety_valve_tests, class:"add-button-main" %>
             </div>
           </div>
-          <hr>
 
-      <h4>Approvals</h4>
+
+
       <div id='approvals'>
+        <h4>Approvals</h4>
         <%= f.simple_fields_for :approvals do |approval| %>
           <%= render 'approval_fields', f:approval %>
         <% end %>
