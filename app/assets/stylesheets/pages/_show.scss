@@ -40,7 +40,7 @@
 
 .container-appr {
 	display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 4fr 4fr 1fr;
   color: white;
 }
 
@@ -171,30 +171,37 @@
 .item2 > a:hover {
   color:rgb(219, 123, 123)
 }
+
 .press-table {
   margin-left: 30%;
   width: 850px;
-
+  border-collapse: collapse;
 }
+
+
+
 .press-table td{
   border: 1px solid #999;
   padding: 8px;
-  border-collapse: collapse;
+
 }
 
 .press-table th {
   padding: 8px;
+
 }
 
 .press-table thead{
   background: #c9dff0;
+  border: 2px solid #c9dff0;
 }
 
 .pres-div {
   display: flex;
   justify-content: center;
+  margin-top: 16px;
 }
 
 .strong-tbl {
-  color:rgb(206, 119, 38)
+  color:rgb(19, 3, 3)
 }

@@ -28,7 +28,7 @@
         </div>
     <% end %>
   </div>
-  <% if current_user.approvals.present?%>
+  <% if current_user.approvals.find_by(pressure_test: @pressure_test).present?%>
     <% if current_user.approvals.find_by(pressure_test: @pressure_test).approval_status == "pending"%>
       <div class="item2"><%= link_to "Approve",  approve_pressure_test_path(@pressure_test), method: :patch, class:'btn-approve' %></div>
     <% end %>
@@ -41,73 +41,94 @@
       <tr>
         <th>Pressure Test</th>
         <th></th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td><strong class='strong-tbl'>Well Name:</strong>   <%= @pressure_test.well_name %></td>
-        <td><strong class='strong-tbl'>Serial Number Chart Recorded:</strong>   <%= @pressure_test.serial_number_chart_recorded %></td>
+        <td style='border-right: 0;'><strong class='strong-tbl'>Serial Number Chart Recorded:</strong>   <%= @pressure_test.serial_number_chart_recorded %></td>
+        <td style='border-left: 0;'></td>
       </tr>
       <tr>
         <td><strong class='strong-tbl'>Test Fluid:</strong>   <%= @pressure_test.test_fluid %></td>
+        <td><strong class='strong-tbl'>Corrective Action:</strong>   <%= @pressure_test.corrective_action %></td>
+        <td><strong class='strong-tbl'>Drill Pipe Diameter:</strong> <%= @pressure_test.drill_pipe_diameter %></td>
+      </tr>
+      <tr>
+        <td style='border-right: 0;'><strong class='strong-tbl'>Comment:</strong><%= @pressure_test.comment %></td>
+        <td style='border-left: 0; border-right:0;'></td>
+        <td style='border-left: 0;'></td>
       </tr>
     </tbody>
   </table>
 </div>
-<div class='tests-out'>
-  <div class='show-pressure'>
 
-    <p> <strong class='strong'>Test Fluid:</strong> <%= @pressure_test.test_fluid %></p>
-    <p> <strong class='strong'>Well Name:</strong> <%= @pressure_test.well_name %></p>
-    <p> <strong class='strong'>Serial Number Chart Recorded:</strong> <%= @pressure_test.serial_number_chart_recorded %></p>
-    <p> <strong class='strong'>Comment:</strong> <%= @pressure_test.comment %></p>
-    <p> <strong class='strong'>Corrective Action:</strong> <%= @pressure_test.corrective_action %></p>
-    <p> <strong class='strong'>Drill Pipe Diameter:</strong> <%= @pressure_test.drill_pipe_diameter %></p>
-  </div>
-
-
-  <div class='heading-comp'>
-    <h4>Component Pressure Tests</h4>
-  </div>
-
-  <div class='cont-comp'>
-    <div class = 'comp-item'>
-      <% if @pressure_test.component_pressure_tests.present? %>
-        <% @pressure_test.component_pressure_tests.each do |component_pressure_test| %>
-            <h4><strong class='strong'><%= component_pressure_test.bop_element_unit %></strong></h4>
-            <p><strong class='strong'>Component Type:</strong> <%= component_pressure_test.component_type %></p>
-            <p><strong class='strong'>Low Pressure:</strong> <%= component_pressure_test.low_pressure %></p>
-            <p><strong class='strong'>High Pressure:</strong> <%= component_pressure_test.high_pressure %></p>
-            <p><strong class='strong'>Test Result:</strong> <%= component_pressure_test.test_result %></p>
-            <p><strong class='strong'>Open Gallons:</strong> <%= component_pressure_test.open_gallons %></p>
-            <p><strong class='strong'>Open Time:</strong> <%= component_pressure_test.open_time %></p>
-            <p><strong class='strong'>Close Time:</strong> <%= component_pressure_test.close_time %></p>
-            <% if component_pressure_test.photo.present? %>
-              <div style="text-align: center;">
-                <%= cl_image_tag component_pressure_test.photo.key, height: 600, width: 600, crop: :fill %>
-              </div>
-            <% end %>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
-
-
-  <% if @pressure_test.safety_valve_tests.present? %>
-    <% @pressure_test.safety_valve_tests.each do |safety_valve_test| %>
-      <h3>SAFETY VALVE TEST - <%= safety_valve_test.serial_number %> </h3>
-      <ul>
-        <li>Unit: <%= safety_valve_test.unit %></li>
-        <li>Serial Number: <%= safety_valve_test.serial_number %></li>
-        <li>Connection Type: <%= safety_valve_test.connection_type %></li>
-        <li>High Pressure: <%= safety_valve_test.high_pressure %></li>
-        <li>Low Pressure: <%= safety_valve_test.low_pressure %></li>
-        <li>Test Result: <%= safety_valve_test.test_result %></li>
-      </ul>
+<h4 style='margin-left: 700px; margin-top: 12px;'>Component Pressure Tests</h4>
+<div class='pres-div'>
+  <% if @pressure_test.component_pressure_tests.present? %>
+    <% @pressure_test.component_pressure_tests.each do |component_pressure_test| %>
+      <table class='press-table'>
+          <thead>
+            <tr>
+              <th><strong><%= component_pressure_test.bop_element_unit %></strong></th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong class='strong-tbl'>Component Type:</strong> <%= component_pressure_test.component_type %></td>
+              <td><strong class='strong-tbl'>Low Pressure: </strong><%= component_pressure_test.low_pressure %> psi</td>
+              <td><strong class='strong-tbl'>High Pressure: </strong><%= component_pressure_test.high_pressure %> psi</td>
+            </tr>
+            <tr>
+              <td><strong class='strong-tbl'>Open:</strong> <%= component_pressure_test.open_gallons %> gallons <%= component_pressure_test.open_time %> seconds</td>
+              <td><strong class='strong-tbl'>Close Time:</strong> <%= component_pressure_test.close_time %></td>
+              <td><strong class='strong-tbl'>Test Result:</strong> <%= component_pressure_test.test_result %></td>
+            </tr>
+          </tbody>
+        </table>
+          <% if component_pressure_test.photo.present? %>
+            <div style="text-align: center;">
+              <%= cl_image_tag component_pressure_test.photo.key, height: 600, width: 600, crop: :fill %>
+            </div>
+          <% end %>
     <% end %>
   <% end %>
+</div>
 
-  <% if @pressure_test.report_file.attached? %>
+<h4 style='margin-left: 750px; margin-top: 12px;'>Safety Valve Tests</h4>
+<div class='pres-div'>
+<% if @pressure_test.safety_valve_tests.present? %>
+  <% @pressure_test.safety_valve_tests.each do |safety_valve_test| %>
+    <table class='press-table'>
+        <thead>
+          <tr>
+            <th><strong><%= safety_valve_test.unit %> - <%= safety_valve_test.serial_number %></strong></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong class='strong-tbl'>Connection Type:</strong> <%= safety_valve_test.connection_type %></td>
+            <td><strong class='strong-tbl'>Low Pressure: </strong><%= safety_valve_test.low_pressure %> psi</td>
+            <td><strong class='strong-tbl'>High Pressure: </strong><%= safety_valve_test.high_pressure %> psi</td>
+          </tr>
+          <tr>
+            <td style='border-right: 0'><strong class='strong-tbl'>Test Result:</strong> <%= safety_valve_test.test_result %></td>
+            <td style='border-left: 0; border-right: 0;'></td>
+            <td style='border-left: 0;'></td>
+          </tr>
+        </tbody>
+      </table>
+  <% end %>
+<% end %>
+</div>
+
+<div class='pres-div'>
+<% if @pressure_test.report_file.attached? %>
     <%= cl_image_tag "#{@pressure_test.report_file.key}.jpg", flag: "attachment", height: 450, width: 300, crop: :scale %>
     <a href="https://res.cloudinary.com/dk9bhadx6/image/upload/fl_attachment/v1632486696/<%= @pressure_test.report_file.key %>.jpg">Download</a>
   <% else %>
@@ -115,7 +136,12 @@
       <%= f.input :report_file, as: :file %>
       <%= f.submit %>
     <% end %>
-  <% end %>
+<% end %>
+</div>
+
+
+<div class='tests-out'>
+
 
   <div class='container-question'>
     <div class='questionss'>
