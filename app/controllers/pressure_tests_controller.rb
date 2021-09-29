@@ -31,7 +31,6 @@ class PressureTestsController < ApplicationController
 
     @pressure_test.next_test_deadline = @pressure_test.completed_date + 21.day
     @pressure_test.user = current_user
-
     if @pressure_test.save
       @pressure_test.answers.build
       redirect_to pressure_test_path(@pressure_test), notice: "Pressure test successfully created."

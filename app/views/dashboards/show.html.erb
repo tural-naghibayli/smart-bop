@@ -1,26 +1,23 @@
+<div class='main-body'>
 
-<h1> <%=current_user.name%>, welcome to your dashboard!</h1>
-  <div class='dash'>
-    <div class='dash-all'>
-       <a class="dash-menu active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">All Tests</a>
-    </div>
-    <div class='dash-new'>
-      <p class="dash-menu active" id="pills-home-tab" style="color: white;"><%= link_to "Add a new test", new_bop_pressure_test_path(@bop)%></p>
-    </div>
+  <div class="main-nav-btn">
+  <h1 class='welcome-user'> <%=current_user.name%>, <span>welcome to your dashboard!</span></h1>
+  <div class='dash-new-test'>
+    <%= link_to "Add a new test", new_bop_pressure_test_path(@bop), class: 'new-test-btn'%>
   </div>
-<div class="tab-content" id="pills-tabContent">
-  <section>
-      <% @pressure_tests.each do |pressure_test| %>
-        <div class="dashboard-list-of-all-test table">
-          <div class='dash-all'>
-            <h4 class='card-content' style='font-size: 20px; margin: 5px;'><strong>Well Name:</strong> <%= pressure_test.well_name %></h3>
-            <h4 class='card-content' style='font-size: 20px; margin: 5px;'><strong>Completed Date:</strong> <%= pressure_test.completed_date %></h3>
-            <h4 class='card-content' style='font-size: 20px; margin: 5px;'><strong>Next test deadline: </strong><%= pressure_test.next_test_deadline %></h3>
-          </div>
-          <div class='dash-new'>
-            <button class='show-btn'><%= link_to "Show", pressure_test_path(pressure_test) %></button>
-          </div>
-        </div>
-      <% end %>
-  </section>
+  </div>
+
+  <% @pressure_tests.each do |pressure_test| %>
+    <div class="dashboard-list-of-all-test-grid">
+      <div class='dash-all-grid'>
+        <h4><strong>Well Name:  </strong><%= pressure_test.well_name%></h4>
+        <h4><strong>Completed Date:  </strong><%= pressure_test.completed_date %></h4>
+        <h4><strong>Corrective Action:  </strong><%= pressure_test.corrective_action %></h4>
+      </div>
+
+      <div class='dash-show-grid'>
+        <%= link_to "Show", pressure_test_path(pressure_test), class: 'show-btn-dashboard'%>
+      </div>
+    </div>
+  <% end %>
 </div>

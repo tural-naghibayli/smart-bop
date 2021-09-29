@@ -127,11 +127,7 @@ GEM
     msgpack (1.4.2)
     netrc (0.11.0)
     nio4r (2.5.8)
-<<<<<<< HEAD
     nokogiri (1.12.5-x86_64-darwin)
-=======
-    nokogiri (1.12.5-x86_64-linux)
->>>>>>> e7e8fea5f95f7de36b2ab1555988832474b3e261
       racc (~> 1.4)
     orm_adapter (0.5.0)
     pg (1.2.3)
@@ -253,9 +249,7 @@ GEM
     zeitwerk (2.4.2)
 
 PLATFORMS
-  x86_64-darwin-20
-  x86_64-linux
-
+  x86_64-darwin-18
 
 DEPENDENCIES
   autoprefixer-rails (= 10.2.5)

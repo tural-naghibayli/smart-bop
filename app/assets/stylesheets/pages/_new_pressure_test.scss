@@ -6,7 +6,6 @@
 //  { color: #F2F2F2; }
 
 .bg-dark-blue {
-
   padding: 50px 50px;
   margin-bottom: 20px;
   background: linear-gradient(to right, #004e92, #000428); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -14,8 +13,9 @@
 }
 
 .bg-light-blue {
+  padding-top: 20px;
   margin-bottom: 20px;
-  background: linear-gradient(to bottom, #abbaab, #ffffff);
+  background: linear-gradient(to bottom, #dce4dc, #ffffff);
 }
 
 .flexbox {
@@ -29,16 +29,112 @@
   font-weight: bold;
   text-shadow: 3px 3px #7f919036;
 }
+.last_test_heading {
+  color: #00bac7;
+  margin-left: 30px;
+  text-shadow: 3px 3px #7f919036;
+}
 
-.form_table {
-  border: 1px #0339A6 solid;
-}
-.form_question{
-  padding: 20px;
-}
 
 .main-form-pic{
   height: 300px;
   width: 400px;
-  border-radius: 25%;
+  border-radius: 30%;
+}
+
+.general_info_form{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 15px;
+  border: 2px #0339A6 solid;
+  border-radius: 2%;
+  padding: 20px;
+  margin: 10px;
+}
+
+
+.equipment_check_form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 15px;
+  border: 1px #0339A6 solid;
+  border-radius: 5%;
+  padding: 15px;
+}
+
+.equipment_check_question {
+  border-bottom: 1px dotted rgb(184, 181, 181);
+  align-items: center;
+
+}
+
+.choke_manifold_form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 15px;
+  border: 1px #0339A6 solid;
+  border-radius: 5%;
+  padding: 15px;
+}
+
+.choke_manifold_question {
+  border-bottom: 1px dotted rgb(184, 181, 181);
+  align-items: center;
+}
+
+.standpipe_manifold_form {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 15px;
+  border: 1px #0339A6 solid;
+  border-radius: 5%;
+  padding: 15px;
+}
+
+.standpipe_manifold_question {
+  border-bottom: 1px dotted rgb(184, 181, 181);
+  align-items: center;
+}
+
+
+.form-check {
+  display: inherit !important;
+}
+
+.component_test_form {
+  margin-top: 5px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+  border: 1px #0339A6 solid;
+  border-radius: 5%;
+  padding: 15px;
+
+}
+
+.component_test_question {
+  border-bottom: 1px dotted rgb(184, 181, 181);
+  align-items: center;
+}
+
+.safety_valve_test_form {
+  margin-top: 5px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+  border: 1px #0339A6 solid;
+  border-radius: 5%;
+  padding: 15px;
+
+}
+
+.safety_valve_test_question {
+  align-items: center;
+}
+
+.approval_input {
+  width: 200px;
+  border-bottom: 1px #0339A6 solid;
+  padding: 5px;
+  margin-top: 5px;
 }
