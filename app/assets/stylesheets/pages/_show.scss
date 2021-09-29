@@ -15,6 +15,7 @@
   top: 0;
   left: 0;
   background-color: #003049ff;
+  z-index: 50;
 }
 .pressure-details {
   margin-top: 4px;
@@ -184,7 +185,7 @@
 
 
 .press-table td{
-  border: 1px solid #999;
+  border: 1px solid rgb(196, 195, 195);
   padding: 8px;
 
 }
@@ -196,39 +197,44 @@
 
 
 .test-info {
-  background: #669bbcff;
-  border: 2px solid #669bbcff;
+  background: #003049ff;
+  border: 2px solid #003049ff;
   border-radius: 8px;
+  color: white;
 }
 
 .test-comp {
-  background: rgb(188, 179, 102);
-  border: 2px solid rgb(188, 179, 102);
+  background: rgb(0, 64, 99);
+  border: 2px solid rgb(0, 64, 99);
   border-radius: 8px;
+  color: white;
 }
 
 .test-safety {
-  background: rgb(172, 147, 110);
-  border: 2px solid rgb(172, 147, 110);
+  background: rgb(0, 71, 109);
+  border: 2px solid rgb(0, 71, 109);
   border-radius: 8px;
+  color: white;
 }
 
 .test-equip {
-  background: rgb(47, 112, 150);
-  border: 2px solid rgb(47, 112, 150);
+  background: rgb(0, 74, 114);
+  border: 2px solid rgb(0, 74, 114);
   border-radius: 8px;
+  color: white;
 }
 
 .test-choke {
-  background: rgb(66, 131, 109);
-  border: 2px solid rgb(66, 131, 109);
+  background: rgb(0, 88, 136);
+  border: 2px solid rgb(0, 88, 136);
   border-radius: 8px;
+  color: white;
 }
 
 .pres-div {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-bottom: 30px;
 }
 
 .strong-tbl {
