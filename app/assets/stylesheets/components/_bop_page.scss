@@ -16,12 +16,13 @@
 .bop-table-wrapper {
   display: grid;
   grid-template-rows: auto;
+  margin-top: 50px;
 }
 
 .bop-table-title {
   text-align: center;
   font-size: 35px;
-  color: $grey-two;
+  color: $prussian-blue;
   text-shadow: 1px 1px 2px black;
   margin: 10px;
 }
@@ -42,6 +43,6 @@
 }
 
 .table-head-wrapper {
-  background: $dark-grey;
+  background: $air-superiority-blue;
   border-radius: 10px;
 }
