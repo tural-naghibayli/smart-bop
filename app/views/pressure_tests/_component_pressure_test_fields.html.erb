@@ -1,4 +1,4 @@
-<div class="nested-fields">
+<div class="nested-fields nested-margin">
 
   <div class="component_test_form">
 
@@ -29,10 +29,10 @@
 
         <%= f.input :test_result,  collection: [ "Good", "Bad"] %>
         <%= f.input :photo, as: :file, class:'btn-photo' %>
-
-        <%= link_to_remove_association "remove component", f, class:"remove-button-main" %>
-        <%#= f.submit %>
-
   </div>
+
+    <%= link_to_remove_association f, class:"remove-button-main" do %>
+      <i class="far fa-trash-alt"></i>
+    <% end %>
 
 </div>
