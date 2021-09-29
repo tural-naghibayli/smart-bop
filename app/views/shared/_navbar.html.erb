@@ -1,6 +1,10 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-xspace fixed-top">
   <%= link_to root_path, class: "navbar-brand" do %>
-    <%= image_tag "bop-logo.png" %>
+      <% if request.path.include? "pressure_tests" %>
+        <%= image_tag "bop-logo-white.png" %>
+      <% else %>
+        <%= image_tag "bop-logo.png" %>
+      <% end %>
     <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
