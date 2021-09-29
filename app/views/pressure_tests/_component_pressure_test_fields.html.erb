@@ -1,22 +1,38 @@
 <div class="nested-fields">
-  <table class="form_table">
 
-    <%# <%= simple_form_for [@pressure_test, @component_pressure_test] do |f| %>
-        <%= f.input :bop_element_unit, collection: [ "Annular Preventer", "Upper Pipe ram", "Middle Pipe ram", "Lower Pipe ram", "Blind Shear Ram" ] %>
-        <%= f.input :component_type %>
-        <%= f.input :low_pressure %>
-        <%= f.input :high_pressure %>
-        <%= f.input :open_gallons %>
-        <%= f.input :open_time %>
-        <%= f.input :close_gallons %>
-        <%= f.input :close_time %>
+  <div class="component_test_form">
+
+        <div class="component_test_question">
+          <%= f.input :bop_element_unit, collection: [ "Annular Preventer", "Upper Pipe ram", "Middle Pipe ram", "Lower Pipe ram", "Blind Shear Ram" ] %>
+        </div>
+        <div class="component_test_question">
+          <%= f.input :component_type %>
+        </div>
+        <div class="component_test_question">
+          <%= f.input :low_pressure %>
+        </div>
+        <div class="component_test_question">
+          <%= f.input :high_pressure %>
+        </div>
+        <div class="component_test_question">
+          <%= f.input :open_time %>
+        </div>
+        <div class="component_test_question">
+          <%= f.input :open_gallons %>
+        </div>
+        <div class="component_test_question">
+          <%= f.input :close_time %>
+        </div>
+        <div class="component_test_question">
+          <%= f.input :close_gallons %>
+        </div>
+
         <%= f.input :test_result,  collection: [ "Good", "Bad"] %>
         <%= f.input :photo, as: :file, class:'btn-photo' %>
-        <%= link_to_remove_association "remove component", f %>
+
+        <%= link_to_remove_association "remove component", f, class:"remove-button-main" %>
         <%#= f.submit %>
-  </table>
+
+  </div>
 
 </div>
-
-<%# bop_pressure_test_component_pressure_tests POST   /bops/:bop_id/pressure_tests/:pressure_test_id/component_pressure_tests(.:format)        component_pressure_tests#create
-new_bop_pressure_test_component_pressure_test GET    /bops/:bop_id/pressure_tests/:pressure_test_id/component_pressure_tests/new(.:format)    component_pressure_tests#new %>

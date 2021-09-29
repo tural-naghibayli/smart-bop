@@ -1,0 +1,85 @@
+// grid - for dashboard
+
+.dashboard-list-of-all-test-grid {
+  background-color: white;
+  box-shadow: 1px 2px 4px 3px rgba(190, 189, 189, 0.281);
+  // position: absolute;
+  // left: 100px;
+  // top: 24%;
+  display: grid;
+  grid-template-areas: 'a b' ;
+  width: 88%;
+  border-radius: 6px;
+  height: 140px;
+  margin-left: 6%;
+  margin-top: 1%;
+
+}
+
+.dash-all-grid {
+  grid-area: a;
+  width: 760px;
+  border-top-left-radius: 6px;
+  border-end-start-radius: 6px;
+  margin: 21px;
+  strong {
+    color: rgb(41, 87, 146);
+    font-size: 20px;
+  }
+  h4 {
+  font-size: 21px;
+  color: rgb(53, 53, 53);
+}
+
+}
+
+
+.dash-show-grid {
+  grid-area: b;
+  align-items: center;
+  padding: 59px;
+  /* margin-left: 480px; */
+  position: absolute;
+  left: 84%;
+}
+.show-btn-dashboard {
+  text-decoration: none;
+  border-radius: 6px;
+  padding: 12px;
+  color: rgb(41, 87, 146);
+  background-color: rgb(255, 255, 255);
+  box-shadow: 1px 1px 4px 6px rgba(168, 168, 168, 0.062);
+}
+
+.show-btn-dashboard:hover {
+  text-decoration: none;
+  color: rgb(255, 136, 136);
+}
+
+.welcome-user {
+  padding-bottom: 2%;
+  font-size: 29px;
+  color: rgb(41, 87, 146);
+  span {
+    color: rgb(65, 65, 65);
+  }
+}
+
+.new-test-btn {
+  color: rgb(190, 49, 49);
+  background-color: rgb(255, 255, 255);
+  padding: 11px;
+  border-radius: 6px;
+  box-shadow: 1px 2px 4px 3px rgba(224, 224, 224, 0.349);
+
+  &:hover {
+    text-decoration: none;
+    color: rgb(41, 87, 146);
+  }
+
+}
+.main-nav-btn {
+  padding-left: 75px;
+  margin-left: 30px;
+  padding-bottom: 15px;
+}

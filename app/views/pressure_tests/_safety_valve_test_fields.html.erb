@@ -1,12 +1,28 @@
 
 <div class="nested-fields">
-<%#= simple_form_for [@pressure_test, @safety_valve_test] do |f| %>
-    <%= f.input :unit, collection: [ "TIW valve", "Auto IBOP", "Manual IBOP", "Grey Valve" ] %>
-    <%= f.input :serial_number %>
-    <%= f.input :connection_type %>
-    <%= f.input :high_pressure %>
-    <%= f.input :low_pressure %>
-    <%= f.input :test_result,  collection: [ "Good", "Bad"] %>
-    <%= link_to_remove_association "remove Safety valve", f %>
-    <%#= f.submit %>
-<%# end %>
+
+  <div class="safety_valve_test_form">
+    
+    <div class="safety_valve_test_question">
+      <%= f.input :unit, collection: [ "TIW valve", "Auto IBOP", "Manual IBOP", "Grey Valve" ] %>
+    </div>
+    <div class="safety_valve_test_question">
+      <%= f.input :serial_number %>
+    </div>
+    <div class="safety_valve_test_question">
+      <%= f.input :connection_type %>
+    </div>
+    <div class="safety_valve_test_question">
+      <%= f.input :high_pressure %>
+    </div>
+    <div class="safety_valve_test_question">
+      <%= f.input :low_pressure %>
+    </div>
+    <div class="safety_valve_test_question">
+      <%= f.input :test_result,  collection: [ "Good", "Bad"] %>
+    </div>
+    <div>
+      <%= link_to_remove_association "remove Safety valve", f, class:"remove-button-main" %>
+    </div>
+  </div>
+</div>
