@@ -1,53 +1,67 @@
-// Specific CSS for your home-page
+// Global styling
 .container-home-page {
-  width: 100vw;
+  width: 100%;
   height: auto;
+  font-family: $body-font;
+}
+    .red-header {
+      color: $red-light;
+    }
+    .blue-header {
+      color: $blue-prussian;
+}
+.wwd-50-radius-images {
+  margin-top: -65px;
+  margin-left: 32%;
+  align-content: center;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+// Main banner for picture
+.banner{
+  width: 100vw;
+  height: 550px;
 }
 .main-page-pic {
-  position: absolute;
-  width: 500px;
-  height: 450px;
+  width: 100%;
+  height: 97.4vh;
   object-fit: cover;
-  // right: 120px;
-  left: 900px;
-  top: 210px;
-
+  position: absolute;
+  top: -3%;
 }
 
+// Heading of Main banner
 .main-text {
-  position: absolute;
-width: 482px;
-height: 90px;
-left: 140px;
-top: 310px;
+  position:relative;
+  margin-left: 8%;
+  margin-top: 16%;
 
-font-family: Roboto;
-font-style: normal;
-font-weight: 500;
-font-size: 46px;
-line-height: 54px;
-/* identical to box height */
-
-
-color: #1D1D1D;
+  font-weight: 500;
+  font-size: 2.5rem;
+  line-height: 52px;
+  color: #ffffff;
+  font-family: $body-font;
 }
 
+// Paraghrap of Main banner
 .main-paragraph{
-  position: absolute;
-width: 600px;
-height: 146px;
-left: 140px;
-top: 390px;
+  position:relative;
+  margin-left: 8%;
+  margin-top: 1%;
 
-font-family: Roboto;
-font-style: normal;
-font-weight: normal;
-font-size: 32px;
-line-height: 42px;
+  width: 600px;
+  height: 146px;
 
-color: #4F4F4F;
+  font-size: 25px;
+  font-weight: 200;
+  line-height: 42px;
+  color: #ffffff;
 }
 
+// Button in the main banner
 .main-button {
   width: 160px;
   height: 40px;
@@ -58,277 +72,262 @@ color: #4F4F4F;
   border: none;
   position: absolute;
   font-size: 18px;
-  background-color: rgb(209, 62, 62);
+  background-color: rgb(255, 255, 255);
   border-radius: 17px;
-  color: #ffffff;
+  color: #414040;
+  font-family: $body-font;
+  font-weight: 400;
 
 }
 
+// Exisisting account - sign in tex
 .existing-account {
   position: absolute;
-  width: 260px;
-  height: 40px;
-  right: 1370px;
   left: 140px;
   top: 620px;
+  color: white;
+  font-family: $body-font;
+  font-weight: 200;
   strong {
-    color: rgb(209, 62, 62);
+    color: rgb(255, 255, 255);
+    font-family: $body-font;
   }
 }
 
-
-
-//the about section start here
-
-//pic area
-.main-about-pic-home {
-  width: 400px;
-}
-
-.main-about-pic-box-home {
-  width: 350px;
-  height: 330px;
+.fade-box-for-banner {
   position: absolute;
-  left: 200px;
-  top: 1500px;
-}
+  top: -1px;
+  width: 59vw;
+  height: 94.5vh;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,0,0,0.6292892156862745) 56%, rgba(20,20,20,0) 100%);}
 
-// pic area ends
-
-.about-main-text-home {
-  width: 600px;
-  height: 190px;
-  position: absolute;
-  left: 660px;
-  top: 1600px;
-  border-left: red;
-  border-width: 0px;
-  text-align: justify;
-}
-
-
-.about-main-paragraph-home {
-  color: gray;
-  font-size: 20px;
-  font-weight: 250;
-
-  margin-top: 9px;
-  line-height: 27px;
-}
-
-.main-header-about-page-home {
-  height: 570px;
-  width: 100vw;
-}
-// what we do area
-
-.what-we-do-text-2header-home {
-   height: 30px;
-  width: auto;
-  color: #c41010;
+// what we do header
+.what-we-do-header {
   text-align: center;
-  margin-top: 0px;
-  position: absolute;
-  left: 42%;
-  top: 790px;
-
 }
-.what-we-do-text-home {
-
-  margin-top: -25px;
-}
-// Record area
-.wwdo-active-data-record-home {
-  position: absolute;
-  top: 830px;
-  left: 135px;
-  width: 1400px;
-  height: 150px;
-  /* margin-top: 0px; */
-  box-shadow: 2px 10px 19px -1px rgba(128, 128, 128, 0.22);
-  background-color: white;
-}
-.live-track-image-home {
-  width: 145px;
-  position: relative;
-  top: 1px;
-  left: 27px;
+.wwd-header-text {
+  font-family: $body-font;
+  margin-top: 10px;
+  font-size: 2.2rem;
+  font-weight: 600;
 }
 
-.info-wwdo-live-track-home {
-  position: relative;
-  // left: 210px;
-  margin-top: -110px;
-}
+// what we do column grid main
 
-// Online form area
-
-.wwdo-onlone-form-home {
-  position: absolute;
-  left: 135px;
-  width: 1400px;
-  height: 150px;
-  top: 1020px;
-  box-shadow: 2px 10px 19px -1px rgba(128, 128, 128, 0.22);
-  background-color: white;
-
-}
-.online-form-image-home {
-  width: 110px;
-  position: relative;
-  top: 19px;
-  left: 37px;
-}
-
-.info-wwdo-online-form-home {
-  position: relative;
-  // left: 210px;
-  margin-top: -70px;
-}
-// Work flow area
-
-
-.info-wwdo-work-flow-home {
-  position: relative;
-  margin-left: 30px;
-  // left: 210px;
-  margin-top: -70px;
-}
-
-.footer-about-us-home {
-  position: absolute;
-  // top: 1920px;
+.wwd-main-grid {
   width: 100vw;
-  height: 50px;
-  background-color: #1a52a5;
-  h2 {
-    position: relative;
-    margin: 20px;
-    font-size: 18px;
+  height: 57vh;
+  align-content: center;
+  justify-content: center;
+  place-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 3%;
+
+
+  // Live track col
+  .live-track-col {
+    width: 23vw;
+    height: 40vh;
+    background: rgb(6,0,101);
+    background: linear-gradient(135deg, rgba(0,35,111,1) 0%, rgba(220,0,14,0.8841911764705882) 100%);
+    box-shadow: rgba(50, 50, 93, 0.322) 0px 30px 60px -12px inset, rgba(44, 44, 44, 0.288) 0px 18px 36px -18px inset;
+    text-align: center;
+    margin-left: 13%;
     color: white;
+    border-radius: 20px;
+    .give-margin-class {
+      font-size: 20px;
+      font-weight: 600;
+      margin-top: 30px;
+    }
+    .give-margin-class-p{
+      margin-top: 15px;
+      margin-left: 60px;
+      margin-right: 60px;
+      text-align: justify;
+
+      font-family: $body-font;
+      font-size: 1.1rem;
+      font-weight: 200;
+    }
+
+    h6{font-family: $body-font;}
+    strong {font-family: $body-font;}
+    .wwd-live-track-image {
+      margin-top: 30px;
+      width: 75px;
+      height: 75px;
+      object-fit: cover;
+    }
+  }
+
+  // workflow col
+  .work-flow-col {
+    width: 23vw;
+    height: 40vh;
+    color: white;
+    background: rgb(6,0,101);
+    background: linear-gradient(135deg, rgba(0,35,111,1) 0%, rgba(220,0,14,0.8841911764705882) 100%);
+    box-shadow: rgba(50, 50, 93, 0.322) 0px 30px 60px -12px inset, rgba(44, 44, 44, 0.288) 0px 18px 36px -18px inset;
+    text-align: center;
+    margin-left: 13%;
+    border-radius: 20px;
+    .give-margin-class {
+      font-size: 20px;
+      font-weight: 600;
+      margin-top: 30px;
+    }
+    .give-margin-class-p{
+      margin-top: 15px;
+      margin-left: 60px;
+        margin-right: 60px;
+
+        text-align: justify;
+        font-family: $body-font;
+        font-size: 1.1rem;
+        font-weight: 200;
+      }
+      h6{font-family: $body-font;}
+      strong {font-family: $body-font;}
+      .wwd-workflow-image {
+        margin-top: 35px;
+        width: 70px;
+        height: 70px;
+        object-fit: cover;
+      }
+  }
+
+  // online form col
+  .online-form-col {
+    width: 23vw;
+    height: 40vh;
+    color: white;
+    background: rgb(6,0,101);
+    background: linear-gradient(135deg, rgba(0,35,111,1) 0%, rgba(220,0,14,0.8841911764705882) 100%);
+    box-shadow: rgba(50, 50, 93, 0.322) 0px 30px 60px -12px inset, rgba(44, 44, 44, 0.288) 0px 18px 36px -18px inset;
+    text-align: center;
+    margin-left: 13%;
+    border-radius: 20px;
+
+      .give-margin-class {
+        font-size: 20px;
+        font-weight: 600;
+        margin-top: 30px;
+      }
+      .give-margin-class-p{
+        margin-top: 15px;
+        margin-left: 60px;
+        margin-right: 60px;
+
+        text-align: justify;
+        font-family: $body-font;
+        font-size: 1.1rem;
+        font-weight: 200;
+      }
+      h6{font-family: $body-font;}
+      strong {font-family: $body-font;}
+      .wwd-online-from-image {
+        margin-top: 30px;
+        width: 75px;
+        height: 75px;
+        object-fit: cover;
+      }
   }
 }
 
-.blue-header-text {
-  color: #1a52a5;
-  strong {
-    font-size: 19px;
+// What is BOP area
+.what-is-bop-banner-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  margin-top: 3%;
+  width: 100vw;
+  height: 50vh;
+  .wibop-give-margin-class {
+        font-size: 20px;
+        font-weight: 600;
+        font-size: 2.2rem;
+        font-family: $body-font;
+      }
+      .wibop-give-margin-class-p{
+
+        text-align: justify;
+        font-family: $body-font;
+        font-size: 1.1rem;
+        font-weight: 200;
+      }
+
+.wibop-text-area {
+  width: 35vw;
+  height: 130px;
+  margin-top: 12%;
+  margin-left: 22%;
+}
+
+.wibop-image-box{
+  width: 30vw;
+  height: 30vh;
+  margin-left: 5%;
+}
+
+}
+
+
+// Lets make history Styling
+.make-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.lets-make-history-banner {
+  width: 100vw;
+  height: 500px
+}
+
+.lmh-icon-image {
+  width: 600px;
+  height: 480px;
+  object-fit: cover;
+  margin-left: 90px;
+}
+.lmh-paragraph{
+  width: 700px;
+  height: 400;
+  margin-top: 160px;
+  margin-left: -70px;
+  font-family: $body-font;
+
+  .lmh-give-margin-header {
+    font-size: 20px;
+    font-weight: 600;
+    font-size: 2.2rem;
+    font-family: $body-font;
   }
-}
-// grid - for active record card
-.wwdo-active-data-record-home-grid {
-  background-color: rgb(255, 255, 255);
-  box-shadow: 1px 1px 4px 6px rgba(190, 189, 189, 0.281);
-  position: absolute;
-  left: 200px;
-  top: 870px;
-  display: grid;
-  grid-template-areas:
-                        'a b'
-                    ;
-  width: 80%;
-  border-radius: 6px;
-  // margin-bottom: 30px;
-  height: 140px;
 
-}
-
-.live-track-image-home-grid {
-  grid-area: a;
-  width: 123px;
-  border-top-left-radius: 6px;
-  border-end-start-radius: 6px;
-
-}
-
-.info-wwdo-live-track-home-grid {
-  grid-area: b;
-  align-items: center;
-  padding: 0px;
-  margin-top: 40px;
-  margin-left: -110px;
-}
-
-// grid - for online form
-
-.wwdo-online-form-home-grid {
-  background-color: rgb(255, 255, 255);
-  box-shadow: 1px 1px 4px 6px rgba(190, 189, 189, 0.281);
-  position: absolute;
-  left: 200px;
-  top: 1090px;
-  display: grid;
-  grid-template-areas:
-                        'a b'
-                    ;
-  width: 80%;
-  border-radius: 6px;
-  // margin-bottom: 30px;
-  height: 140px;
-
-}
-
-.online-form-image-home-grid {
-  grid-area: a;
-  width: 100px;
-  border-top-left-radius: 6px;
-  border-end-start-radius: 6px;
-  margin: 23px;
-
-}
-
-.info-wwdo-online-form-home-grid {
-  grid-area: b;
-  align-items: center;
-  padding: 0px;
-  margin-left: -186px;
-  margin-top: 30px;
-}
-
-// grid - for workflow
-
-.wwdo-work-flow-home-grid {
-  background-color: rgb(255, 255, 255);
-  box-shadow: 1px 1px 4px 6px rgba(190, 189, 189, 0.281);
-  position: absolute;
-  left: 200px;
-  top: 1300px;
-  display: grid;
-  grid-template-areas:
-                        'a b'
-                    ;
-  width: 80%;
-  border-radius: 6px;
-  // margin-bottom: 30px;
-  height: 140px;
-
-}
-
-.work-flow-image-home-grid {
-  grid-area: a;
-  width: 100px;
-  border-top-left-radius: 6px;
-  border-end-start-radius: 6px;
-  margin: 23px;
-
-}
-
-
-.info-wwdo-work-flow-home-grid {
-  grid-area: b;
-  align-items: center;
-  padding: 0px;
-  margin-top: 29px;
+  .lmh-give-margin-header-p{
+    text-align: justify;
+    font-family: $body-font;
+    font-size: 1.1rem;
+    font-weight: 200;
+  }
 }
 
 // footer area
 
-.footer-about-us-home {
-  position: absolute;
-  top: 1900px;
-}
-
-
-.red-header-text-bg-home {
-  color: rgb(207, 69, 69);
+.footer-home-page {
+  width: 100vw;
+  height: 45px;
+  background: linear-gradient(135deg, rgba(0,35,111,1) 0%, rgba(220,0,14,0.8841911764705882) 100%);
+  font-family: $body-font;
+  margin-top: 2%;
+  .footer-text {
+    font-family: $body-font;
+    font-size: 1rem;
+    font-weight: 200;
+    color: white;
+    padding-top: 15px;
+    padding-left: 40px;
+  }
 }
