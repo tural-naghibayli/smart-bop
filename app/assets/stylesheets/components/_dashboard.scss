@@ -8,12 +8,11 @@
   // top: 24%;
   display: grid;
   grid-template-areas: 'a b' ;
-  width: 88%;
+  width: 70%;
   border-radius: 6px;
   height: 140px;
-  margin-left: 6%;
+  margin-left: 16%;
   margin-top: 1%;
-
 }
 
 .dash-all-grid {
@@ -22,13 +21,13 @@
   border-top-left-radius: 6px;
   border-end-start-radius: 6px;
   margin: 21px;
-  strong {
-    color: rgb(41, 87, 146);
-    font-size: 20px;
-  }
-  h4 {
-  font-size: 21px;
-  color: rgb(53, 53, 53);
+    strong {
+      color: rgb(41, 87, 146);
+      font-size: 20px;
+    }
+    h4 {
+    font-size: 21px;
+    color: rgb(53, 53, 53);
 }
 
 }
@@ -39,8 +38,8 @@
   align-items: center;
   padding: 59px;
   /* margin-left: 480px; */
-  position: absolute;
-  left: 84%;
+  //position: absolute;
+  //left: 84%;
 }
 .show-btn-dashboard {
   text-decoration: none;
@@ -80,6 +79,7 @@
 }
 .main-nav-btn {
   padding-left: 75px;
-  margin-left: 30px;
+  margin-left: 10.5%;
   padding-bottom: 15px;
+  margin-top: 7em;
 }
