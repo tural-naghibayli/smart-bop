@@ -38,8 +38,8 @@
   <table class='press-table'>
     <thead class='test-info'>
       <tr>
+        <th><h4>Pressure Test Information</h4></th>
         <th></th>
-        <th style='text-align: center;'><h4>Pressure Test Information</h4></th>
         <th></th>
       </tr>
     </thead>
@@ -105,7 +105,9 @@
   <% end %>
 
 
-<h4 style='margin-left: 470px; margin-top: 10px;'>Safety Valve Tests</h4>
+<div class=‘pres-div2’>
+  <h4 style=‘margin-left: 55px’>Safety Valve Tests</h4>
+</div>
 
 <% if @pressure_test.safety_valve_tests.present? %>
   <% @pressure_test.safety_valve_tests.each do |safety_valve_test| %>
