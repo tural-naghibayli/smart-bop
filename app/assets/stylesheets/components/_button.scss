@@ -1,6 +1,6 @@
 .add-button-main {
   border: 1px solid $blue;
-  border-radius: 6px;
+  border-radius: 9px;
   background-color: $blue;
   font-family: 'Roboto Condensed', sans-serif;
   color: $white-grey;
@@ -15,7 +15,7 @@
 }
 .remove-button-main {
   border: 1px solid $dark-red;
-  border-radius: 6px;
+  border-radius: 9px;
   background-color: $dark-red;
   font-family: "Roboto Condensed";
   color: $white-grey;
@@ -30,8 +30,8 @@
 }
 
 .create-test-button {
+  border-radius: 9px;
   border: 1px solid $blue;
-  border-radius: 6px;
   background-color: $blue;
   font-family: 'Roboto Condensed', sans-serif;
   color: $white-grey;

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-  get 'about', to: 'pages#about'
+  # get 'about', to: 'pages#about' in future if we needed about page
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   resources :bops, only: [:index]
