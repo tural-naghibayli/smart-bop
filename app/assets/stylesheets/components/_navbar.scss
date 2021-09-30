@@ -4,10 +4,9 @@ $dark-gblue: #57758D;
   position: relative;
   z-index: 10;
   position: sticky;
-  background-color: transparent;
-  transition: 0.1s background-color ease;
   top: 0;
-  height: 80px;
+  height: 60px;
+  margin-bottom: 20px;
 }
 .navbar-xspace-white {
   background-color: white;
@@ -46,4 +45,8 @@ $dark-gblue: #57758D;
 
 #nav-text:hover {
   color: rgb(59, 117, 192);
+}
+
+.margin-top-spacing {
+  margin-top: 5rem;
 }

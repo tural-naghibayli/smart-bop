@@ -5,9 +5,8 @@
     <h4><%= current_user.rig.name %></h4>
     <p class='staff-position'><%= current_user.position %></p>
     <div class='bop-serial'>
-      <h5>BOP serial number: <%= Bop.find(@pressure_test.bop_id).serial_number %></h5>
-      <h5><strong>Pressure Test Details</strong></h5>
-      <p>___________________________</p>
+      <h5><strong>BOP Test History</strong></h5>
+      <p>____________________________________________</p>
     </div>
   </div>
   <div class='pressure-details'>
@@ -15,7 +14,7 @@
     <p> <strong class='strong'>Completed Date:</strong> <%= @pressure_test.completed_date %></p>
     <p> <strong class='strong-next'>Next Test Deadline:</strong> <%= @pressure_test.next_test_deadline %></p>
   </div>
-  <p style='text-align: center; color: white; margin-bottom: 0;'><u>Approval Status</u></p>
+  <p style='text-align: center; color: #fdf0d5ff; margin-bottom: 0;'><u>Approval Status</u></p>
   <div class="container-appr">
     <% @pressure_test.approvals.each do |appr| %>
         <div class="appr-name"><%= appr.user.name %></div>
@@ -36,24 +35,29 @@
 </div>
 
 <div class='pres-div'>
-<table class='press-table'>
-    <thead>
+  <table class='press-table'>
+    <thead class='test-info'>
       <tr>
-        <th>Pressure Test</th>
         <th></th>
+        <th style='text-align: center;'><h4>Pressure Test Information</h4></th>
         <th></th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td><strong class='strong-tbl'>Well Name:</strong>   <%= @pressure_test.well_name %></td>
-        <td style='border-right: 0;'><strong class='strong-tbl'>Serial Number Chart Recorded:</strong>   <%= @pressure_test.serial_number_chart_recorded %></td>
-        <td style='border-left: 0;'></td>
+        <td><strong class='strong-tbl'>Chart Recorder S/N:</strong>   <%= @pressure_test.serial_number_chart_recorded %></td>
+        <td><strong class='strong-tbl'>BOP S/N:</strong> <%= Bop.find(@pressure_test.bop_id).serial_number %></td>
       </tr>
       <tr>
         <td><strong class='strong-tbl'>Test Fluid:</strong>   <%= @pressure_test.test_fluid %></td>
-        <td><strong class='strong-tbl'>Corrective Action:</strong>   <%= @pressure_test.corrective_action %></td>
-        <td><strong class='strong-tbl'>Drill Pipe Diameter:</strong> <%= @pressure_test.drill_pipe_diameter %></td>
+        <td style='border-right:0;'><strong class='strong-tbl'>Drill Pipe Diameter:</strong> <%= @pressure_test.drill_pipe_diameter %></td>
+        <td style='border-left: 0;'></td>
+      </tr>
+      <tr>
+        <td style='border-right: 0;'><strong class='strong-tbl'>Corrective Action:</strong>   <%= @pressure_test.corrective_action %></td>
+        <td style='border-left: 0; border-right:0;'></td>
+        <td style='border-left: 0;'></td>
       </tr>
       <tr>
         <td style='border-right: 0;'><strong class='strong-tbl'>Comment:</strong><%= @pressure_test.comment %></td>
@@ -64,148 +68,284 @@
   </table>
 </div>
 
-<h4 style='margin-left: 700px; margin-top: 12px;'>Component Pressure Tests</h4>
-<div class='pres-div'>
+<h4 style='margin-left: 470px; margin-top: 10px;'>Component Pressure Tests</h4>
+
   <% if @pressure_test.component_pressure_tests.present? %>
     <% @pressure_test.component_pressure_tests.each do |component_pressure_test| %>
+    <div class='pres-div'>
       <table class='press-table'>
-          <thead>
-            <tr>
-              <th><strong><%= component_pressure_test.bop_element_unit %></strong></th>
-              <th></th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong class='strong-tbl'>Component Type:</strong> <%= component_pressure_test.component_type %></td>
-              <td><strong class='strong-tbl'>Low Pressure: </strong><%= component_pressure_test.low_pressure %> psi</td>
-              <td><strong class='strong-tbl'>High Pressure: </strong><%= component_pressure_test.high_pressure %> psi</td>
-            </tr>
-            <tr>
-              <td><strong class='strong-tbl'>Open:</strong> <%= component_pressure_test.open_gallons %> gallons <%= component_pressure_test.open_time %> seconds</td>
-              <td><strong class='strong-tbl'>Close Time:</strong> <%= component_pressure_test.close_time %></td>
-              <td><strong class='strong-tbl'>Test Result:</strong> <%= component_pressure_test.test_result %></td>
-            </tr>
-          </tbody>
-        </table>
-          <% if component_pressure_test.photo.present? %>
-            <div style="text-align: center;">
-              <%= cl_image_tag component_pressure_test.photo.key, height: 600, width: 600, crop: :fill %>
-            </div>
-          <% end %>
-    <% end %>
-  <% end %>
-</div>
-
-<h4 style='margin-left: 750px; margin-top: 12px;'>Safety Valve Tests</h4>
-<div class='pres-div'>
-<% if @pressure_test.safety_valve_tests.present? %>
-  <% @pressure_test.safety_valve_tests.each do |safety_valve_test| %>
-    <table class='press-table'>
-        <thead>
+        <thead class='test-comp'>
           <tr>
-            <th><strong><%= safety_valve_test.unit %> - <%= safety_valve_test.serial_number %></strong></th>
+            <th><strong><%= component_pressure_test.bop_element_unit %></strong></th>
             <th></th>
             <th></th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td><strong class='strong-tbl'>Connection Type:</strong> <%= safety_valve_test.connection_type %></td>
-            <td><strong class='strong-tbl'>Low Pressure: </strong><%= safety_valve_test.low_pressure %> psi</td>
-            <td><strong class='strong-tbl'>High Pressure: </strong><%= safety_valve_test.high_pressure %> psi</td>
+            <td><strong class='strong-tbl'>Type:</strong> <%= component_pressure_test.component_type %></td>
+            <td><strong class='strong-tbl'>Low Pressure: </strong><%= component_pressure_test.low_pressure %> psi</td>
+            <td><strong class='strong-tbl'>High Pressure: </strong><%= component_pressure_test.high_pressure %> psi</td>
           </tr>
           <tr>
-            <td style='border-right: 0'><strong class='strong-tbl'>Test Result:</strong> <%= safety_valve_test.test_result %></td>
-            <td style='border-left: 0; border-right: 0;'></td>
-            <td style='border-left: 0;'></td>
+            <td><strong class='strong-tbl'>Open:</strong> <%= component_pressure_test.open_gallons %> gallons, <%= component_pressure_test.open_time %> seconds</td>
+            <td><strong class='strong-tbl'>Close:</strong> <%= component_pressure_test.close_gallons %> gallons, <%= component_pressure_test.close_time %> seconds</td>
+            <td><strong class='strong-tbl'>Test Result:</strong> <%= component_pressure_test.test_result %></td>
           </tr>
         </tbody>
-      </table>
+        </table>
+      </div>
+          <% if component_pressure_test.photo.present? %>
+            <div style="margin-left: 40%; margin-top: 20px;">
+              <%= cl_image_tag component_pressure_test.photo.key, height: 600, width: 600, crop: :fill %>
+            </div>
+          <% end %>
+
+    <% end %>
+  <% end %>
+
+
+<h4 style='margin-left: 470px; margin-top: 10px;'>Safety Valve Tests</h4>
+
+<% if @pressure_test.safety_valve_tests.present? %>
+  <% @pressure_test.safety_valve_tests.each do |safety_valve_test| %>
+  <div class='pres-div'>
+    <table class='press-table'>
+      <thead class='test-safety'>
+        <tr>
+          <th><strong><%= safety_valve_test.unit %> - <%= safety_valve_test.serial_number %></strong></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong class='strong-tbl'>Connection Type:</strong> <%= safety_valve_test.connection_type %></td>
+          <td><strong class='strong-tbl'>Low Pressure: </strong><%= safety_valve_test.low_pressure %> psi</td>
+          <td><strong class='strong-tbl'>High Pressure: </strong><%= safety_valve_test.high_pressure %> psi</td>
+        </tr>
+        <tr>
+          <td style='border-right: 0'><strong class='strong-tbl'>Test Result:</strong> <%= safety_valve_test.test_result %></td>
+          <td style='border-left: 0; border-right: 0;'></td>
+          <td style='border-left: 0;'></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
   <% end %>
 <% end %>
+
+
+<div class='pres-div'>
+  <table class='press-table'>
+    <thead class='test-equip'>
+      <tr>
+        <th><strong>Equipment Checks</strong></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <% Question.where(category:"Equipment Checks").each_with_index  do |quest,index| %>
+        <%if index == 0 %><td><strong class='strong-tbl'><%= quest.name %>  </strong>
+          <%if quest.answers.first.value == 'Yes'%>
+            <i class="fas fa-check fa-lg text-success"></i>
+          <%elsif quest.answers.first.value == 'No'%>
+            <i class="fas fa-times fa-lg text-danger"></i>
+          <% else %>
+            <%= quest.answers.first.value %>
+          <% end %>
+        </td>
+        <% end %>
+        <%if index == 1 %><td><strong class='strong-tbl'><%= quest.name %>  </strong>
+          <%if quest.answers.first.value == 'Yes'%>
+            <i class="fas fa-check fa-lg text-success"></i>
+          <%elsif quest.answers.first.value == 'No'%>
+            <i class="fas fa-times fa-lg text-danger"></i>
+          <% else %>
+            <%= quest.answers.first.value %>
+          <% end %>
+        </td>
+        <% end %>
+        <% end %>
+      </tr>
+      <tr>
+      <% Question.where(category:"Equipment Checks").each_with_index  do |quest,index| %>
+        <%if index == 2 %><td><strong class='strong-tbl'><%= quest.name %> </strong>
+          <%if quest.answers.first.value == 'Yes'%>
+            <i class="fas fa-check fa-lg text-success" ></i>
+          <%elsif quest.answers.first.value == 'No'%>
+            <i class="fas fa-times fa-lg text-danger"></i>
+          <% else %>
+            <%= quest.answers.first.value %>
+          <% end %>
+        </td>
+        <% end %>
+        <%if index == 5 %><td><strong class='strong-tbl'><%= quest.name %> </strong>
+          <%if quest.answers.first.value == 'Yes'%>
+            <i class="fas fa-check fa-lg text-success" ></i>
+          <%elsif quest.answers.first.value == 'No'%>
+            <i class="fas fa-times fa-lg text-danger"></i>
+          <% else %>
+            <%= quest.answers.first.value %>
+          <% end %>
+        </td>
+        <% end %>
+      <% end %>
+      </tr>
+      <tr>
+        <% Question.where(category:"Equipment Checks").each_with_index  do |quest,index| %>
+        <%if index == 3 %><td><strong class='strong-tbl'><%= quest.name %> </strong>
+          <%if quest.answers.first.value == 'Yes'%>
+            <i class="fas fa-check fa-lg text-success" ></i>
+          <%elsif quest.answers.first.value == 'No'%>
+            <i class="fas fa-times fa-lg text-danger"></i>
+          <% else %>
+            <%= quest.answers.first.value %>
+          <% end %>
+        </td>
+        <% end %>
+        <%if index == 4 %><td><strong class='strong-tbl'><%= quest.name %> </strong>
+          <%if quest.answers.first.value == 'Yes'%>
+            <i class="fas fa-check fa-lg text-success" ></i>
+          <%elsif quest.answers.first.value == 'No'%>
+            <i class="fas fa-times fa-lg text-danger"></i>
+          <% else %>
+            <%= quest.answers.first.value %>
+          <% end %>
+        </td>
+        <% end %>
+        <% end %>
+      </tr>
+      <tr>
+        <% Question.where(category:"EquipmentCheckBypassNormal").each  do |quest| %>
+        <td><strong class='strong-tbl'><%= quest.name %>:</strong> <%= quest.answers.first.value %></td>
+        <% end %>
+        <% Question.where(category:"ManifoldPressure").each  do |quest| %>
+        <td><strong class='strong-tbl'><%= quest.name %>:</strong> <%= quest.answers.first.value %></td>
+        <% end %>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class='pres-div'>
+  <table class='press-table'>
+    <thead class='test-choke'>
+      <tr>
+        <th><strong>Choke Manifold Checks</strong></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <% Question.where(category:"Choke Manifold").each_with_index  do |quest,index| %>
+        <%if index == 0 %><td><strong class='strong-tbl'><%= quest.name %> </strong>
+          <%if quest.answers.first.value == 'Yes'%>
+            <i class="fas fa-check fa-lg text-success" ></i>
+          <%elsif quest.answers.first.value == 'No'%>
+            <i class="fas fa-times fa-lg text-danger"></i>
+          <% else %>
+            <%= quest.answers.first.value %>
+          <% end %>
+        </td>
+        <% end %>
+        <%if index == 1 %><td><strong class='strong-tbl'><%= quest.name %> </strong>
+          <%if quest.answers.first.value == 'Yes'%>
+            <i class="fas fa-check fa-lg text-success" ></i>
+          <%elsif quest.answers.first.value == 'No'%>
+            <i class="fas fa-times fa-lg text-danger"></i>
+          <% else %>
+            <%= quest.answers.first.value %>
+          <% end %>
+        </td>
+        <% end %>
+        <%if index == 2 %><td><strong class='strong-tbl'><%= quest.name %> </strong>
+          <%if quest.answers.first.value == 'Yes'%>
+            <i class="fas fa-check fa-lg text-success" ></i>
+          <%elsif quest.answers.first.value == 'No'%>
+            <i class="fas fa-times fa-lg text-danger"></i>
+          <% else %>
+            <%= quest.answers.first.value %>
+          <% end %>
+        </td>
+        <% end %>
+        <% end %>
+      </tr>
+      <tr>
+        <% Question.where(category:"Choke Manifold").each_with_index  do |quest,index| %>
+        <%if index == 3 %><td><strong class='strong-tbl'><%= quest.name %> </strong>
+          <%if quest.answers.first.value == 'Yes'%>
+            <i class="fas fa-check fa-lg text-success" ></i>
+          <%elsif quest.answers.first.value == 'No'%>
+            <i class="fas fa-times fa-lg text-danger"></i>
+          <% else %>
+            <%= quest.answers.first.value %>
+          <% end %>
+        </td>
+        <% end %>
+        <% end %>
+        <% Question.where(category:"Pressure Input Choke Manifold").each_with_index  do |quest| %>
+        <td style='border-right: 0;'><strong class='strong-tbl'><%= quest.name %>:</strong> <%= quest.answers.first.value %></td>
+        <% end %>
+        <td style='border-left: 0;'></td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
 <div class='pres-div'>
-<% if @pressure_test.report_file.attached? %>
+  <table class='press-table'>
+    <thead class='test-choke'>
+      <tr>
+        <th><strong>Standpipe Manifold Checks</strong></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <% Question.where(category:"Standpipe Manifold").each_with_index  do |quest,index| %>
+        <%if index == 0 %><td><strong class='strong-tbl'><%= quest.name %> </strong>
+          <%if quest.answers.first.value == 'Yes'%>
+            <i class="fas fa-check fa-lg text-success" ></i>
+          <%elsif quest.answers.first.value == 'No'%>
+            <i class="fas fa-times fa-lg text-danger"></i>
+          <% else %>
+            <%= quest.answers.first.value %>
+          <% end %>
+        </td>
+        <% end %>
+        <%if index == 1 %><td><strong class='strong-tbl'><%= quest.name %> </strong>
+        <%if quest.answers.first.value == 'Yes'%>
+        <i class="fas fa-check fa-lg text-success" ></i>
+        <%elsif quest.answers.first.value == 'No'%>
+        <i class="fas fa-times fa-lg text-danger"></i>
+        <% else %>
+        <%= quest.answers.first.value %>
+        <% end %>
+        </td>
+        <% end %>
+        <% end %>
+        <% Question.where(category:"Pressure Input Standpipe Manifold").each  do |quest| %>
+        <td><strong class='strong-tbl'><%= quest.name %>:</strong> <%= quest.answers.first.value %></td>
+        <% end %>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class='report-file-div'>
+  <% if @pressure_test.report_file.attached? %>
     <%= cl_image_tag "#{@pressure_test.report_file.key}.jpg", flag: "attachment", height: 450, width: 300, crop: :scale %>
+    <br>
     <a href="https://res.cloudinary.com/dk9bhadx6/image/upload/fl_attachment/v1632486696/<%= @pressure_test.report_file.key %>.jpg">Download</a>
   <% else %>
     <%= simple_form_for @pressure_test do |f| %>
       <%= f.input :report_file, as: :file %>
       <%= f.submit %>
     <% end %>
-<% end %>
-</div>
-
-
-<div class='tests-out'>
-
-
-  <div class='container-question'>
-    <div class='questionss'>
-      <h4>Equipment Checks</h4>
-      <% Question.where(category:"Equipment Checks").each do |quest| %>
-        <p><%= quest.name %> <%= quest.answers.first.value %></p>
-      <% end %>
-    </div>
-
-    <div class='questionss'>
-      <h4>ManifoldPressure</h4>
-      <% Question.where(category:"ManifoldPressure").each do |quest| %>
-        <p><%= quest.name %> <%= quest.answers.first.value %></p>
-      <% end %>
-    </div>
-
-    <div class='questionss'>
-      <h4>General Manifold</h4>
-      <% Question.where(category:"General Manifold").each do |quest| %>
-        <p><%= quest.name %> <%= quest.answers.first.value %></p>
-      <% end %>
-    </div>
-
-    <div class='questionss'>
-      <h4>Choke Manifold</h4>
-      <% Question.where(category:"Choke Manifold").each do |quest| %>
-        <p><%= quest.name %> <%= quest.answers.first.value %></p>
-      <% end %>
-    </div>
-
-    <div class='questionss'>
-      <h4>Pressure Input</h4>
-      <%# Question.where(category:"PressureInput").each do |quest| %>
-        <p><%#= quest.name %> <%#= quest.answers.first.value %></p>
-      <%# end %>
-    </div>
-
-    <div class='questionss'>
-      <h4>EquipmentCheckBypassNormal</h4>
-      <% Question.where(category:"EquipmentCheckBypassNormal").each do |quest| %>
-        <p><%= quest.name %> <%= quest.answers.first.value %></p>
-      <% end %>
-    </div>
-</div>
-
-
-
-<%#= link_to("Download", cl_private_download_url("#{@pressure_test.report_file.key}", :pdf, :attachment => true)) %>
-
-<div class="container">
-  <ul class="responsive-table">
-    <li class="table-header">
-      <div class="col col-1">Rig</div>
-      <div class="col col-2">Name</div>
-      <div class="col col-3">Position</div>
-      <div class="col col-4">Approval Status</div>
-    </li>
-    <% @pressure_test.approvals.each do |appr| %>
-    <li class="table-row">
-      <div class="col col-1"><%= appr.user.rig.name %></div>
-      <div class="col col-2"><%= appr.user.name %></div>
-      <div class="col col-3"><%= appr.user.position %></div>
-      <div class="col col-4"><%= appr.approval_status %></div>
-    </li>
-    <% end %>
-  </ul>
+  <% end %>
 </div>
