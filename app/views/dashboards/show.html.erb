@@ -1,23 +1,28 @@
 <div class='main-body'>
 
   <div class="main-nav-btn">
-  <h1 class='welcome-user'> <%=current_user.name%>, <span>welcome to your dashboard!</span></h1>
-  <div class='dash-new-test'>
-    <%= link_to "Add a new test", new_bop_pressure_test_path(@bop), class: 'new-test-btn'%>
-  </div>
+    <h1 class='welcome-user'> <%=current_user.name%>, <span>welcome to your dashboard!</span></h1>
+    <div class='dash-new-test'>
+      <%= link_to "Add a new test", new_bop_pressure_test_path(@bop), class: 'create-test-button'%>
+    </div>
   </div>
 
   <% @pressure_tests.each do |pressure_test| %>
-    <div class="dashboard-list-of-all-test-grid">
-      <div class='dash-all-grid'>
-        <h4><strong>Well Name:  </strong><%= pressure_test.well_name%></h4>
-        <h4><strong>Completed Date:  </strong><%= pressure_test.completed_date %></h4>
-        <h4><strong>Corrective Action:  </strong><%= pressure_test.corrective_action %></h4>
+
+      <div class="dashboard-list-of-all-test-grid">
+
+        <div class='dash-all-grid'>
+          <h4><strong>Well Name:  </strong><%= pressure_test.well_name%></h4>
+          <h4><strong>Completed Date:  </strong><%= pressure_test.completed_date %></h4>
+          <h4><strong>Corrective Action:  </strong><%= pressure_test.corrective_action %></h4>
+        </div>
+
+        <div class='dash-show-grid'>
+          <%= link_to "Show", pressure_test_path(pressure_test), class: 'add-button-main'%>
+        </div>
+
       </div>
 
-      <div class='dash-show-grid'>
-        <%= link_to "Show", pressure_test_path(pressure_test), class: 'show-btn-dashboard'%>
-      </div>
-    </div>
   <% end %>
+
 </div>
