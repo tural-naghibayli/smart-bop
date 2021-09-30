@@ -34,6 +34,8 @@
   <% end %>
 </div>
 
+<div class='big-cont'>
+
 <div class='pres-div'>
   <table class='press-table'>
     <thead class='test-info'>
@@ -68,7 +70,8 @@
   </table>
 </div>
 
-<h4 style='margin-left: 470px; margin-top: 10px;'>Component Pressure Tests</h4>
+
+<h4>Component Pressure Tests</h4>
 
   <% if @pressure_test.component_pressure_tests.present? %>
     <% @pressure_test.component_pressure_tests.each do |component_pressure_test| %>
@@ -96,7 +99,7 @@
         </table>
       </div>
           <% if component_pressure_test.photo.present? %>
-            <div style="margin-left: 40%; margin-top: 20px;">
+            <div style="margin-left: 30%; margin-top: 20px;">
               <%= cl_image_tag component_pressure_test.photo.key, height: 600, width: 600, crop: :fill %>
             </div>
           <% end %>
@@ -105,7 +108,8 @@
   <% end %>
 
 
-<h4 style='margin-left: 470px; margin-top: 10px;'>Safety Valve Tests</h4>
+<h4>Safety Valve Tests</h4>
+
 
 <% if @pressure_test.safety_valve_tests.present? %>
   <% @pressure_test.safety_valve_tests.each do |safety_valve_test| %>
@@ -219,10 +223,10 @@
       </tr>
       <tr>
         <% Question.where(category:"EquipmentCheckBypassNormal").each  do |quest| %>
-        <td><strong class='strong-tbl'><%= quest.name %>:</strong> <%= quest.answers.first.value %></td>
+          <td><strong class='strong-tbl'><%= quest.name %>:</strong> <%= quest.answers.first.value %></td>
         <% end %>
         <% Question.where(category:"ManifoldPressure").each  do |quest| %>
-        <td><strong class='strong-tbl'><%= quest.name %>:</strong> <%= quest.answers.first.value %></td>
+          <td><strong class='strong-tbl'><%= quest.name %>:</strong> <%= quest.answers.first.value %></td>
         <% end %>
       </tr>
     </tbody>
@@ -344,8 +348,10 @@
     <a href="https://res.cloudinary.com/dk9bhadx6/image/upload/fl_attachment/v1632486696/<%= @pressure_test.report_file.key %>.jpg">Download</a>
   <% else %>
     <%= simple_form_for @pressure_test do |f| %>
-      <%= f.input :report_file, as: :file %>
+      <%= f.input :report_file, as: :file%>
       <%= f.submit %>
     <% end %>
   <% end %>
+</div>
+
 </div>
