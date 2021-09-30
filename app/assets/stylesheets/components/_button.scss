@@ -17,8 +17,9 @@
   border: 1px solid $dark-red;
   border-radius: 6px;
   background-color: $dark-red;
+  font-family: "Roboto Condensed";
   color: $white-grey;
-  padding: 2px 5px 2px 5px;
+  padding: 5px 10px;
   margin: 10px;
   &:hover {
     border: 1px solid $warning-red;
