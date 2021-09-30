@@ -61,7 +61,7 @@
   // display: grid;
   // grid-template-columns: 1fr 1fr 1fr 1fr;
   // grid-gap: 15px;
-  border: 2px rgb(228, 228, 228) solid;
+  border: 1px rgb(228, 228, 228) solid;
   border-radius: 15px;
   padding: 2rem;
   padding-top: 3rem;
@@ -105,16 +105,16 @@
 .equipment_check_question {
   align-items: center;
   margin-bottom: 10px;
-  color : grey
+  color : rgb(80, 79, 79);
 }
 
 .equipment_check_question div {
   margin-bottom: 10px;
-  color : grey
+  color : rgb(80, 79, 79);
 }
 
 .equipment_check_question span .form-check {
-  color : grey
+  color : grey;
 }
 
 .choke_manifold_form {
@@ -137,11 +137,11 @@
 
 .choke_manifold_form div {
   margin-bottom: 10px;
-  color : grey
+  color : rgb(80, 79, 79);
 }
 
 .choke_manifold_form span .form-check {
-  color : grey
+  color : grey;
 }
 
 .standpipe_manifold_form {
@@ -168,7 +168,7 @@
 }
 
 .standpipe_manifold_form span .form-check {
-  color : grey
+  color : grey(29, 105, 204)
 }
 
 
@@ -211,9 +211,10 @@
 
 .safety_valve_test_question {
   align-items: center;
-  color : grey;
+  color : rgb(80, 79, 79);
   font-weight: bold;
 }
+
 
 #approvals{
   margin-top: 25px;
@@ -224,12 +225,23 @@
 }
 
 .approval_input {
+  border: 1px rgb(228, 228, 228) solid;
+  border-radius: 15px;
   width: 200px;
-  padding: 5px;
+  padding: 12px;
   color: #011c52;
   font-weight: bold;
+  margin-bottom: 12px;
 }
 
 .nested-margin{
   margin-bottom: 10px;
+}
+
+.create-btn {
+  text-align: center;
+}
+
+.manif-question {
+  color: rgb(80, 79, 79) !important;
 }
