@@ -4,6 +4,9 @@
       <img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
       <h3>Welcome, <%= current_user.name.upcase %></h3>
       <p class='staff-position'><%= current_user.position %></p>
+      <p>Rig: <%= current_user.rig.name %></p>
+      <p> <strong class='strong'>Last Test Date:</strong> <%= current_user.pressure_tests.last.last_test_date  %></p>
+
     </div>
   </div>
   <div class="rig-table-container">

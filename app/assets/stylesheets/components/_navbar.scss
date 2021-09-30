@@ -4,8 +4,8 @@ $dark-gblue: #57758D;
   position: relative;
   z-index: 10;
   position: sticky;
-  top: 10px;
-  height: 90px;
+  top: 0;
+  height: 60px;
   margin-bottom: 20px;
 }
 .navbar-xspace-white {
@@ -25,17 +25,15 @@ $dark-gblue: #57758D;
   width: 130px;
   position: absolute;
   left: 48px;
-  top: 35px;
+  top: 10px;
   background: transparent;
 }
 
 .nav-link {
-  color: rgb(212, 49, 49);
+  color: #c1121fff;
+  font-size: 22px;
   border-radius: 10px;
-  margin-left: -20px;
-  margin-right: 60px;
-  margin-top: 20px;
-
+  font-weight: bold;
 }
 
 
@@ -43,7 +41,9 @@ $dark-gblue: #57758D;
 #nav-text {
   font-size: 19px;
   font-weight: 500;
-  color: rgb(214, 59, 59);
+  color: #c1121fff;
+  font-size: 22px;
+  font-weight: bold;
 }
 
 #nav-text:hover {
@@ -51,7 +51,7 @@ $dark-gblue: #57758D;
 }
 
 .margin-top-spacing {
-  margin-top: 40px;
+  margin-top: 5rem;
 }
 
 .nav-item {
