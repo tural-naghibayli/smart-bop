@@ -1,6 +1,13 @@
 <body class="rig-page-body">
+  <div class='sidebar'>
+    <div class='heading-pres sidebar-rig-head'>
+      <img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
+      <h3>Welcome, <%= current_user.name.upcase %></h3>
+      <p class='staff-position'><%= current_user.position %></p>
+    </div>
+  </div>
   <div class="rig-table-container">
-    <h1 class="rig-page-title">Our Rigs</h1>
+    <h3 class="rig-page-title">Our Rigs</h1>
     <table class="table table-borderless rig-table table-hover">
       <thead>
         <tr class="table-head-wrapper">
