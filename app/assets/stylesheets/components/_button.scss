@@ -17,9 +17,9 @@
   border: 1px solid $dark-red;
   border-radius: 6px;
   background-color: $dark-red;
-  font-family: 'Secular One', sans-serif;
+  font-family: "Roboto Condensed";
   color: $white-grey;
-  padding: 2px 5px 0px 5px;
+  padding: 5px 10px;
   margin: 10px;
   &:hover {
     border: 1px solid $warning-red;
@@ -33,7 +33,7 @@
   border: 1px solid $dark-grey;
   border-radius: 6px;
   background-color: $dark-grey;
-  font-family: 'Secular One', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   color: $white-grey;
   padding: 11px 15px;
   margin: 10px;

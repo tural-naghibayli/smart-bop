@@ -113,7 +113,7 @@
 
                 <% if question %>
                   <div class="standpipe_manifold_question">
-                    <div><%= question.name %></div>
+                    <div class='manif-question'><%= question.name %></div>
 
                     <span>
                       <% if question.category == "Standpipe Manifold" %>
@@ -147,18 +147,19 @@
 
 
 
+      <h3>Approvals</h3>
       <div id='approvals'>
-        <h3>Approvals</h3>
         <%= f.simple_fields_for :approvals do |approval| %>
           <%= render 'approval_fields', f:approval %>
-        <% end %>
+          <% end %>
+        </div>
         <div class='links'>
           <%= link_to_add_association 'Add Approval', f, :approvals, class:"add-button-main" %>
         </div>
+
+      <div class='create-btn'>
+        <%= f.submit "Create Pressure Test", class:"create-test-button" %>
       </div>
-
-      <%= f.submit "Create Pressure Test", class:"create-test-button" %>
-
     <% end %>
 
 
