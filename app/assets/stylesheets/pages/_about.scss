@@ -1,231 +1,85 @@
-.main-container-about-us {
-  width: auto;
-  height: 100vw;
-}
-
-.add-from-about-us {
-  height: 100vh;
-}
-
-.main-about-pic {
-  width: 670px;
-}
-
-.main-about-pic-box {
-  width: 600px;
-  height: 600px;
-
-  position: absolute;
-  left: 150px;
-  top: 130px;
-}
-
-.about-main-text {
-  width: 600px;
-  height: 700px;
-
-  position: absolute;
-  left: 780px;
-  top: 380px;
-
-  border-left: red;
-  border-width: 2px;
-  text-align: justify;
-}
+// Global variables
 
 
-.about-main-paragraph {
-  color: gray;
-  font-size: 20px;
-  font-weight: 250;
 
-  margin-top: 9px;
-  line-height: 27px;
-}
 
-.main-header-about-page {
-  height: 570px;
+
+// How BOP operates - header area
+.header-info-bop {
   width: 100vw;
-}
-// what we do area
-.what-we-do-text-2header {
-  height: 30px;
-  width: auto;
-  color: rgb(196, 16, 16);
+  height: 60px;
   text-align: center;
-  margin-top: 25px;
-
-}
-.what-we-do-text {
-  margin-top: -25px;
-}
-// Record area
-.wwdo-active-data-record {
-  position: absolute;
-  left: 135px;
-  width: 1400px;
-  height: 150px;
-  margin-top: 53px;
-
-  box-shadow: 2px 10px 19px -1px rgba(128, 128, 128, 0.22);
-  background-color: rgb(255, 255, 255);
-
-}
-.live-track-image {
-  width: 145px;
-  position: relative;
-  top: 1px;
-  left: 27px;
-}
-
-.info-wwdo-live-track {
-  position: relative;
-  left: 210px;
-  margin-top: -110px;
-}
-
-// Online form area
-
-.wwdo-onlone-form {
-  position: absolute;
-  left: 135px;
-  width: 1400px;
-  height: 150px;
-  top: 1000px;
-
-  box-shadow: 2px 10px 19px -1px rgba(128, 128, 128, 0.22);
-  background-color: rgb(255, 255, 255);
-
-}
-.online-form-image {
-  width: 110px;
-  position: relative;
-  top: 19px;
-  left: 37px;
-}
-
-.info-wwdo-online-form {
-  position: relative;
-  left: 210px;
-  margin-top: -70px;
-}
-
-// Work flow area
-
-.wwdo-work-flow {
-  position: absolute;
-  left: 135px;
-  width: 1400px;
-  height: 150px;
-  top: 1210px;
-
-  box-shadow: 2px 10px 19px -1px rgba(128, 128, 128, 0.22);
-  background-color: rgb(255, 255, 255);
-
-}
-.work-flow-image {
-  width: 110px;
-  position: relative;
-  top: 19px;
-  left: 37px;
-}
-
-.info-wwdo-work-flow {
-  position: relative;
-  left: 210px;
-  margin-top: -70px;
-}
-
-// what is bop area
-.what-is-bop-text-2header {
-  height: 30px;
-  width: auto;
-  color: rgb(196, 16, 16);
-  text-align: center;
-  margin-top: 700px;
-
-}
-.what-is-bop-text {
-  margin-top: -22px;
-}
-
-// What is BOP. area
-.bop-info-conatainer {
-  position: absolute;
-  top: 1450px;
-}
-.top-bop-info-pic {
-  position: relative;
-  width: 300px;
-  left: 50px;
-}
-
-.bottom-bop-info-pic {
-  position: relative;
-  width: 250px;
-  left: 740px;
-  top: 530px;
-}
-
-// bop info text area
-
-.bop-info-text-box {
-  position: absolute;
-  left: 550px;
-  top: 160px;
-
-  width: 900px;
-  height: 400px;
-
-  background-color: white;
-  box-shadow: 2px 10px 19px -1px rgba(128, 128, 128, 0.22);
-
-  strong {
-  color: rgb(26, 82, 165);
-  font-size: 18px;
+  margin-top: 210px;
+  margin-bottom: 10px;
+  #info-bop-operate-header {
+    padding-top: 30px;
+    font-family: $body-font;
+    font-size: 2.2rem;
+    font-weight: 600;
   }
 }
 
-
-.info-bop-paragraph {
-  margin: 20px;
-  text-align: justify;
-}
-
-// bop info text area
-
-.bop-operate-info-text-box{
-  position: absolute;
-  left: 200px;
-  top: 700px;
-
-  width: 900px;
-  height: 400px;
-
-  background-color: white;
-  box-shadow: 2px 10px 19px -1px rgba(128, 128, 128, 0.22);
-
-}
-
-.info-bop-operate-header {
-  margin: 19px;
-  color: rgb(26, 82, 165);
-}
-.info-bop-operate-paragraph {
-  margin: 20px;
-  text-align: justify;
-}
-
-.footer-about-us {
-  position: absolute;
-  top: 2600px;
+// Bop info area one
+.bop-info-conatainer-one {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   width: 100vw;
-  height: 50px;
-  background-color: rgb(26, 82, 165);
-  h2 {
-    position: relative;
-    margin: 10px;
-    font-size: 18px;
-    color: white;
+  height: 400px;
+  margin-top: 90px;
+  margin-bottom: 20px;
+}
+.info-bop-image-container-one{
+    .info-bop-image-one {
+      width: 300px;
+      height: 320px;
+      background-position: top;
+      margin-left: 150px;
+      box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+
+    }
   }
+.info-bop-text-area-one {
+  margin-right: 210px;
+  margin-top: 90px;
+  width: 730px;
+
+  text-align: justify;
+  font-family: $body-font;
+  font-size: 1.2rem;
+  font-weight: 200;
+
+}
+
+// Bop info area two
+
+.bop-info-container-two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100vw;
+  height: 400px;
+  margin-top: 20px;
+  margin-bottom: 90px;
+}
+.info-bop-image-container-two {
+    .info-bop-image-two {
+      width: 300px;
+      height: 320px;
+
+      margin-right: 150px;
+      background-position: top;
+      box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+
+    }
+  }
+.info-bop-text-area-two {
+  margin-left: 150px;
+  margin-top: 90px;
+  margin-right: 120px;
+  width: 700px;
+
+  text-align: justify;
+  font-family: $body-font;
+  font-size: 1.2rem;
+  font-weight: 200;
+
 }
