@@ -24,7 +24,7 @@
 
 .rig-page-body {
   // background-image: linear-gradient(to right top, #b5b5bf, $white-grey);
-  font-weight: bold;
+
   color: #424761;
   min-height: 100vh;
   margin-top: 50px;
@@ -36,13 +36,12 @@
   text-shadow: 1px 1px 2px $dark-grey;
   font-size: 1em;
   font-family: 'Roboto Condensed', sans-serif;
+  font-weight: bold;
 }
 
 .rig-filler {
   color: #424761;
-  font-weight: bold;
   font-family: 'Roboto Condensed', sans-serif;
-
 }
 h1, h2, h3, h4 {
   font-family: 'Roboto Condensed', sans-serif;
