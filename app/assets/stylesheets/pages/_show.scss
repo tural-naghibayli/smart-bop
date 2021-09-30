@@ -147,6 +147,13 @@
   padding: 8px;
 }
 
+.items {
+  display: inline;
+  margin-left: 10px;
+  border: 2px solid rgb(179, 77, 77);
+  border-radius: 4px;
+  padding: 6px;
+}
 
 .item2 {
   border: 2px solid #38a58a;
@@ -169,19 +176,13 @@
   text-decoration: none;
 }
 
-.big-cont {
-  margin-left: 30%;
-}
-
-.big-cont h4{
-  margin-left: 52px;
-}
-
-
 .press-table {
+  margin-left: 30%;
   width: 850px;
   border-collapse: collapse;
 }
+
+
 
 .press-table td{
   border: 1px solid rgb(196, 195, 195);
@@ -191,6 +192,7 @@
 
 .press-table th {
   padding: 8px;
+
 }
 
 
@@ -241,9 +243,17 @@
 
 .report-file-div {
   border: 1px solid rgb(196, 195, 195);
-  margin-left: 52px;
+  margin-left: 461px;
   margin-top: 20px;
   margin-bottom: 10px;
   padding: 8px;
   width: fit-content;
+}
+
+.aligning {
+  margin-left: 462px;
+}
+
+.pres-div2 {
+  margin-left: 462px;
 }
