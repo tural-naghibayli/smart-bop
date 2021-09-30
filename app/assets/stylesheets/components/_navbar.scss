@@ -32,8 +32,6 @@ $dark-gblue: #57758D;
 .nav-link {
   color: rgb(212, 49, 49);
   border-radius: 10px;
-  margin-left: 10px;
-  margin-right: 30px;
 }
 
 
@@ -50,4 +48,8 @@ $dark-gblue: #57758D;
 
 .margin-top-spacing {
   margin-top: 5rem;
+}
+
+.nav-item {
+  margin: 1px;
 }

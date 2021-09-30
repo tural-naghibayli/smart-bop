@@ -1,7 +1,15 @@
 <body class="bop-page-body">
-  <div class="bop-table-wrapper">
+  <div class='sidebar'>
+    <div class='heading-pres sidebar-rig-head'>
+      <img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
+      <h3>Welcome, <%= current_user.name.upcase %></h3>
+      <p class='staff-position'><%= current_user.position %></p>
+      <p class="test-date-p"> <strong class='strong'>Last Test Date:</strong> <%= @bop.last_completed_pressure_test_date %></p>
+    </div>
+    </div>
 
-    <h1 class="bop-table-title">BOP Details</h1>
+  <div class="bop-table-wrapper">
+    <h3 class="bop-table-title">BOP Details</h1>
     <div class="bop-table-container">
       <table class="table table-hover table-borderless">
         <thead>
@@ -27,7 +35,7 @@
       </table>
     </div>
 
-    <h2 class="bop-table-title">Pressure Tests</h2>
+    <h3 class="bop-table-title">Pressure Tests</h2>
     <div class="bop-table-container">
       <table class="table table-hover table-borderless">
         <thead>
@@ -42,7 +50,11 @@
             <tr class='clickable-row' <%#= link_to " ", rigs_path(@rig) %>>
               <td><%= test.well_name %></td>
               <td><%= test.completed_date %></td>
-              <td><%= link_to "📂", pressure_test_path(test), class:"pressure-test-link"%></td>
+              <td>
+                <%= link_to  pressure_test_path(test), class:"pressure-test-link" do %>
+                <i class="fas fa-folder-open"></i>
+                <% end %>
+              </td>
             </tr>
           <% end %>
         </tbody>

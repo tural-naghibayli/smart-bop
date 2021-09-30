@@ -27,9 +27,6 @@
         </li>
 
         <li class="nav-item active">
-          <%= link_to "Dashboard", dashboard_path, class: "nav-link", id:'nav-text' %>
-        </li>
-        <li class="nav-item active">
           <%= link_to "Rigs", rigs_path, class: "nav-link", id:'nav-text'%>
         </li>
 
@@ -37,6 +34,11 @@
         <li class="nav-item active">
           <%= link_to "BOP", bop_path(current_user.bop), class: "nav-link", id:'nav-text' %>
         </li>
+
+        <li class="nav-item active">
+          <%= link_to "Dashboard", dashboard_path, class: "nav-link", id:'nav-text' %>
+        </li>
+
         <li class="nav-item active">
           <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link", id:'nav-text' %>
         </li>
