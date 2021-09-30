@@ -2,7 +2,7 @@
   border: 1px solid $blue;
   border-radius: 6px;
   background-color: $blue;
-  font-family: $body-font;
+  font-family: 'Roboto Condensed', sans-serif;
   color: $white-grey;
   padding: 5px 10px;
   margin: 10px;
@@ -17,9 +17,8 @@
   border: 1px solid $dark-red;
   border-radius: 6px;
   background-color: $dark-red;
-  font-family: 'Secular One', sans-serif;
   color: $white-grey;
-  padding: 2px 5px 0px 5px;
+  padding: 2px 5px 2px 5px;
   margin: 10px;
   &:hover {
     border: 1px solid $warning-red;
@@ -30,16 +29,16 @@
 }
 
 .create-test-button {
-  border: 1px solid $dark-grey;
+  border: 1px solid $blue;
   border-radius: 6px;
-  background-color: $dark-grey;
-  font-family: 'Secular One', sans-serif;
+  background-color: $blue;
+  font-family: 'Roboto Condensed', sans-serif;
   color: $white-grey;
-  padding: 11px 15px;
+  padding: 5px 10px;
   margin: 10px;
   &:hover {
-    border: 1px solid $gray-blue;
-    background-color: $gray-blue;
+    border: 1px solid $light-blue;
+    background-color: $light-blue;
     text-decoration: none;
     color: white;
   }
