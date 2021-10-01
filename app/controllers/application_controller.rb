@@ -11,6 +11,6 @@ class ApplicationController < ActionController::Base
   end
 
   def default_url_options
-    { host: ENV["DOMAIN"] || "smart-bop.com" }
+    { host: ENV["DOMAIN"] || "www.smart-bop.com" }
   end
 end
