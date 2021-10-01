@@ -1,11 +1,13 @@
 <body class="rig-page-body">
   <div class='sidebar'>
     <div class='heading-pres sidebar-rig-head'>
-      <img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
+      <%= image_tag "avatar.jpg",  alt:"avatar-large", class:"avatar-large-2"  %>
       <h3>Welcome, <%= current_user.name.upcase %></h3>
       <p class='staff-position'><%= current_user.position %></p>
       <p>Rig: <%= current_user.rig.name %></p>
-      <p> <strong class='strong'>Last Test Date:</strong> <%= current_user.pressure_tests.last.last_test_date  %></p>
+      <% if current_user.pressure_tests.nil? %>
+        <p> <strong class='strong'>Last Test Date:</strong> <%= current_user.pressure_tests.last.last_test_date  %></p>
+      <% end %>
 
     </div>
   </div>
@@ -31,7 +33,10 @@
             <td class="rig-filler"><%= rig.contractor_drilling_company %></td>
             <td class="rig-filler"><%= rig.reservoir_field %></td>
             <td class="rig-filler"><%= rig.name %></td>
-            <% unless rig.bop.nil? %>
+            <% if rig.bop.pressure_tests.empty? %>
+              <td class="rig-filler"><%= rig.bop.last_completed_pressure_test_date %></td>
+              <td class="rig-filler"><%= rig.bop.last_completed_pressure_test_date %></td>
+            <% else %>
               <td class="rig-filler"><%= rig.bop.last_completed_pressure_test_date %></td>
               <td class="rig-filler"><%= rig.bop.last_completed_pressure_test_date+21.day %></td>
             <% end %>

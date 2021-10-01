@@ -1,6 +1,6 @@
 <div class='sidebar'>
   <div class='heading-pres'>
-    <img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
+    <%= image_tag "avatar.jpg",  alt:"avatar-large", class:"avatar-large-2"  %>
     <h3><%= current_user.name.upcase %></h3>
     <h4>Rig: <%= current_user.rig.name %></h4>
     <p class='staff-position'><%= current_user.position %></p>
@@ -34,8 +34,8 @@
   <table class='press-table'>
     <thead class='test-info'>
       <tr>
+        <th><h4>Pressure Test Information</h4></th>
         <th></th>
-        <th style='text-align: center;'><h4>Pressure Test Information</h4></th>
         <th></th>
       </tr>
     </thead>
@@ -64,7 +64,7 @@
   </table>
 </div>
 
-<div class='pres-div2'>
+<div style="margin-left: 560px">
 <h4>Component Pressure Tests</h4>
 </div>
 
@@ -98,11 +98,10 @@
               <%= cl_image_tag component_pressure_test.photo.key, height: 600, width: 600, crop: :fill %>
             </div>
           <% end %>
-
     <% end %>
   <% end %>
 
-<div class='pres-div2'>
+<div style="margin-left: 560px">
 <h4>Safety Valve Tests</h4>
 </div>
 
