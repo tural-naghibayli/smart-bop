@@ -1,0 +1,5 @@
+meta_product_name: "Smart BOP"
+meta_title: "Smart BOP - Keep it online!"
+meta_description: "Better history records."
+meta_image: "main-banner-img.jpg" # should exist in `app/assets/images/`
+twitter_account: "@smarbop"   # required for Twitter Cards
