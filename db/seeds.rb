@@ -19,21 +19,22 @@ Answer.destroy_all
 Bop.destroy_all
 Rig.destroy_all
 
-rig_1 = Rig.create!(name: "Fatih", reservoir_field: "Tuna_1", contractor_drilling_company: "Odfjell", operator_company: "TPAO")
-bop_1 = Bop.create!(rig: rig_1, serial_number: "SN BOP 1234", bop_type: "U-shape Dual Ram BOP", producer: "NOV Shaffer", pressure_rating: 5000, description: 'Designed for HP oil fields')
-bop_2 = Bop.create!(rig: rig_1, serial_number: "SN BOP 4578", bop_type: "5k", producer: "Cameron", pressure_rating: 9000, description: 'Designed for HP and HT oil fields')
+rig_1 = Rig.create!(name: "Fatih", reservoir_field: "Tuna-1", contractor_drilling_company: "Odfjell", operator_company: "TPAO")
+rig_2 = Rig.create!(name: "Yavuz", reservoir_field: "Tuna-1", contractor_drilling_company: "Maersk", operator_company: "TPAO")
+rig_3 = Rig.create!(name: "Kanuni", reservoir_field: "Tuna-2", contractor_drilling_company: "Odfjell", operator_company: "TPAO")
+bop_1 = Bop.create!(rig: rig_1, serial_number: "SN BOP 1234", bop_type: "U-shape Dual Ram BOP", producer: "NOV Shaffer", pressure_rating: 15000, description: 'Designed for HP gas fields')
+bop_2 = Bop.create!(rig: rig_2, serial_number: "SN BOP 4578", bop_type: "5k Variable ram", producer: "Cameron", pressure_rating: 5000, description: 'Designed for medium pressure oil fields')
+bop_3 = Bop.create!(rig: rig_3, serial_number: "SN BOP 6789", bop_type: "10k Subsea", producer: "Vetco", pressure_rating: 10000, description: 'Designed for HP and HT oil fields')
 
+puts "Created rig_1,rig_2, rig_3, bop_1, bop_2, bop_3"
 
-rig_2 = Rig.create!(name: "Zatih", reservoir_field: "Tuna_2", contractor_drilling_company: "Odfjell", operator_company: "TPAO")
-user_1 = User.create!(rig: rig_1, email: "user1@user.com", password: "password", name: "Efe", position: 'Shift Supervisor', company: "Odfjell", admin: false)
-user_2 = User.create!(rig: rig_1, email: "user2@user.com", password: "password", name: "Tural", position: 'Well Site Leader', company: "TPAO", admin: false)
-user_3 = User.create!(rig: rig_1, email: "user3@user.com", password: "password", name: "Duygu", position: 'Rig Superintendent', company: "Odfjell", admin: false)
-user_4 = User.create!(rig: rig_2, email: "user4@user.com", password: "password", name: "Safi", position: 'Driller', company: "Odfjell", admin: false)
+user_1 = User.create!(rig: rig_1, email: "user1@user.com", password: "password", name: "Efe Arslan", position: 'Shift Supervisor', company: "Odfjell", admin: false)
+user_2 = User.create!(rig: rig_1, email: "user2@user.com", password: "password", name: "Tural Naghibayli ", position: 'Well Site Leader', company: "TPAO", admin: false)
+user_3 = User.create!(rig: rig_1, email: "user3@user.com", password: "password", name: "Duygu Cavushoglu", position: 'Rig Superintendent', company: "Odfjell", admin: false)
+user_4 = User.create!(rig: rig_1, email: "user4@user.com", password: "password", name: "Safi Noorazi", position: 'Driller', company: "Odfjell", admin: false)
 
+puts "Created user_1,user_2, user_3,user_4 for rig_1"
 
-pressure_test_2 = PressureTest.create!(user: user_3, bop: bop_2, last_test_date: Date.today-20 , completed_date:Date.today, next_test_deadline:Date.today+21 , test_fluid: "water", well_name:"B1", serial_number_chart_recorded:"SN Cool32", comment: "Equipment un checked", corrective_action: "Risk no assested", drill_pipe_diameter: "20 inch XT50")
-
-puts "Created rig_1, user_1, bop_1, pressure_test_1 WITH NEW ids"
 # ------ Questions for forms -------
 
 # Equipment Checks
