@@ -1,6 +1,6 @@
 <div class='sidebar'>
   <div class='heading-pres'>
-    <img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
+    <%= image_tag "avatar.jpg",  alt:"avatar-large", class:"avatar-large-2"  %>
     <h3><%= current_user.name.upcase %></h3>
     <h4>Rig: <%= current_user.rig.name %></h4>
     <p class='staff-position'><%= current_user.position %></p>
