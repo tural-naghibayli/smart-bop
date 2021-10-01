@@ -6,18 +6,18 @@
         <span class='fade-box-for-banner'></span>
 
         <h2 class='main-text'>Welcome to Smart BOP</h2>
-        <p class='main-paragraph'> We are committed to bring safety to the front line workers and give accurate results with a better history records</p>
+        <p class='main-paragraph'> We are committed to bring safety to the front line workers and give accurate results with a better history records.</p>
 
     <%# sign-up and already sign-in %>
         <% unless current_user.present? %>
         <%= link_to "<button class='main-button '>Sign Up</button>".html_safe, new_user_registration_path %>
-        <p class='existing-account'>Already have an account | <%= link_to "<strong>log in</strong>".html_safe, new_user_session_path  %></p>
+        <p class='existing-account'>Already have an account | <%= link_to "<strong>Log in</strong>".html_safe, new_user_session_path  %></p>
         <% end %>
     </div>
 
     <%# what we do header %>
     <div class="what-we-do-header">
-      <h2 class='wwd-header-text blue-header'>What we do?</h2>
+      <h2 class='wwd-header-text blue-header'>What do we do?</h2>
     </div>
 
     <%# What we do section %>
@@ -27,7 +27,7 @@
           <%= image_tag "servers.svg", alt: "live track image", class: 'wwd-live-track-image' %>
         </div>
         <h6 class='give-margin-class'><strong>Active Data</strong></h6>
-        <p class='give-margin-class-p'>Now you can update or track your data live the data is on tip of your finger no need to search papers for the history of your tests</p>
+        <p class='give-margin-class-p'>Now, you can update or track your data live the data is on tip of your finger. No need to search for papers of test history.</p>
       </div>
 
       <div class='online-form-col'>
@@ -36,7 +36,7 @@
         </div>
 
         <h6 class='give-margin-class'><strong>Online Form</strong></h6>
-        <p class='give-margin-class-p'>We provide the online form platform for your BOP test to make your work more effecient and avoid the Big or small errors</p>
+        <p class='give-margin-class-p'>We provide the online platform for BOP test to make your work more effecient and avoid the big or small errors.</p>
       </div>
 
       <div class='work-flow-col'>
@@ -44,7 +44,7 @@
           <%= image_tag "workflow.svg", alt: "work flow image", class: 'wwd-workflow-image' %>
         </div>
         <h6 class='give-margin-class'><strong>Simple Workflow</strong></h6>
-        <p class='give-margin-class-p'>No more complex and different work flow for your BOP records because we provide you the easiest and more accurate Workflow for your BOP tests that will cover everything for you</p>
+        <p class='give-margin-class-p'>No more complex and different workflow for your BOP records. We provide the easiest and more accurate workflow for BOP tests that covers everything for you.</p>
       </div>
 
     </div>
@@ -96,8 +96,8 @@
       </div>
 
       <div class="lmh-paragraph">
-        <h2 class=" lmh-give-margin-header red-header">Let's Make history.</h2>
-        <p class=" lmh-give-margin-header-p" >We are a team of experts in oil industry and want to transfer the complex and mysterious paper track of your BOP test with the new BOPsmart system that will provide a reliable and safe records of your tests with few clicks!</p>
+        <h2 class=" lmh-give-margin-header red-header">Let's make history.</h2>
+        <p class=" lmh-give-margin-header-p" >We are a team of experts in oil industry and want to transfer the complex and mysterious paper track of your BOP test with the new smartBOP system that will provide a reliable and safe records of your tests with few clicks!</p>
       </div>
 
     </div>
