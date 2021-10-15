@@ -37,6 +37,7 @@
   background-size: 120%;
   vertical-align: middle;
   object-fit: cover;
+  filter: brightness(95%);
 }
 
 // Heading of Main banner
@@ -56,11 +57,11 @@
   margin-left: 20px;
   margin-top: 10px;
 
-  width: 600px;
+  width: 550px;
   height: 120px;
 
   font-size: 25px;
-  font-weight: 200;
+  font-weight: 400;
   line-height: 42px;
   color: #ffffff;
 }
