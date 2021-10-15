@@ -2,22 +2,22 @@
 
     <%# main banner pic & text%>
     <div class="banner">
-      <%= image_tag "main-banner-img.jpg", alt: "Home", class: "main-page-pic" %>
-        <span class='fade-box-for-banner'></span>
-
+      <div class="home-bg-image">
         <h2 class='main-text'>Welcome to Smart BOP</h2>
         <p class='main-paragraph'> We are committed to bring safety to the front line workers and give accurate results with a better history records.</p>
-
-    <%# sign-up and already sign-in %>
-        <% unless current_user.present? %>
-        <%= link_to "<button class='main-button '>Sign Up</button>".html_safe, new_user_registration_path %>
-        <p class='existing-account'>Already have an account | <%= link_to "<strong>Log in</strong>".html_safe, new_user_session_path  %></p>
-        <% end %>
+        <%# sign-up and already sign-in %>
+        <div class = "signup-button">
+          <% unless current_user.present? %>
+          <%= link_to "<button class='main-button'>Sign Up</button>".html_safe, new_user_registration_path %>
+          <p class='existing-account'>Already have an account | <%= link_to "<strong>Log in</strong>".html_safe, new_user_session_path  %></p>
+          <% end %>
+        </div>
+      </div>
     </div>
 
     <%# what we do header %>
     <div class="what-we-do-header">
-      <h2 class='wwd-header-text blue-header'>What do we do?</h2>
+      <h2 class='wwd-header-text'>What do we do?</h2>
     </div>
 
     <%# What we do section %>
