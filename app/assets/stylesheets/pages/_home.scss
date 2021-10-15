@@ -72,12 +72,15 @@
   height: 40px;
   border: none;
   font-size: 18px;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(236, 230, 230);
   border-radius: 9px;
   color: #414040;
   font-family: $body-font;
   font-weight: 400;
-
+}
+.main-button:hover {
+  background-color: #f8f8f8; /* Green */
+  color: black;
 }
 
 .signup-button {
