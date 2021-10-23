@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_23_012130) do
+ActiveRecord::Schema.define(version: 2021_10_23_223346) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,6 +71,18 @@ ActiveRecord::Schema.define(version: 2021_10_23_012130) do
     t.index ["rig_id"], name: "index_bops_on_rig_id"
   end
 
+  create_table "component_function_tests", force: :cascade do |t|
+    t.bigint "function_test_id", null: false
+    t.string "bop_element_unit"
+    t.integer "open_gallons"
+    t.integer "open_time"
+    t.integer "close_gallons"
+    t.integer "close_time"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["function_test_id"], name: "index_component_function_tests_on_function_test_id"
+  end
+
   create_table "component_pressure_tests", force: :cascade do |t|
     t.string "bop_element_unit"
     t.string "component_type"
@@ -85,6 +97,18 @@ ActiveRecord::Schema.define(version: 2021_10_23_012130) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["pressure_test_id"], name: "index_component_pressure_tests_on_pressure_test_id"
+  end
+
+  create_table "function_tests", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "bop_id", null: false
+    t.date "last_test_date"
+    t.date "completed_date"
+    t.date "next_test_deadline"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["bop_id"], name: "index_function_tests_on_bop_id"
+    t.index ["user_id"], name: "index_function_tests_on_user_id"
   end
 
   create_table "pressure_tests", force: :cascade do |t|
@@ -161,7 +185,10 @@ ActiveRecord::Schema.define(version: 2021_10_23_012130) do
   add_foreign_key "approvals", "pressure_tests"
   add_foreign_key "approvals", "users"
   add_foreign_key "bops", "rigs"
+  add_foreign_key "component_function_tests", "function_tests"
   add_foreign_key "component_pressure_tests", "pressure_tests"
+  add_foreign_key "function_tests", "bops"
+  add_foreign_key "function_tests", "users"
   add_foreign_key "pressure_tests", "bops"
   add_foreign_key "pressure_tests", "users"
   add_foreign_key "safety_valve_tests", "pressure_tests"

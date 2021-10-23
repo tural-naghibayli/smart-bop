@@ -6,7 +6,7 @@ class CreateComponentFunctionTests < ActiveRecord::Migration[6.0]
       t.integer :open_gallons
       t.integer :open_time
       t.integer :close_gallons
-      t.integer :close_gallons
+      t.integer :close_time
 
       t.timestamps
     end
