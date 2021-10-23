@@ -47,7 +47,7 @@
             </tr>
         </thead>
         <tbody>
-          <% @bop.pressure_tests.each do |test| %>
+          <% @bop.pressure_tests.reverse().each do |test| %>
             <tr class='clickable-row' <%#= link_to " ", rigs_path(@rig) %>>
               <td><%= test.well_name %></td>
               <td><%= test.completed_date %></td>
