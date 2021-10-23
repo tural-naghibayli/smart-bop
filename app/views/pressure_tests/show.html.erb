@@ -339,7 +339,7 @@
   <% if @pressure_test.report_file.attached? %>
     <%= cl_image_tag "#{@pressure_test.report_file.key}.jpg", flag: "attachment", height: 450, width: 300, crop: :scale %>
     <br>
-    <a href="https://res.cloudinary.com/dk9bhadx6/image/upload/fl_attachment/v1632486696/<%= @pressure_test.report_file.key %>.jpg">Download</a>
+    <a href="https://res.cloudinary.com/dmv4hpk8d/image/upload/fl_attachment/v1632486696/<%= @pressure_test.report_file.key %>.jpg">Download</a>
   <% else %>
     <%= simple_form_for @pressure_test do |f| %>
       <%= f.input :report_file, as: :file%>
