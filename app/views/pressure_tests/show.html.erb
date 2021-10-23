@@ -41,8 +41,8 @@
     </thead>
     <tbody>
       <tr>
-        <td><p class='strong-tbl'>Well Name:</p>   <%= @pressure_test.well_name %></td>
-        <td><p class='strong-tbl'>Chart Recorder S/N:</strong>   <%= @pressure_test.serial_number_chart_recorded %></td>
+        <td><strong class='strong-tbl'>Well Name:</strong> <%= @pressure_test.well_name %></td>
+        <td><strong class='strong-tbl'>Chart Recorder S/N:</strong> <%= @pressure_test.serial_number_chart_recorded %></td>
         <td><strong class='strong-tbl'>BOP S/N:</strong> <%= Bop.find(@pressure_test.bop_id).serial_number %></td>
       </tr>
       <tr>
