@@ -3,6 +3,8 @@
 
   <%= simple_form_for [@bop, @function_test] do |f| %>
     <%= f.input :completed_date %>
+    <%= f.input :well_name %>
+    <%= f.input :location, collection:["Rig floor" , "Drilling Office"] %>
 
     <h3>Components of BOP</h3>
 
@@ -14,6 +16,55 @@
           <%= link_to_add_association 'Add Component', f, :component_function_tests, class:"add-button-main" %>
         </div>
     </div>
+
+
+    <h3>Regular Checks</h3>
+
+    <div class="equipment_check_form">
+
+      <% index = 0 %>
+      <%= f.simple_fields_for :answers, class: 'input-display' do |answer| %>
+
+        <% question = Question.where(category: [ "Function Test Questions", "Function Test BypassNormal"])[index] %>
+          <% if question %>
+            <div class="equipment_check_question">
+              <div><%= question.name %></div>
+              <% if question.category == "Function Test Questions" %>
+                <span><%= answer.input_field :value, as: :radio_buttons, collection: [['Yes', 'Yes'], ['No', 'No'], ["N/A","N/A"]], label: false %></span>
+              <% elsif question.category == "Function Test BypassNormal" %>
+                <%= answer.input :value, collection: [ "Bypass", "Normal"], label: false %>
+              <% end %>
+              <%= answer.hidden_field :question_id, value: question.id %>
+            </div>
+          <% end %>
+
+          <% index += 1 %>
+      <% end %>
+    </div>
+
+
+    <h3>System Checks</h3>
+    <p>To be carried out by System Engineer or Senior Electrician</p>
+    <div class="equipment_check_form">
+
+      <% index = 0 %>
+      <%= f.simple_fields_for :answers, class: 'input-display' do |answer| %>
+
+        <% question = Question.where(category: [ "System Engineer Questions"])[index] %>
+          <% if question %>
+            <div class="equipment_check_question">
+              <div><%= question.name %></div>
+              <% if question.category == "System Engineer Questions" %>
+                <span><%= answer.input_field :value, as: :radio_buttons, collection: [['Yes', 'Yes'], ['No', 'No'], ["N/A","N/A"]], label: false %></span>
+              <% end %>
+              <%= answer.hidden_field :question_id, value: question.id %>
+            </div>
+          <% end %>
+
+          <% index += 1 %>
+      <% end %>
+    </div>
+
 
     <div class='create-btn'>
       <%= f.submit "Create Function Test", class:"create-test-button" %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_23_223346) do
+ActiveRecord::Schema.define(version: 2021_10_24_221701) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,8 @@ ActiveRecord::Schema.define(version: 2021_10_23_223346) do
     t.bigint "pressure_test_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "function_test_id"
+    t.index ["function_test_id"], name: "index_answers_on_function_test_id"
     t.index ["pressure_test_id"], name: "index_answers_on_pressure_test_id"
     t.index ["question_id"], name: "index_answers_on_question_id"
   end
@@ -107,6 +109,8 @@ ActiveRecord::Schema.define(version: 2021_10_23_223346) do
     t.date "next_test_deadline"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "location"
+    t.string "well_name"
     t.index ["bop_id"], name: "index_function_tests_on_bop_id"
     t.index ["user_id"], name: "index_function_tests_on_user_id"
   end
@@ -180,6 +184,7 @@ ActiveRecord::Schema.define(version: 2021_10_23_223346) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "answers", "function_tests"
   add_foreign_key "answers", "pressure_tests"
   add_foreign_key "answers", "questions"
   add_foreign_key "approvals", "pressure_tests"

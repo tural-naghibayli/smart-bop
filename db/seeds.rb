@@ -62,6 +62,16 @@ question_15 = Question.create!(name: "Remote and manual choke checked ?", questi
 question_16 = Question.create!(name: "Operated auto-chokes with hand pump ?", question_type:"", category:"Choke Manifold")
 question_14 = Question.create!(name: "Test pressure applied to Choke manifold:", question_type:"", category:"Pressure Input Choke Manifold")
 
-
-
 puts "Created choke manifold questions"
+
+question_17 = Question.create!(name: "Annular pressure regulator - increase/decrease ?", question_type:"", category:"Function Test Questions")
+question_18 = Question.create!(name: "Manifold pressure regulator - increase/decrease ?", question_type:"", category:"Function Test Questions")
+question_19 = Question.create!(name: "Manifold pressure regulator - bypass/normal ?", question_type:"", category:"Function Test BypassNormal")
+
+puts "Created Function Test questions"
+
+question_20 = Question.create!(name: "Visual Inspection of Equipment", question_type:"", category:"System Engineer Questions")
+question_21 = Question.create!(name: "Instrument Calibration in Certification", question_type:"", category:"System Engineer Questions")
+question_22 = Question.create!(name: "Visual Ex inspection", question_type:"", category:"System Engineer Questions")
+
+puts "Created System Engineer questions"

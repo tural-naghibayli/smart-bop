@@ -12,6 +12,11 @@ class FunctionTestsController < ApplicationController
   def new
     @function_test = FunctionTest.new
     @bop = Bop.find(params[:bop_id])
+
+    Question.all.each do |q|
+      @function_test.answers.build
+    end
+
   end
 
   def create
@@ -36,7 +41,7 @@ class FunctionTestsController < ApplicationController
   end
 
   def function_test_params
-    params.require(:function_test).permit(:completed_date,
+    params.require(:function_test).permit(:completed_date, :location, :well_name,
                                           component_function_tests_attributes:[:id, :function_test_id,:bop_element_unit,
                                                     :open_gallons, :open_time, :close_gallons, :close_time, :photo, :_destroy]
                                           )

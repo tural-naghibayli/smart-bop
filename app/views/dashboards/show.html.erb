@@ -3,8 +3,13 @@
   <div class="main-nav-btn">
     <h1 class='welcome-user'> <%=current_user.name%>, <span>welcome to your dashboard!</span></h1>
     <div class='dash-new-test'>
-      <%= link_to "Add a new test", new_bop_pressure_test_path(@bop), class: 'create-test-button'%>
+      <%= link_to "Add a new pressure test", new_bop_pressure_test_path(@bop), class: 'create-test-button'%>
     </div>
+    <br>
+    <div class='dash-new-test'>
+      <%= link_to "Add a new function test", new_bop_function_test_path(@bop), class: 'create-test-button'%>
+    </div>
+
   </div>
 
   <% @pressure_tests.reverse().each do |pressure_test| %>

@@ -23,7 +23,7 @@
             <%= f.input :serial_number_chart_recorded, label:"SN chart recorder" %>
             <%= f.input :corrective_action %>
             <%= f.input :comment %>
-            <%= f.input :location, collection: ["Rig floor", "Office"] %>
+            <%= f.input :location, collection: ["Rig floor", "Drilling Office"] %>
           </div>
 
         </div>
@@ -37,27 +37,22 @@
 
             <% question = Question.where(category: [ "Equipment Checks", "EquipmentCheckBypassNormal", "ManifoldPressure"])[index] %>
 
-              <% if question %>
-                <div class="equipment_check_question">
-                  <div><%= question.name %></div>
-
-
-                    <% if question.category == "Equipment Checks" %>
-                      <span>
-                        <%= answer.input_field :value, as: :radio_buttons, collection: [['Yes', 'Yes'], ['No', 'No'], ["N/A","N/A"]], label: false %>
-                      </span>
-                    <% elsif question.category == "EquipmentCheckBypassNormal" %>
-                      <%= answer.input :value, collection: [ "Bypass", "Normal"], label: false %>
-                    <% elsif question.category =="ManifoldPressure" %>
-                      <%= answer.input :value, as: :string, label: false %>
-                    <% end %>
-
-                    <%= answer.hidden_field :question_id, value: question.id %>
-
-                </div>
-              <% end %>
-
-              <% index += 1 %>
+            <% if question %>
+              <div class="equipment_check_question">
+                <div><%= question.name %></div>
+                  <% if question.category == "Equipment Checks" %>
+                    <span>
+                      <%= answer.input_field :value, as: :radio_buttons, collection: [['Yes', 'Yes'], ['No', 'No'], ["N/A","N/A"]], label: false %>
+                    </span>
+                  <% elsif question.category == "EquipmentCheckBypassNormal" %>
+                    <%= answer.input :value, collection: [ "Bypass", "Normal"], label: false %>
+                  <% elsif question.category =="ManifoldPressure" %>
+                    <%= answer.input :value, as: :string, label: false %>
+                  <% end %>
+                  <%= answer.hidden_field :question_id, value: question.id %>
+              </div>
+            <% end %>
+            <% index += 1 %>
           <% end %>
         </div>
 
