@@ -1,0 +1,23 @@
+<div class="container">
+  <h1>Build a new Function Test</h1>
+
+  <%= simple_form_for [@bop, @function_test] do |f| %>
+    <%= f.input :completed_date %>
+
+    <h3>Components of BOP</h3>
+
+    <div id='component_function_tests'>
+        <%= f.simple_fields_for :component_function_tests do |component| %>
+          <%= render 'component_function_test_fields', f:component %>
+        <% end %>
+        <div class='links'>
+          <%= link_to_add_association 'Add Component', f, :component_function_tests, class:"add-button-main" %>
+        </div>
+    </div>
+
+    <div class='create-btn'>
+      <%= f.submit "Create Function Test", class:"create-test-button" %>
+    </div>
+  <% end %>
+
+</div>

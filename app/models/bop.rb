@@ -2,6 +2,7 @@ class Bop < ApplicationRecord
   belongs_to :rig
   validates :serial_number, :bop_type, :pressure_rating, :rig, presence: true
   has_many :pressure_tests, dependent: :destroy
+  has_many :function_tests, dependent: :destroy
   has_many :safety_valve_tests, through: :pressure_tests
   has_many :component_pressure_tests, through: :pressure_tests
 

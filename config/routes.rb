@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :rigs, only: [:show, :index]
 
   resources :bops, only: [:show, :new ] do
+    resources :function_tests, only: [:new, :create]
     resources :pressure_tests, only: [:new, :create]
   end
 
@@ -23,6 +24,18 @@ Rails.application.routes.draw do
     end
   end
 
+
+  resources :function_tests, only: [:show, :index] do
+    resources :component_function_tests, only: [:new, :create, :show]
+    member do
+      patch :approve
+    end
+    collection do
+      get :preview
+    end
+  end
+
   resources :pressure_tests, only: [:edit, :update, :delete]
+  resources :function_tests, only: [:edit, :update, :delete]
   resource :dashboard, only: [:show]
 end
