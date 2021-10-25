@@ -36,7 +36,7 @@
       </table>
     </div>
 
-    <h4>Next Test Deadline : <%= @bop.last_completed_pressure_test_date+21.day  %> </h4>
+    <h4>Next Test Deadline : <%= @bop.pressure_tests.present? ? @bop.last_completed_pressure_test_date+21.day : "No previous test"  %> </h4>
 
     <h2 class="bop-table-title">Pressure Tests</h2>
     <div class="bop-table-container">
