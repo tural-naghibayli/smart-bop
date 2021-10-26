@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_24_221701) do
+ActiveRecord::Schema.define(version: 2021_10_26_213456) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,8 +43,6 @@ ActiveRecord::Schema.define(version: 2021_10_24_221701) do
     t.bigint "pressure_test_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "function_test_id"
-    t.index ["function_test_id"], name: "index_answers_on_function_test_id"
     t.index ["pressure_test_id"], name: "index_answers_on_pressure_test_id"
     t.index ["question_id"], name: "index_answers_on_question_id"
   end
@@ -99,6 +97,16 @@ ActiveRecord::Schema.define(version: 2021_10_24_221701) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["pressure_test_id"], name: "index_component_pressure_tests_on_pressure_test_id"
+  end
+
+  create_table "function_test_answers", force: :cascade do |t|
+    t.bigint "question_id", null: false
+    t.bigint "function_test_id", null: false
+    t.string "value"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["function_test_id"], name: "index_function_test_answers_on_function_test_id"
+    t.index ["question_id"], name: "index_function_test_answers_on_question_id"
   end
 
   create_table "function_tests", force: :cascade do |t|
@@ -184,7 +192,6 @@ ActiveRecord::Schema.define(version: 2021_10_24_221701) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "answers", "function_tests"
   add_foreign_key "answers", "pressure_tests"
   add_foreign_key "answers", "questions"
   add_foreign_key "approvals", "pressure_tests"
@@ -192,6 +199,8 @@ ActiveRecord::Schema.define(version: 2021_10_24_221701) do
   add_foreign_key "bops", "rigs"
   add_foreign_key "component_function_tests", "function_tests"
   add_foreign_key "component_pressure_tests", "pressure_tests"
+  add_foreign_key "function_test_answers", "function_tests"
+  add_foreign_key "function_test_answers", "questions"
   add_foreign_key "function_tests", "bops"
   add_foreign_key "function_tests", "users"
   add_foreign_key "pressure_tests", "bops"

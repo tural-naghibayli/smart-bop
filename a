@@ -1,0 +1,17 @@
+=> [32m#<PressureTest:0x00007f91987e2350[0m
+ id: [1;36mnil[0m,
+ last_test_date: [1;36mnil[0m,
+ completed_date: [1;36mnil[0m,
+ next_test_deadline: [1;36mnil[0m,
+ test_fluid: [1;36mnil[0m,
+ well_name: [1;36mnil[0m,
+ serial_number_chart_recorded: [1;36mnil[0m,
+ comment: [1;36mnil[0m,
+ corrective_action: [1;36mnil[0m,
+ drill_pipe_diameter: [1;36mnil[0m,
+ user_id: [1;36mnil[0m,
+ created_at: [1;36mnil[0m,
+ updated_at: [1;36mnil[0m,
+ bop_id: [1;36mnil[0m,
+ status: [31m[1;31m"[0m[31mPending[1;31m"[0m[31m[0m,
+ location: [1;36mnil[0m[32m>[0m

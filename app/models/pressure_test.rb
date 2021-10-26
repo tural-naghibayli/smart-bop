@@ -14,8 +14,6 @@ class PressureTest < ApplicationRecord
   has_many :approvals, dependent: :destroy
   accepts_nested_attributes_for :approvals, reject_if: :all_blank, allow_destroy: true
 
-  has_many :answers, dependent: :destroy
-
   validates :completed_date, :test_fluid, :well_name, :drill_pipe_diameter, :user, presence: true
 
   has_one_attached :report_file

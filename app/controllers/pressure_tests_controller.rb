@@ -1,5 +1,4 @@
 class PressureTestsController < ApplicationController
-
   before_action :set_pressure_test, only: [:show, :edit, :update, :destroy, :approve]
 
   def index
@@ -31,7 +30,6 @@ class PressureTestsController < ApplicationController
 
     @pressure_test.bop = @bop
     @pressure_test.last_test_date = @bop.last_completed_pressure_test_date
-
 
     @pressure_test.next_test_deadline = @pressure_test.completed_date + 21.day
     @pressure_test.user = current_user
@@ -71,18 +69,17 @@ class PressureTestsController < ApplicationController
     redirect_to bop_path
   end
 
-
   private
 
   def pressure_test_params
 
     params.require(:pressure_test).permit(:completed_date, :test_fluid, :well_name, :serial_number_chart_recorded, :comment, :corrective_action, :drill_pipe_diameter, :photo, :report_file, :location,
                                           component_pressure_tests_attributes:[:id, :pressure_test_id,:bop_element_unit, :component_type, :low_pressure,
-                                                    :high_pressure, :test_result, :open_gallons, :open_time,
-                                                    :close_gallons, :close_time, :photo, :_destroy],
+                                                                               :high_pressure, :test_result, :open_gallons, :open_time,
+                                                                               :close_gallons, :close_time, :photo, :_destroy],
                                           safety_valve_tests_attributes:[:id, :unit, :serial_number, :connection_type, :high_pressure, :low_pressure, :test_result, :_destroy],
-                                          answers_attributes: [ :question_id, :value],
-                                          approvals_attributes: [ :id, :testable_type, :approval_status, :pressure_test_id, :user_id])
+                                          answers_attributes: [:question_id, :value],
+                                          approvals_attributes: [:id, :testable_type, :approval_status, :pressure_test_id, :user_id])
   end
 
   def set_pressure_test

@@ -36,34 +36,69 @@
       </table>
     </div>
 
-    <h4>Next Test Deadline : <%= @bop.pressure_tests.present? ? @bop.last_completed_pressure_test_date+21.day : "No previous test"  %> </h4>
+    <h4>Next Pressure Test Deadline : <%= @bop.pressure_tests.present? ? @bop.last_completed_pressure_test_date+21.day : "No previous test"  %> </h4>
+    <h4>Next Function Test Deadline : <%= @bop.function_tests.present? ? @bop.last_completed_function_test_date+21.day : "No previous test"  %> </h4>
 
-    <h2 class="bop-table-title">Pressure Tests</h2>
-    <div class="bop-table-container">
-      <table class="table table-hover table-borderless">
-        <thead>
-          <tr class="table-head-wrapper">
-            <th scope="col" class="th-title">Well Name</th>
-            <th scope="col" class="th-title">Completed Date</th>
-            <th scope="col" class="th-title">Location</th>
-            <th scope="col" class="th-title"></th>
-            </tr>
-        </thead>
-        <tbody>
-          <% @bop.pressure_tests.reverse().each do |test| %>
-            <tr class='clickable-row' <%#= link_to " ", rigs_path(@rig) %>>
-              <td><%= test.well_name %></td>
-              <td><%= test.completed_date %> </td>
-              <td><%= test.location %></td>
-              <td>
-                <%= link_to  pressure_test_path(test), class:"pressure-test-link" do %>
-                <i class="fas fa-folder-open"></i>
-                <% end %>
-              </td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
+    <div>
+      <h2 class="bop-table-title">Pressure Tests</h2>
+      <div class="bop-table-container">
+        <table class="table table-hover table-borderless">
+          <thead>
+            <tr class="table-head-wrapper">
+              <th scope="col" class="th-title">Well Name</th>
+              <th scope="col" class="th-title">Completed Date</th>
+              <th scope="col" class="th-title">Location</th>
+              <th scope="col" class="th-title"></th>
+              </tr>
+          </thead>
+          <tbody>
+            <% @bop.pressure_tests.reverse().each do |test| %>
+              <tr class='clickable-row' <%#= link_to " ", rigs_path(@rig) %>>
+                <td><%= test.well_name %></td>
+                <td><%= test.completed_date %> </td>
+                <td><%= test.location %></td>
+                <td>
+                  <%= link_to  pressure_test_path(test), class:"pressure-test-link" do %>
+                  <i class="fas fa-folder-open"></i>
+                  <% end %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        </div>
     </div>
+
+    <div>
+      <h2 class="bop-table-title">Function Tests</h2>
+      <div class="bop-table-container">
+        <table class="table table-hover table-borderless">
+          <thead>
+            <tr class="table-head-wrapper">
+              <th scope="col" class="th-title">Well Name</th>
+              <th scope="col" class="th-title">Completed Date</th>
+              <th scope="col" class="th-title">Location</th>
+              <th scope="col" class="th-title"></th>
+              </tr>
+          </thead>
+          <tbody>
+            <% @bop.function_tests.reverse().each do |test| %>
+              <tr class='clickable-row' <%#= link_to " ", rigs_path(@rig) %>>
+                <td><%= test.well_name %></td>
+                <td><%= test.completed_date %> </td>
+                <td><%= test.location %></td>
+                <td>
+                  <%= link_to  function_test_path(test), class:"pressure-test-link" do %>
+                  <i class="fas fa-folder-open"></i>
+                  <% end %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+
   </div>
 </body>
