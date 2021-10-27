@@ -38,8 +38,8 @@
 
     <h4><strong> Deadlines </strong></h4>
     <div class="next-test-info">
-      <h5>Pressure Test: <%= @bop.pressure_tests.present? ? @bop.last_completed_pressure_test_date+21.day : "No previous test"  %> </h5>
-      <h5>Function Test: <%= @bop.function_tests.present? ? @bop.last_completed_function_test_date+21.day : "No previous test"  %> </h5>
+      <h5><strong> Pressure Test: </strong> <%= @bop.pressure_tests.present? ? @bop.last_completed_pressure_test_date+21.day : "No previous test"  %> </h5>
+      <h5><strong> Function Test: </strong> <%= @bop.function_tests.present? ? @bop.last_completed_function_test_date+21.day : "No previous test"  %> </h5>
     </div>
 
 
