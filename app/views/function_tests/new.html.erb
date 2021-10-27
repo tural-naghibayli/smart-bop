@@ -2,10 +2,11 @@
   <h1>Build a new Function Test</h1>
 
   <%= simple_form_for [@bop, @function_test] do |f| %>
-    <%= f.input :completed_date %>
-    <%= f.input :well_name %>
-    <%= f.input :location, collection:["Rig floor" , "Drilling Office"] %>
-
+    <div class = "funtion_test_general_form">
+      <%= f.input :completed_date %>
+      <%= f.input :well_name %>
+      <%= f.input :location, collection:["Rig floor" , "Drilling Office"] %>
+    </div>
     <h3>Components of BOP</h3>
 
     <div id='component_function_tests'>
@@ -20,11 +21,11 @@
 
     <h3>Regular Checks</h3>
 
-    <div class="equipment_check_form">
+    <div class="function_equipment_check_form">
 
       <% index = 0 %>
-      <%= f.simple_fields_for :answers, class: 'input-display' do |answer| %>
 
+      <%= f.simple_fields_for :function_test_answers, class: 'input-display' do |answer| %>
         <% question = Question.where(category: [ "Function Test Questions", "Function Test BypassNormal"])[index] %>
           <% if question %>
             <div class="equipment_check_question">
@@ -45,10 +46,10 @@
 
     <h3>System Checks</h3>
     <p>To be carried out by System Engineer or Senior Electrician</p>
-    <div class="equipment_check_form">
+    <div class="function_equipment_check_form">
 
       <% index = 0 %>
-      <%= f.simple_fields_for :answers, class: 'input-display' do |answer| %>
+      <%= f.simple_fields_for :function_test_answers, class: 'input-display' do |answer| %>
 
         <% question = Question.where(category: [ "System Engineer Questions"])[index] %>
           <% if question %>

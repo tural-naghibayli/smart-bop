@@ -1,6 +1,6 @@
 <div class="nested-fields nested-margin">
 
-  <div class="component_test_form">
+  <div class="component_function_test_form">
 
         <div class="component_test_question">
           <%= f.input :bop_element_unit, collection: [ "Annular Preventer", "Upper Pipe ram", "Middle Pipe ram", "Lower Pipe ram", "Blind Shear Ram", "North HCR", "South HCR", "Shear Boost", "Diverter" ] %>
@@ -8,11 +8,17 @@
 
         <div class="component_test_question">
           <%= f.input :open_time %>
+        </div>
+
+        <div class="component_test_question">
           <%= f.input :open_gallons %>
         </div>
 
         <div class="component_test_question">
           <%= f.input :close_time %>
+        </div>
+
+        <div class="component_test_question">
           <%= f.input :close_gallons %>
         </div>
 
