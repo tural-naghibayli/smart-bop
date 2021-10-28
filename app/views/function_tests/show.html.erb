@@ -2,3 +2,164 @@
   <h1>This is function test SHOW PAGE</h1>
   <h2>Last Test date: <%= @function_test.completed_date %></h2>
 </div>
+
+
+<div class='sidebar'>
+  <div class='heading-pres'>
+    <%= image_tag "avatar.jpg",  alt:"avatar-large", class:"avatar-large-2"  %>
+    <h3><%= current_user.name.upcase %></h3>
+    <h4>Rig: <%= current_user.rig.name %></h4>
+    <p class='staff-position'><%= current_user.position %></p>
+  </div>
+  <div class='pressure-details'>
+    <p> <strong class='strong'>Last Test Date:</strong> <%= @function_test.last_test_date %></p>
+    <p> <strong class='strong'>Completed Date:</strong> <%= @function_test.completed_date %></p>
+    <p> <strong class='strong-next'>Next Test Deadline:</strong> <%= @function_test.next_test_deadline %></p>
+  </div>
+  <p style='margin-left: 180px; color: #fdf0d5ff; margin-bottom: 0;'><u>Approval Status</u></p>
+
+</div>
+
+<div class='pres-div'>
+  <table class='press-table'>
+    <thead class='test-info'>
+      <tr>
+        <th><h4>Function Test Information</h4></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong class='strong-tbl'>Well Name:</strong> <%= @function_test.well_name %></td>
+        <td><strong class='strong-tbl'>BOP S/N:</strong> <%= Bop.find(@function_test.bop_id).serial_number %></td>
+        <td><strong class='strong-tbl'>Location:</strong><%= @function_test.location %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div style="margin-left: 38%; margin-bottom: 15px">
+  <h4>Component Function Tests</h4>
+</div>
+
+  <% if @function_test.component_function_tests.present? %>
+    <% @function_test.component_function_tests.each do |component_function_test| %>
+    <div class='pres-div'>
+      <table class='press-table'>
+        <thead class='test-comp'>
+          <tr>
+            <th><strong><%= component_function_test.bop_element_unit %></strong></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td><strong class='strong-tbl'>Open:</strong> <%= component_function_test.open_gallons %> gallons, <%= component_function_test.open_time %> seconds</td>
+            <td><strong class='strong-tbl'>Close:</strong> <%= component_function_test.close_gallons %> gallons, <%= component_function_test.close_time %> seconds</td>
+            <td></td>
+          </tr>
+        </tbody>
+        </table>
+      </div>
+    <% end %>
+  <% end %>
+
+  <div class='pres-div'>
+    <table class='press-table'>
+      <thead class='test-equip'>
+        <tr>
+          <th><strong>Function Equipment Checks</strong></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <% Question.where(category:"Function Test Questions").each_with_index  do |quest,index| %>
+            <%if index == 0 %>
+              <td> <strong class='strong-tbl'><%= quest.name %>  </strong>
+                <%if quest.function_test_answers.first.value == 'Yes'%>
+                  <i class="fas fa-check fa-lg text-success"></i>
+                <%elsif quest.function_test_answers.first.value == 'No'%>
+                  <i class="fas fa-times fa-lg text-danger"></i>
+                <% else %>
+                  <%= quest.function_test_answers.first.value %>
+                <% end %>
+              </td>
+            <% end %>
+            <%if index == 1 %>
+              <td><strong class='strong-tbl'><%= quest.name %>  </strong>
+                <%if quest.function_test_answers.first.value == 'Yes'%>
+                  <i class="fas fa-check fa-lg text-success"></i>
+                <%elsif quest.function_test_answers.first.value == 'No'%>
+                  <i class="fas fa-times fa-lg text-danger"></i>
+                <% else %>
+                  <%= quest.function_test_answers.first.value %>
+                <% end %>
+              </td>
+            <% end %>
+          <% end %>
+          <% Question.where(category:"Function Test BypassNormal").each  do |quest| %>
+            <td>
+              <strong class='strong-tbl'><%= quest.name %>:</strong>
+              <%= quest.function_test_answers.first.value %>
+            </td>
+          <% end %>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class='pres-div'>
+    <table class='press-table'>
+      <thead class='test-equip'>
+        <tr>
+          <th><strong>System Engineer Checks</strong></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <% Question.where(category:"System Engineer Questions").each_with_index  do |quest,index| %>
+            <%if index == 0 %>
+              <td> <strong class='strong-tbl'><%= quest.name %>  </strong>
+                <%if quest.function_test_answers.first.value == 'Yes'%>
+                  <i class="fas fa-check fa-lg text-success"></i>
+                <%elsif quest.function_test_answers.first.value == 'No'%>
+                  <i class="fas fa-times fa-lg text-danger"></i>
+                <% else %>
+                  <%= quest.function_test_answers.first.value %>
+                <% end %>
+              </td>
+            <% end %>
+            <%if index == 1 %>
+              <td><strong class='strong-tbl'><%= quest.name %>  </strong>
+                <%if quest.function_test_answers.first.value == 'Yes'%>
+                  <i class="fas fa-check fa-lg text-success"></i>
+                <%elsif quest.function_test_answers.first.value == 'No'%>
+                  <i class="fas fa-times fa-lg text-danger"></i>
+                <% else %>
+                  <%= quest.function_test_answers.first.value %>
+                <% end %>
+              </td>
+            <% end %>
+             <%if index == 2 %>
+              <td><strong class='strong-tbl'><%= quest.name %>  </strong>
+                <%if quest.function_test_answers.first.value == 'Yes'%>
+                  <i class="fas fa-check fa-lg text-success"></i>
+                <%elsif quest.function_test_answers.first.value == 'No'%>
+                  <i class="fas fa-times fa-lg text-danger"></i>
+                <% else %>
+                  <%= quest.function_test_answers.first.value %>
+                <% end %>
+              </td>
+            <% end %>
+          <% end %>
+        </tr>
+      </tbody>
+    </table>
+  </div>

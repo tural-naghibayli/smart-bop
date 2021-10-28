@@ -46,7 +46,7 @@ class FunctionTestsController < ApplicationController
     params.require(:function_test).permit(:completed_date, :location, :well_name,
                                           component_function_tests_attributes:[:id, :function_test_id,:bop_element_unit,
                                                     :open_gallons, :open_time, :close_gallons, :close_time, :photo, :_destroy],
-                                          function__test_answers_attributes: [:question_id, :value],
+                                          function_test_answers_attributes: [:question_id, :value],
                                           )
   end
 
