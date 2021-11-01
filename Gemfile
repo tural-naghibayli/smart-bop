@@ -64,7 +64,3 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "cocoon"
-
-gem 'bonsai-elasticsearch-rails', '~> 7'
-
-gem 'searchkick', '~> 4.0'
