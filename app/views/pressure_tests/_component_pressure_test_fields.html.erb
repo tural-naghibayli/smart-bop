@@ -14,6 +14,8 @@
         <div class="component_test_question">
           <%= f.input :high_pressure %>
         </div>
+        <%= f.input :test_result,  collection: [ "Good", "Bad"] %>
+
         <div class="component_test_question">
           <%= f.input :open_time %>
         </div>
@@ -27,7 +29,6 @@
           <%= f.input :close_gallons %>
         </div>
 
-        <%= f.input :test_result,  collection: [ "Good", "Bad"] %>
         <%= f.input :photo, as: :file, class:'btn-photo' %>
   </div>
 
