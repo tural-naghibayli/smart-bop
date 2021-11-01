@@ -1,4 +1,6 @@
 class PressureTest < ApplicationRecord
+  searchkick
+
   belongs_to :user
   belongs_to :bop
 
@@ -17,5 +19,6 @@ class PressureTest < ApplicationRecord
   validates :completed_date, :test_fluid, :well_name, :drill_pipe_diameter, :user, presence: true
 
   has_one_attached :report_file
+
 
 end
