@@ -1,5 +1,4 @@
 class PressureTest < ApplicationRecord
-  searchkick
 
   belongs_to :user
   belongs_to :bop
