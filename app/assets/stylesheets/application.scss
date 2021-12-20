@@ -8,9 +8,10 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
 // Your CSS partials
-@import "components/index";
 @import "pages/index";
+@import "components/index";
 @import "components/rig_table";
 @import "components/bop_page";
 @import "components/button";
