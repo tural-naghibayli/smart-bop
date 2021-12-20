@@ -11,15 +11,17 @@
       color: $blue-prussian;
 }
 .wwd-50-radius-images {
-  margin-top: -65px;
-  margin-left: 32%;
-  align-content: center;
+  display: flex;
+  justify-content: center;
+  margin-top: -20%;
+  margin-left: 5%;
   width: 140px;
   height: 140px;
   border-radius: 50%;
   background-color: rgb(255, 255, 255);
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  box-shadow: rgba(33, 33, 49, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
+
 // Main banner for picture
 .banner{
   width: 100vw;
@@ -117,10 +119,9 @@
 }
 
 // what we do column grid main
-
 .wwd-main-grid {
 
-  width: 100vw;
+  width: 90vw;
   height: 500px;
   align-content: center;
   justify-content: center;
@@ -131,9 +132,9 @@
 
 
   // Live track col
-  .live-track-col {
-    width: 23vw;
-    height: 300px;
+  .info-card {
+    width: 85%;
+    height: auto;
     background: rgb(6,0,101);
     background: linear-gradient(135deg, rgba(0,35,111,1) 0%, rgba(220,0,14,0.8841911764705882) 100%);
     box-shadow: rgba(50, 50, 93, 0.322) 0px 30px 60px -12px inset, rgba(44, 44, 44, 0.288) 0px 18px 36px -18px inset;
@@ -147,11 +148,8 @@
       margin-top: 30px;
     }
     .give-margin-class-p{
-      margin-top: 15px;
-      margin-left: 60px;
-      margin-right: 60px;
+      margin: 10% 10%;
       text-align: justify;
-
       font-family: $body-font;
       font-size: 1.1rem;
       font-weight: 200;
@@ -159,94 +157,23 @@
 
     h6{font-family: $body-font;}
     strong {font-family: $body-font;}
-    .wwd-live-track-image {
+
+    .info-card-image {
       margin-top: 30px;
       width: 75px;
       height: 75px;
       object-fit: cover;
     }
   }
+ }
 
-  // workflow col
-  .work-flow-col {
-    width: 23vw;
-    height: 300px;
-    color: white;
-    background: rgb(6,0,101);
-    background: linear-gradient(135deg, rgba(0,35,111,1) 0%, rgba(220,0,14,0.8841911764705882) 100%);
-    box-shadow: rgba(50, 50, 93, 0.322) 0px 30px 60px -12px inset, rgba(44, 44, 44, 0.288) 0px 18px 36px -18px inset;
-    text-align: center;
-    margin-left: 13%;
-    border-radius: 20px;
-    .give-margin-class {
-      font-size: 20px;
-      font-weight: 600;
-      margin-top: 30px;
-    }
-    .give-margin-class-p{
-      margin-top: 15px;
-      margin-left: 60px;
-        margin-right: 60px;
-
-        text-align: justify;
-        font-family: $body-font;
-        font-size: 1.1rem;
-        font-weight: 200;
-      }
-      h6{font-family: $body-font;}
-      strong {font-family: $body-font;}
-      .wwd-workflow-image {
-        margin-top: 35px;
-        width: 70px;
-        height: 70px;
-        object-fit: cover;
-      }
-  }
-
-  // online form col
-  .online-form-col {
-    width: 23vw;
-    height: 300px;
-    color: white;
-    background: rgb(6,0,101);
-    background: linear-gradient(135deg, rgba(0,35,111,1) 0%, rgba(220,0,14,0.8841911764705882) 100%);
-    box-shadow: rgba(50, 50, 93, 0.322) 0px 30px 60px -12px inset, rgba(44, 44, 44, 0.288) 0px 18px 36px -18px inset;
-    text-align: center;
-    margin-left: 13%;
-    border-radius: 20px;
-
-      .give-margin-class {
-        font-size: 20px;
-        font-weight: 600;
-        margin-top: 30px;
-      }
-      .give-margin-class-p{
-        margin-top: 15px;
-        margin-left: 60px;
-        margin-right: 60px;
-
-        text-align: justify;
-        font-family: $body-font;
-        font-size: 1.1rem;
-        font-weight: 200;
-      }
-      h6{font-family: $body-font;}
-      strong {font-family: $body-font;}
-      .wwd-online-from-image {
-        margin-top: 30px;
-        width: 75px;
-        height: 75px;
-        object-fit: cover;
-      }
-  }
-}
 
 // What is BOP area
 .what-is-bop-banner-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
 
-  margin-top: 5%;
+  margin-top: 2%;
   width: 100vw;
   height: 50vh;
   .wibop-give-margin-class {
@@ -422,3 +349,6 @@
     padding-left: 40px;
   }
 }
+
+
+// -----------------------
